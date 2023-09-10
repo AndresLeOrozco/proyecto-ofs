@@ -16,13 +16,13 @@ export default function RootLayout({ children }) {
         <main>
           <div className="grid grid-cols-2 gap-4 place-content-stretch h-48 ">
             <div className="px-8">
-              <TextArea Area="OFS" />
+              <TextArea Area="OFS"/>
             </div>
             <div className="px-8">
-              <TextArea Area="JS" />
+              <TextArea Area="JS" edit = {true}/>
             </div>
             <div className='m-0 p-0 space-x-0 w-screen'>
-              <TextArea />
+              <TextArea edit= {true}/>
             </div>
           </div>
         </main>
