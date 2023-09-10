@@ -1,5 +1,16 @@
-export default function ABOUT() {
+export default async function ABOUT() {
     return (
-        <h1>ABOUT</h1>
+        alert(await resp().Desarrolladores[0].nombre)
     )
   }
+
+async function resp()  {
+    const res = await fetch('/api/about', {
+    method: 'GET', 
+    headers: {
+      'Content-Type':'application/json'
+    },
+  })
+  const data = await res.json(); 
+  return data;
+}
