@@ -4,19 +4,17 @@ import TextArea from '@/components/TextArea'
 
 export default function Home() {
   return (
-    <>
-    <div className="flex">
-      <div className="flex-1 px-8">
+    <div className="grid grid-cols-2 gap-4 place-content-stretch h-48 ">
+      <div className="px-8">
         <TextArea Area="OFS" />
       </div>
-      <div className="flex-1 px-8">
+      <div className="px-8">
         <TextArea Area="JS" />
       </div>
+      <div className='m-0 p-0 space-x-0 w-screen'>
+        <TextArea/>
+      </div>
     </div>
-    <div className='mt-8'>
-    <TextArea />
-    </div>
-    </>
   )
 
 
