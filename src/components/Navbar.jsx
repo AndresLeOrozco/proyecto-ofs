@@ -8,7 +8,7 @@ const Navbar = () =>
                 <img src="https://www.escinf.una.ac.cr/templates/yootheme/cache/f2/logoESCINF-f2f112bd.png" className ="h-20 mr-3" alt="Flowbite Logo" />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">OFS Playground</span>
             </Link>
-            <SimpleButtons name = 'about' url = 'http://localhost:3000/' />
+            <SimpleButtons name = 'About' url = 'http://localhost:3000/' />
         </div>
     </nav>
 
