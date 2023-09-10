@@ -1,5 +1,6 @@
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import TextArea from '@/components/TextArea'
 
 export const metadata = {
   title: 'Proyecto lord',
@@ -9,13 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
       <body>
-        <Navbar/>
-        <main>
+        <Navbar />
         {children}
-        </main>
-        </body>
+      </body>
     </html>
   )
 }
