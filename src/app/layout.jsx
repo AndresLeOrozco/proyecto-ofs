@@ -1,6 +1,9 @@
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import TextArea from '@/components/TextArea'
+import { SimpleButtons } from '@/components/Buttons'
+const fs = require('fs');
+const path = require('path');
 
 
 export const metadata = {
@@ -17,6 +20,7 @@ export default function RootLayout({ children }) {
           <div className="grid grid-cols-2 gap-4 place-content-stretch h-48 ">
             <div className="px-8">
               <TextArea Area="OFS"/>
+              <SimpleButtons name = "Save" url = " ">Save</SimpleButtons>
             </div>
             <div className="px-8">
               <TextArea Area="JS" edit = {true}/>
@@ -31,3 +35,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+

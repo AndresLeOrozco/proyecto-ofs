@@ -1,24 +1,66 @@
 "use client"
 import { useState } from "react"
-
+import { useRouter } from "next/navigation"
 
 
 
 
 export const SimpleButtons = ({ name, url }) => {
-    const router = useRouter()
+    const router = useRouter();
+    const [fileName, setFileName] = useState(); // Nombre del archivo
+    const [fileContent, setFileContent] = useState(); // Contenido del archivo
+  
+    const handleSaveFile = async () => {
+      try {
+        // Validar si fileName y fileContent no están vacíos antes de guardar
+        if (!fileName || !fileContent) {
+          console.error("Por favor, ingresa un nombre y contenido del archivo.");
+          return;
+        }
+  
+        const response = await fetch(`/api/script/${fileName}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ fileName, fileContent }),
+        });
+  
+        if (response.ok) {
+          console.log('Archivo guardado en el servidor correctamente');
+        } else {
+          console.error('Error al guardar el archivo en el servidor');
+        }
+      } catch (error) {
+        console.error('Error de red:', error);
+      }
+    };
+  
     return (
-        <div className="hidden w-full md:block md:w-auto">
+      <div>
+        {/* Inputs para el nombre y contenido del archivo */}
+        <input
+          type="text"
+          placeholder=" Id del archivo"
+          value={fileName}
+          onChange={(e) => setFileName(e.target.value)}
+        />
+        <textarea
+          placeholder="Contenido del archivo"
+          value={fileContent}
+          onChange={(e) => setFileContent(e.target.value)}
+        />
+  
+        {/* Botón para guardar el archivo en el servidor */}
+        <button className="bg-blue-500 hover:cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+        onClick={handleSaveFile}>Save</button>
+  
+        {/* Botón para redirigir a la URL especificada */}
+    
+      </div>
+    );
+  };
 
-            <buttom className="bg-blue-500 hover:cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={() =>
-                router.push(`http://localhost:3000/${url}`)
-            }>
-                {name}
-            </buttom>
-
-        </div>
-    )
-}
 
 export const ModalButtons =  ({data, name, url}) => {
     const users = data.Desarrolladores
