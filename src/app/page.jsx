@@ -16,7 +16,6 @@ import { TextArea } from '@/components/TextArea'
 import { RequestButtom } from '@/components/Buttons'
 import { SaveButton } from '@/components/Buttons'
 import { useState } from "react"
-export const userContext = React.createContext();
 
 
 const Home = () => {
@@ -49,7 +48,6 @@ const Home = () => {
     Component that contains the REACT (JSX) code of the body the app
   */
   return (
-    <userContext.Provider value={textareaText}>
       <main>
         <div className="grid grid-cols-3 gap-4 place-content-stretch h-48 ">
           <div className="px-1">
@@ -69,7 +67,6 @@ const Home = () => {
           </div>
         </div>
       </main>
-    </userContext.Provider>
   )
 }
 
