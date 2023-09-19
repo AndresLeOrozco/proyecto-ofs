@@ -61,7 +61,7 @@ const Home = () => {
             <RetrieveButton afterProcess={handlerSetText1}></RetrieveButton>
            </div>
           <div id="the-count">
-            <span id="current">Chars: {textareaText[0].length}</span>
+            <span id="current">Characters: {textareaText[0].length}</span>
             <span id="maximum"></span>
           </div>Í
         </div>
