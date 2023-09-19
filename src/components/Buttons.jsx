@@ -118,18 +118,19 @@ const Post = async (bodyReq, url, callback) =>{
 }
 
   export const SaveButton = ({children,url, processData }) => {
-    const [fileName, setFileName] = useState();
+    const [fileName, setFileName] = useState("");
     const [showModal, setShowModal] = useState(false);
 
     const handleSaveFile = async () => {
       try {
         // Validar si fileContent no están vacíos antes de guardar
-        if (!processData.text) {
-          alert("Area de texto vacia.")
+        if (!processData.text || fileName === "") {
+          alert("Area de texto o nombre de archivo vacio.")
           return;
         }
 
         let fileContent = processData.text
+        console.log(fileName)
         url = url + `/${fileName}`
         let body = {fileName, fileContent}
         let nothing = (newText) =>  null
