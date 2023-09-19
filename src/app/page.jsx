@@ -13,8 +13,7 @@ web application.
 "use client"
 import React from 'react'
 import { TextArea } from '@/components/TextArea'
-import { RequestButtom } from '@/components/Buttons'
-import { SaveButton } from '@/components/Buttons'
+import { RequestButtom , RetrieveButton, SaveButton} from '@/components/Buttons'
 import { useState } from "react"
 
 
@@ -44,6 +43,11 @@ const Home = () => {
     setTextareaText([textareaText[0], NewText, textareaText[2]]);
   };
 
+  const handlerSetText1 = (newText) => {
+    const NewText = `${newText}`
+    setTextareaText([NewText, textareaText[1], textareaText[2]]);
+  };
+
   /*
     Component that contains the REACT (JSX) code of the body the app
   */
@@ -52,6 +56,10 @@ const Home = () => {
       <div className="grid grid-cols-3 gap-4 place-content-stretch h-48 ">
         <div className="px-1">
           <TextArea Area="OFS" GetText={SetEditionTextualArea} AreaText={textareaText[0]} />
+          <div className="flex p-5 space-x-4">
+            <SaveButton processData={{ text: textareaText[0] }} url='script'>Save</SaveButton>
+            <RetrieveButton afterProcess={handlerSetText1}></RetrieveButton>
+           </div>
           <div id="the-count">
             <span id="current">Chars: {textareaText[0].length}</span>
             <span id="maximum"></span>
@@ -61,7 +69,6 @@ const Home = () => {
           <RequestButtom afterProcess={handlerSetText} url='compile' processData={{ text: textareaText[0] }}>
             Compilar
           </RequestButtom>
-          <SaveButton processData={{ text: textareaText[0] }} url='script'>Save</SaveButton>
         </div>
         <div className="px-1">
           <TextArea Area="JS" AreaText={textareaText[1]} NotEditable="pointer-events-none" />

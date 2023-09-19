@@ -20,3 +20,25 @@ export async function POST(request) {
     return NextResponse.json({ message: 'Error guardado correctamente' });
   }
 }
+
+export async function GET(request) {
+  try {
+    // Recibe el nombre del archivo como parámetro en la URL
+    const {searchParams} = new URL(request.url)
+    const fileName = searchParams.get('fileName')
+    // Define la ruta del archivo en el servidor
+    const filePath = path.join(process.cwd(), "private", fileName);
+
+    // Lee el contenido del archivo
+    const fileContent = await fs.readFile(filePath, "utf-8");
+
+    // Devuelve el contenido como respuesta
+    return NextResponse.json(fileContent);
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { message: "Error al leer el archivo" },
+      { status: 500 }
+    );
+  }
+}

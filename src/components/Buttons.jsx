@@ -72,7 +72,7 @@ export const ModalButtons = ({ data, name, url }) => {
                                 {/*body*/}
                                 <div className="relative p-6 flex-auto">
                                     {users.map((user, index) => (
-                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                        <p key = {index} className="my-4 text-slate-500 text-lg leading-relaxed">
                                             Name: {user.nombre}  -  Cualidad Registrada: {user.cualidad}
                                         </p>
                                     ))}
@@ -212,4 +212,35 @@ const Post = async (bodyReq, url, callback) =>{
 )
   };
 
+
+  
+  export const RetrieveButton = ({ children, afterProcess }) => {
+
+    console.log("sss")
+    const handleRetrieveClick = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/script/doc1.js?fileName=doc1.js");
+        if (response.ok) {
+            afterProcess(await response.json());
+        } else {
+          console.error("Error al recuperar el archivo");
+        }
+      } catch (error) {
+        console.error("Error de red:", error);
+      }
+    };
+  
+    return (
+      <div>
+        <button
+          className="bg-blue-500 hover:cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+          type="button"
+          onClick={() => handleRetrieveClick()}
+        >
+          Recuperar
+          {children}
+        </button>
+      </div>
+    );
+  };
 
