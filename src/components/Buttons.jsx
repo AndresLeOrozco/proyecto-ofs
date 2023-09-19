@@ -123,25 +123,20 @@ const Post = async (bodyReq, url, callback) =>{
 
     const handleSaveFile = async () => {
       try {
-        // Validar si fileName y fileContent no están vacíos antes de guardar
-        if (!processData) {
-          console.error("Por favor, ingresa un nombre y contenido del archivo.");
+        // Validar si fileContent no están vacíos antes de guardar
+        if (!processData.text) {
+          alert("Area de texto vacia.")
           return;
         }
+
         let fileContent = processData.text
-        const response = await fetch(`http://localhost:3000/api/${url}/${fileName}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ fileName, fileContent}),
-        });
-  
-        if (response.ok) {
-          console.log('Archivo guardado en el servidor correctamente');
-        } else {
-          console.error('Error al guardar el archivo en el servidor');
-        }
+        url = url + `/${fileName}`
+        let body = {fileName, fileContent}
+        let nothing = (newText) =>  null
+        Post(body,url,nothing)
+        setShowModal(false)
+        alert('Archivo guardado correctamente')
+
       } catch (error) {
         console.error('Error de red:', error);
       }
