@@ -53,7 +53,7 @@ const Home = () => {
         <div className="px-1">
           <TextArea Area="OFS" GetText={SetEditionTextualArea} AreaText={textareaText[0]} />
           <div id="the-count">
-            <span id="current">Chars: {textareaText[0].length}</span>
+            <span id="current">Characters: {textareaText[0].length}</span>
             <span id="maximum"></span>
           </div>Í
         </div>
