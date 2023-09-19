@@ -63,7 +63,7 @@ const Home = () => {
           <div id="the-count">
             <span id="current">Characters: {textareaText[0].length}</span>
             <span id="maximum"></span>
-          </div>Í
+          </div>
         </div>
         <div className="block items-center justify-center mx-0 pt-4">
           <RequestButtom afterProcess={handlerSetText} url='compile' processData={{ text: textareaText[0] }}>

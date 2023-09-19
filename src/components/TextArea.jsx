@@ -21,6 +21,7 @@ TextArea Component that contains a text area and its label.
 import React, { useState } from "react"
 
 export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEditable = '' }) => {
+    
     const [row, setRows] = useState(AreaText.split("\n").length)
 
     const handleTextareaChange = (event) => {
@@ -28,22 +29,22 @@ export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEdi
     };
 
     const handleLine = (event) => {
-        event.keyCode === 13 || event.keyCode === 8 ? setRows(AreaText.split("\n").length) : ""
+        event.keyCode === 13 || event.keyCode === 8 ? setRows(AreaText.split("\n").length) : null
     };
 
-    const AreaTextClass = `${NotEditable}  auto scrollbar-hide block p-2.5 w-full text-sm text-gray-900 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-10`;
+    const AreaTextClass = `${NotEditable}  auto scrollbar-hide block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`;
 
     // Divide el texto en líneas para contar el número de filas
 
     return (
         <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
             <div className="flex">
-                <div className="h-72 relative flex-1 overflow-x-hidden overflow-y-auto dark:bg-gray-700 " >
+                <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 " >
                     <textarea
                         spellCheck="false"
                         value={AreaText}
                         onChange={handleTextareaChange}
-                        rows={row > 14? row : 14} 
+                        rows={row > 14 ? row : 14} 
                         className={AreaTextClass}
                         onKeyDown={handleLine}
                     ></textarea>
