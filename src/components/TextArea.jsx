@@ -31,7 +31,7 @@ export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEdi
         event.keyCode === 13 || event.keyCode === 8 ? setRows(AreaText.split("\n").length) : ""
     };
 
-    const AreaTextClass = `${NotEditable}  grow scrollbar-hide block p-2.5 w-full text-sm text-gray-900 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-10`;
+    const AreaTextClass = `${NotEditable}  auto scrollbar-hide block p-2.5 w-full text-sm text-gray-900 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-10`;
 
     // Divide el texto en líneas para contar el número de filas
 
@@ -43,7 +43,7 @@ export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEdi
                         spellCheck="false"
                         value={AreaText}
                         onChange={handleTextareaChange}
-                        rows={row} 
+                        rows={row > 14? row:14} 
                         className={AreaTextClass}
                         onKeyDown={handleLine}
                     ></textarea>

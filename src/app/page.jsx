@@ -48,10 +48,14 @@ const Home = () => {
     Component that contains the REACT (JSX) code of the body the app
   */
   return (
-    <main> 
+    <main>
       <div className="grid grid-cols-3 gap-4 place-content-stretch h-48 ">
         <div className="px-1">
           <TextArea Area="OFS" GetText={SetEditionTextualArea} AreaText={textareaText[0]} />
+          <div id="the-count">
+            <span id="current">Chars: {textareaText[0].length}</span>
+            <span id="maximum"></span>
+          </div>Í
         </div>
         <div className="block items-center justify-center mx-0 pt-4">
           <RequestButtom afterProcess={handlerSetText} url='compile' processData={{ text: textareaText[0] }}>
@@ -59,7 +63,6 @@ const Home = () => {
           </RequestButtom>
           <SaveButton processData={{ text: textareaText[0] }} url='script'>Save</SaveButton>
         </div>
-        
         <div className="px-1">
           <TextArea Area="JS" AreaText={textareaText[1]} NotEditable="pointer-events-none" />
         </div>
