@@ -31,14 +31,14 @@ export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEdi
         event.keyCode === 13 || event.keyCode === 8 ? setRows(AreaText.split("\n").length) : ""
     };
 
-    const AreaTextClass = `${NotEditable}  grow h-72 scrollbar-hide block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-10`;
+    const AreaTextClass = `${NotEditable}  grow h-72 scrollbar-hide block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-10`;
 
     // Divide el texto en líneas para contar el número de filas
 
     return (
         <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
             <div className="flex">
-                <div className="h-72 relative flex-1 overflow-x-hidden overflow-y-auto" >
+                <div className="h-72 relative flex-1 overflow-x-hidden overflow-y-auto dark:bg-gray-700 " >
                     <textarea
                         spellCheck="false"
                         value={AreaText}
@@ -47,7 +47,7 @@ export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEdi
                         className={AreaTextClass}
                         onKeyDown={handleLine}
                     ></textarea>
-                    <div className="absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
+                    <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
                         {AreaText.split("\n").map((_, index) => (
                             <div key={index} className="mb-1 mt-1 text-xs">
                                 {index + 1}
