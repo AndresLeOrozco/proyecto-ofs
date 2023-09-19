@@ -74,7 +74,7 @@ const Home = () => {
           <TextArea Area="JS" AreaText={textareaText[1]} NotEditable="pointer-events-none" />
         </div>
         <div className='m-0 p-0 space-x-0 w-screen'>
-          <TextArea AreaText={textareaText[2]} NotEditable="pointer-events-none" />
+          <TextArea Area="Terminal" AreaText={textareaText[2]} NotEditable="pointer-events-none" />
         </div>
       </div>
     </main>
