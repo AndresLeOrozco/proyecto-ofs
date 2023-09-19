@@ -26,7 +26,7 @@ import { useState } from "react"
 export const RequestButtom =  ({children, afterProcess, url, processData }) => { 
     return (
         <div className="hidden w-full md:block md:w-auto">
-            <buttom className="bg-blue-500 hover:cursor-pointer hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={() => {
+            <buttom className=" hover:cursor-pointer text-white py-2 px-4 " onClick={() => {
                 Post(processData, url, afterProcess);
             }}>
                 { children }

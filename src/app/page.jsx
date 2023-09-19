@@ -67,7 +67,7 @@ const Home = () => {
         </div>
         <div className="block items-center justify-center mx-0 pt-4">
           <RequestButtom afterProcess={handlerSetText} url='compile' processData={{ text: textareaText[0] }}>
-            Compilar
+          <img src="https://cdn-icons-png.flaticon.com/512/9123/9123237.png" alt="Descripción de la imagen" className="w-20 h-20 mr-1" />
           </RequestButtom>
         </div>
         <div className="px-1">
