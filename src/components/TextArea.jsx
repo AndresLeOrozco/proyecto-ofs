@@ -43,7 +43,7 @@ export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEdi
                         spellCheck="false"
                         value={AreaText}
                         onChange={handleTextareaChange}
-                        rows={row > 14? row:14} 
+                        rows={row > 14? row : 14} 
                         className={AreaTextClass}
                         onKeyDown={handleLine}
                     ></textarea>
