@@ -213,10 +213,9 @@ const Post = async (bodyReq, url, callback) =>{
   };
 
 
-  
+
   export const RetrieveButton = ({ children, afterProcess }) => {
 
-    console.log("sss")
     const handleRetrieveClick = async () => {
       try {
         const response = await fetch("http://localhost:3000/api/script/doc1.js?fileName=doc1.js");

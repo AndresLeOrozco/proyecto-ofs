@@ -7,7 +7,6 @@ export async function POST(request) {
 
   try {
     const { fileName, fileContent } = await request.json(); // Recibe datos del cliente
-    console.log(fileName,fileContent)
     // Define la ruta del archivo en el servidor
     const filePath = path.join(process.cwd(), 'private', fileName);
 
