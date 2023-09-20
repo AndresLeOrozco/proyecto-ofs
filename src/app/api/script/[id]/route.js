@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { NextResponse } from 'next/server';
 
-export async function POST(request) {
+export const POST = async (request) => {
 
   try {
     const { fileName, fileContent } = await request.json(); // Recibe datos del cliente
@@ -16,11 +16,11 @@ export async function POST(request) {
      return NextResponse.json({ message: 'Archivo guardado correctamente' });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ message: 'Error guardado correctamente' });
+    return NextResponse.json({ message: 'Error guardado incorrectamente' });
   }
 }
 
-export async function GET(request) {
+export const GET = async (request) => {
   try {
     // Recibe el nombre del archivo como parámetro en la URL
     const {searchParams} = new URL(request.url)

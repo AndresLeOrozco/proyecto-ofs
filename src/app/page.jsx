@@ -18,6 +18,7 @@ import { useState } from "react"
 
 
 const Home = () => {
+  let words = 0
   /*
     react hook of use state, the state is an array that contains
     The value of the Edition textual Area,the value of the Transpilation Area and
@@ -51,6 +52,17 @@ const Home = () => {
     setTextareaText([NewText, textareaText[1], textareaText[2]]);
   };
 
+
+  const countWords = (wordsCount) => {
+      const regex = /[a-zA-Z]{2,}/g;  //Poner /[a-zA-Z]+/g; para contar letras solas como palabras 
+
+      let text = textareaText[0]; // Obtener el texto completo
+      const matches = text.match(regex); 
+      matches ? wordsCount = matches.length : wordsCount = 0
+
+      return wordsCount
+  }
+
   /*
     Component that contains the REACT (JSX) code of the body the app
   */
@@ -64,7 +76,7 @@ const Home = () => {
             <RetrieveButton afterProcess={handlerSetText1}></RetrieveButton>
           </div>
           <div id="the-count">
-            <span id="current">Characters: {textareaText[0].length}</span>
+            <span id="current">Words: {countWords(words)}</span>
             <span id="maximum"></span>
           </div>
         </div>
