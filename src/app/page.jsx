@@ -52,6 +52,7 @@ const Home = () => {
     setTextareaText([NewText, textareaText[1], textareaText[2]]);
   };
 
+  const regex = /\w+/g
 
   const countWords = (wordsCount) => {
       const regex = /[a-zA-Z]{2,}/g;  //Poner /[a-zA-Z]+/g; para contar letras solas como palabras 
