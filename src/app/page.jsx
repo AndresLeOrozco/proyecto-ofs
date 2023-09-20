@@ -13,7 +13,7 @@ web application.
 "use client"
 import React from 'react'
 import { TextArea } from '@/components/TextArea'
-import { RequestButtom , RetrieveButton, SaveButton} from '@/components/Buttons'
+import { RequestButtom, RetrieveButton, SaveButton } from '@/components/Buttons'
 import { useState } from "react"
 
 
@@ -25,6 +25,9 @@ const Home = () => {
   */
 
   const [textareaText, setTextareaText] = useState(['', '', '']);
+
+  const [IsFileSaved, setIsFileSaved] = useState(false);
+
 
   /*
      Function that changes the The value of the Edition textual Area
@@ -59,7 +62,7 @@ const Home = () => {
           <div className="flex p-5 space-x-4">
             <SaveButton processData={{ text: textareaText[0] }} url='script'>Save</SaveButton>
             <RetrieveButton afterProcess={handlerSetText1}></RetrieveButton>
-           </div>
+          </div>
           <div id="the-count">
             <span id="current">Characters: {textareaText[0].length}</span>
             <span id="maximum"></span>
@@ -67,7 +70,7 @@ const Home = () => {
         </div>
         <div className="block items-center justify-center mx-0 pt-4">
           <RequestButtom afterProcess={handlerSetText} url='compile' processData={{ text: textareaText[0] }}>
-          <img src="https://cdn-icons-png.flaticon.com/512/9123/9123237.png" alt="Descripción de la imagen" className="w-20 h-20 mr-1" />
+            <img src="https://cdn-icons-png.flaticon.com/512/9123/9123237.png" alt="Descripción de la imagen" className="w-20 h-20 mr-1" />
           </RequestButtom>
         </div>
         <div className="px-1">

@@ -27,7 +27,7 @@ export const RequestButtom =  ({children, afterProcess, url, processData }) => {
     return (
         <div className="hidden w-full md:block md:w-auto">
             <buttom className=" hover:cursor-pointer text-white py-2 px-4 " onClick={() => {
-                processData === "" ? Post(processData, url, afterProcess) : alert("Area de texto Vacio") 
+                processData.text != '' ? Post(processData, url, afterProcess) : alert("Area de texto Vacio") 
             }}>
                 { children }
             </buttom>
