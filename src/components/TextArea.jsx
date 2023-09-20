@@ -22,21 +22,19 @@ import React, { useState, useEffect } from "react"
 
 export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEditable = '' }) => {
 
-    const [row, setRows] = useState(AreaText.split("\n").length)
+    let row = AreaText.split("\n").length
 
     const handleTextareaChange = (event) => {
         GetText(event.target.value)
     };
 
     const handleLine = (event) => {
-        event.keyCode === 13 || event.keyCode === 8 ? setRows(AreaText.split("\n").length) : null
+        event.keyCode === 13 || event.keyCode === 8 ? row = AreaText.split("\n").length : null
     };
 
     const AreaTextClass = `${NotEditable}  auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`;
 
-    useEffect(()=>{setRows(AreaText.split("\n").length)})
-
-    // Divide el texto en líneas para contar el número de filas
+    useEffect(()=>{row = AreaText.split("\n").length})
 
     return (
         <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -49,7 +47,7 @@ export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEdi
                         spellCheck="false"
                         value={AreaText}
                         onChange={handleTextareaChange}
-                        rows={row > 14 ? row : 14}
+                        rows = {row > 14 ? row : 14}
                         className={AreaTextClass}
                         onKeyDown={handleLine}
                     ></textarea>
