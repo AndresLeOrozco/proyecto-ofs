@@ -54,16 +54,6 @@ const Home = () => {
 
   const regex = /\w+/g
 
-  const countWords = (wordsCount) => {
-      const regex = /[a-zA-Z]{2,}/g;  //Poner /[a-zA-Z]+/g; para contar letras solas como palabras 
-
-      let text = textareaText[0]; // Obtener el texto completo
-      const matches = text.match(regex); 
-      matches ? wordsCount = matches.length : wordsCount = 0
-
-      return wordsCount
-  }
-
   /*
     Component that contains the REACT (JSX) code of the body the app
   */
@@ -77,7 +67,7 @@ const Home = () => {
             <RetrieveButton afterProcess={handlerSetText1}></RetrieveButton>
           </div>
           <div id="the-count">
-            <span id="current">Words: {countWords(words)}</span>
+            <span id="current">Words: {textareaText[0].match(regex)?.length}</span>
             <span id="maximum"></span>
           </div>
         </div>
