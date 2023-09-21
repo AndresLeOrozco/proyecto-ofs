@@ -21,7 +21,6 @@ import {
 import { useState } from "react";
 
 const Home = () => {
-  let words = 0;
   /*
     react hook of use state, the state is an array that contains
     The value of the Edition textual Area,the value of the Transpilation Area and
