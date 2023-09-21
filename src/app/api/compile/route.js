@@ -18,9 +18,9 @@ POST method : receives an object in JSON format from the body request with only 
 attribute that is also a string with the current date and returns an object with the string of 
 the request and with other string containing the current date.
 
-*/ 
-export async function POST(request){  
-    let code = await request.json()
-    code.time = new Date().toString()
-    return NextResponse.json(code)
+*/
+export async function POST(request) {
+  let code = await request.json();
+  code.time = new Date().toString();
+  return NextResponse.json(code);
 }

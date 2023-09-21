@@ -9,7 +9,6 @@ Description:
 TextArea Component that contains a text area and its label.
 */
 
-
 /*
     the TextArea have four properties: 
     Area = string inside the label that gives a name to the textarea.
@@ -18,48 +17,59 @@ TextArea Component that contains a text area and its label.
     NotEditable  string which is added to the classname of the textarea, it is used mainly to set 
     the text area as read only
 */
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-export const TextArea = ({ Area = '', GetText = () => { }, AreaText = '', NotEditable = '' }) => {
+export const TextArea = ({
+  Area = "",
+  GetText = () => {},
+  AreaText = "",
+  NotEditable = "",
+}) => {
+  let row = AreaText.split("\n").length;
 
-    let row = AreaText.split("\n").length
+  const handleTextareaChange = (event) => {
+    GetText(event.target.value);
+  };
 
-    const handleTextareaChange = (event) => {
-        GetText(event.target.value)
-    };
+  const handleLine = (event) => {
+    event.keyCode === 13 || event.keyCode === 8
+      ? (row = AreaText.split("\n").length)
+      : null;
+  };
 
-    const handleLine = (event) => {
-        event.keyCode === 13 || event.keyCode === 8 ? row = AreaText.split("\n").length : null
-    };
+  const AreaTextClass = `${NotEditable}  auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`;
 
-    const AreaTextClass = `${NotEditable}  auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`;
+  useEffect(() => {
+    row = AreaText.split("\n").length;
+  });
 
-    useEffect(()=>{row = AreaText.split("\n").length})
-
-    return (
-        <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-            <label htmlFor="message" className="block mb-2 text-sm font-medium text-black dark:text-gray-400">
-                {Area}
-            </label>
-            <div className="flex">
-                <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 " >
-                    <textarea
-                        spellCheck="false"
-                        value={AreaText}
-                        onChange={handleTextareaChange}
-                        rows = {row > 14 ? row : 14}
-                        className={AreaTextClass}
-                        onKeyDown={handleLine}
-                    ></textarea>
-                    <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
-                        {AreaText.split("\n").map((_, index) => (
-                            <div key={index} className="mb-1 mt-1 text-xs">
-                                {index + 1}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+      <label
+        htmlFor="message"
+        className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
+      >
+        {Area}
+      </label>
+      <div className="flex">
+        <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">
+          <textarea
+            spellCheck="false"
+            value={AreaText}
+            onChange={handleTextareaChange}
+            rows={row > 14 ? row : 14}
+            className={AreaTextClass}
+            onKeyDown={handleLine}
+          ></textarea>
+          <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
+            {AreaText.split("\n").map((_, index) => (
+              <div key={index} className="mb-1 mt-1 text-xs">
+                {index + 1}
+              </div>
+            ))}
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
