@@ -215,9 +215,8 @@ export const RetrieveButton = ({ children, afterProcess }) => {
 
   const handleFileInputChange = async () => {
     const selectedFile = fileInputRef.current.files[0];
-    const fileName = selectedFile.name;
-
     if (selectedFile) {
+        const fileName = selectedFile.name;
       try {
         const response = await fetch(
           `http://localhost:3000/api/script/${fileName}?fileName=${fileName}`
@@ -225,7 +224,7 @@ export const RetrieveButton = ({ children, afterProcess }) => {
         if (response.ok) {
           afterProcess(await response.json());
         } else {
-          console.error("Error al recuperar el archivo");
+          alert("El archivo ha recuperar debe ser de la carpeta private")
         }
       } catch (error) {
         console.error("Error de red:", error);
@@ -239,6 +238,7 @@ export const RetrieveButton = ({ children, afterProcess }) => {
         type="file"
         //accept=".txt"
         ref={fileInputRef}
+        accept=".txt, .js"
         style={{ display: "none" }}
         onChange={handleFileInputChange}
       />
