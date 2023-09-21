@@ -19,6 +19,10 @@ import {
   SaveButton,
 } from "@/components/Buttons";
 import { useState } from "react";
+import Image from "next/image";
+import play from '../../public/images/play.png'
+
+
 
 const Home = () => {
   /*
@@ -61,49 +65,46 @@ const Home = () => {
   return (
     <main>
       <span className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
-            {FileSaved}
-          </span>
-      <div className="grid grid-cols-3 gap-4 place-content-stretch h-48 ">
-        <div className="px-1">
+        {FileSaved}
+      </span>
+      <div className="text-all">
+        <div className="text-EA">
           <TextArea
             Area="OFS"
             GetText={SetEditionTextualArea}
             AreaText={textareaText[0]}
           />
-          <div className="flex p-5 space-x-4">
-            <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile:setFileSaved , fileName:FileSaved}}>
+          <div className="btns-all">
+            <RequestButtom
+              afterProcess={handlerSetText}
+              url="compile"
+              processData={{ text: textareaText[0] }}
+            >
+              <Image
+                src={play}
+                className="img-play"
+              />
+            </RequestButtom>
+            <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }}>
               Save
             </SaveButton>
             <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} />
           </div>
+        </div>
+        <div className="text-TA">
+          <TextArea
+            Area="JS"
           <div id="the-count">
             <span id="current">
               Words: {textareaText[0].match(regex)?.length}
             </span>
             <span id="maximum"></span>
           </div>
-        </div>
-        <div className="block items-center justify-center mx-0 pt-4">
-          <RequestButtom
-            afterProcess={handlerSetText}
-            url="compile"
-            processData={{ text: textareaText[0] }}
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/9123/9123237.png"
-              alt="Descripción de la imagen"
-              className="w-20 h-20 mr-1"
-            />
-          </RequestButtom>
-        </div>
-        <div className="px-1">
-          <TextArea
-            Area="JS"
             AreaText={textareaText[1]}
             NotEditable="pointer-events-none"
           />
         </div>
-        <div className="m-0 p-0 space-x-0 w-screen">
+        <div className="text-RA">
           <TextArea
             Area="Terminal"
             AreaText={textareaText[2]}
