@@ -119,7 +119,7 @@ const Post = async (bodyReq, url, callback) => {
   callback(await res.json());
 };
 
-export const SaveButton = ({ children, url, processData }) => {
+export const SaveButton = ({ children, url, processData, setFileSaved }) => {
   const [fileName, setFileName] = useState("");
   const [showModal, setShowModal] = useState(false);
 
@@ -132,11 +132,10 @@ export const SaveButton = ({ children, url, processData }) => {
       }
 
       let fileContent = processData.text;
-      console.log(fileName);
       url = url + `/${fileName}`;
       let body = { fileName, fileContent };
-      let nothing = (newText) => null;
-      Post(body, url, nothing);
+      Post(body, url, (newText) => null);
+      setFileSaved(fileName)
       setShowModal(false);
       alert("Archivo guardado correctamente");
     } catch (error) {
@@ -164,7 +163,7 @@ export const SaveButton = ({ children, url, processData }) => {
                   <h3 className="text-3xl font-semibold">Save File</h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => (setShowModal(false))}
                   >
                     <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
                       ×
@@ -210,7 +209,7 @@ export const SaveButton = ({ children, url, processData }) => {
   );
 };
 
-export const RetrieveButton = ({ children, afterProcess }) => {
+export const RetrieveButton = ({ children, afterProcess, setFileSaved }) => {
   const fileInputRef = useRef(null);
 
   const handleFileInputChange = async () => {
@@ -222,6 +221,7 @@ export const RetrieveButton = ({ children, afterProcess }) => {
           `http://localhost:3000/api/script/${fileName}?fileName=${fileName}`
         );
         if (response.ok) {
+          setFileSaved(fileName)
           afterProcess(await response.json());
         } else {
           alert("El archivo ha recuperar debe ser de la carpeta private")

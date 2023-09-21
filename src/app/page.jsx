@@ -30,7 +30,7 @@ const Home = () => {
 
   const [textareaText, setTextareaText] = useState(["", "", ""]);
 
-  const [IsFileSaved, setIsFileSaved] = useState(false);
+  const [FileSaved, setFileSaved] = useState("Unsaved Text");
 
   /*
      Function that changes the The value of the Edition textual Area
@@ -63,16 +63,17 @@ const Home = () => {
     <main>
       <div className="grid grid-cols-3 gap-4 place-content-stretch h-48 ">
         <div className="px-1">
+          <label>{FileSaved}</label>
           <TextArea
             Area="OFS"
             GetText={SetEditionTextualArea}
             AreaText={textareaText[0]}
           />
           <div className="flex p-5 space-x-4">
-            <SaveButton processData={{ text: textareaText[0] }} url="script">
+            <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={setFileSaved}>
               Save
             </SaveButton>
-            <RetrieveButton afterProcess={handlerSetText1} />
+            <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} />
           </div>
           <div id="the-count">
             <span id="current">
