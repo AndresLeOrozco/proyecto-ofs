@@ -49,7 +49,7 @@ export const TextArea = ({
          htmlFor="message"
          className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
        >
-         {Area}
+         <strong>{Area}</strong>
        </label>
        <div className="flex">
          <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">

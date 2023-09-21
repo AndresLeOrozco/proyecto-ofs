@@ -98,11 +98,12 @@ const Home = () => {
              NotEditable="pointer-events-none"
            />
          </div>
-         <div id="the-count">
+         <div id="the-count" className="container mx-auto inline-block">
            <span id="current">
-             Words: {textareaText[0].match(regex)?.length}
+             Words: {textareaText[0].match(regex)?.length}{"   "}
            </span>
-           <span id="maximum"></span>
+            <span></span>
+           <span id="rows">Rows: {textareaText[0].split("\n").length}</span>
          </div>
          <div className="text-RA">
            <TextArea
