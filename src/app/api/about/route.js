@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server"
 
 export function GET() {
   return NextResponse.json({
@@ -8,5 +8,5 @@ export function GET() {
       { nombre: "Rony Chinchilla Azofeifa", cualidad: "SOBONAZO" },
       { nombre: "Kairo Chacon Maleanos", cualidad: "Faraon" },
     ],
-  });
+  })
 }

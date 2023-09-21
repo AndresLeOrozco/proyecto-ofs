@@ -10,7 +10,7 @@ the file is the endpoint /compile in the API of the application that receives th
 compile the Edition Textual Area (EA).
 */
 
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server"
 
 /*
 
@@ -20,7 +20,7 @@ the request and with other string containing the current date.
 
 */
 export async function POST(request) {
-  let code = await request.json();
-  code.time = new Date().toString();
-  return NextResponse.json(code);
+  let code = await request.json()
+  code.time = new Date().toString()
+  return NextResponse.json(code)
 }

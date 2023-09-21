@@ -1,8 +1,8 @@
-"use client";
-import { useState } from "react";
+"use client"
+import { useState } from "react"
 
 export const ModalButton = ({ headerName, data, name }) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
   return (
     <>
       <button
@@ -38,7 +38,7 @@ export const ModalButton = ({ headerName, data, name }) => {
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={() => {
-                      setShowModal(false);
+                      setShowModal(false)
                     }}
                   >
                     Close
@@ -51,5 +51,5 @@ export const ModalButton = ({ headerName, data, name }) => {
         </>
       ) : null}
     </>
-  );
-};
+  )
+}

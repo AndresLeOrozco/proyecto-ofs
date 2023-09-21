@@ -11,9 +11,9 @@ RequestButtom: that creates a butttom and produce a request by click event.
 Modal Buttom: Create and show a dynamic content modal.
 */
 
-"use client";
- import { useState, useRef } from "react";
- import Image from "next/image";
+"use client"
+ import { useState, useRef } from "react"
+ import Image from "next/image"
  import upload from '../../public/images/upload.png'
  import save from '../../public/images/save.png'
 
@@ -34,18 +34,18 @@ export const RequestButtom = ({ children, afterProcess, url, processData }) => {
             onClick={() => {
                 processData.text != ""
                     ? Post(processData, url, afterProcess)
-                    : alert("Area de texto Vacio");
+                    : alert("Area de texto Vacio")
             }}
         >
             {children}
         </buttom>
 
-    );
-};
+    )
+}
 
 export const ModalButtons = ({ data, name, url }) => {
     const users = data.Desarrolladores
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false)
     return (
         <>
             <button
@@ -121,8 +121,8 @@ const Post = async (bodyReq, url, callback) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(bodyReq)
-    });
-    callback(await res.json());
+    })
+    callback(await res.json())
 }
 
 export const SaveButton = ({ children, url, processData, setFileSaved }) => {
@@ -231,32 +231,32 @@ export const SaveButton = ({ children, url, processData, setFileSaved }) => {
             ) : null}
         </>
     )
-};
+}
 
 
 
 export const RetrieveButton = ({ children, afterProcess, setFileSaved }) => {
-    const fileInputRef = useRef(null);
+    const fileInputRef = useRef(null)
 
     const handleFileInputChange = async () => {
-        const selectedFile = fileInputRef.current.files[0];
+        const selectedFile = fileInputRef.current.files[0]
         if (selectedFile) {
-            const fileName = selectedFile.name;
+            const fileName = selectedFile.name
             try {
                 const response = await fetch(
                     `http://localhost:3000/api/script/${fileName}?fileName=${fileName}`
-                );
+                )
                 if (response.ok) {
                     setFileSaved(fileName)
-                    afterProcess(await response.json());
+                    afterProcess(await response.json())
                 } else {
                     alert("El archivo a recuperar debe ser de la carpeta private")
                 }
             } catch (error) {
-                console.error("Error de red:", error);
+                console.error("Error de red:", error)
             }
         }
-    };
+    }
 
     return (
         <div>
@@ -277,5 +277,5 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved }) => {
                 {children}
             </button>
         </div>
-    );
+    )
 }

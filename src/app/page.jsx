@@ -10,16 +10,16 @@ Component Main page of the project, this is the components that contains all the
 web application. 
 */
 
-"use client";
-import React from "react";
-import { TextArea } from "@/components/TextArea";
+"use client"
+import React from "react"
+import { TextArea } from "@/components/TextArea"
 import {
   RequestButtom,
   RetrieveButton,
   SaveButton,
-} from "@/components/Buttons";
-import { useState } from "react";
-import Image from "next/image";
+} from "@/components/Buttons"
+import { useState } from "react"
+import Image from "next/image"
 import play from '../../public/images/play.png'
 
 
@@ -31,33 +31,33 @@ const Home = () => {
     The value of the Execution output
   */
 
-  const [textareaText, setTextareaText] = useState(["", "", ""]);
+  const [textareaText, setTextareaText] = useState(["", "", ""])
 
-  const [FileSaved, setFileSaved] = useState("Unsaved Text");
+  const [FileSaved, setFileSaved] = useState("Unsaved Text")
 
   /*
      Function that changes the The value of the Edition textual Area
   */
 
   const SetEditionTextualArea = (newText) => {
-    setTextareaText([newText, textareaText[1], textareaText[2]]);
-  };
+    setTextareaText([newText, textareaText[1], textareaText[2]])
+  }
 
   /*
     Function that changes the The value of the Transpilation Area
   */
 
   const handlerSetText = (newText) => {
-    const NewText = `${newText.time}\n${newText.text}`;
-    setTextareaText([textareaText[0], NewText, textareaText[2]]);
-  };
+    const NewText = `${newText.time}\n${newText.text}`
+    setTextareaText([textareaText[0], NewText, textareaText[2]])
+  }
 
   const handlerSetText1 = (newText) => {
-    const NewText = `${newText}`;
-    setTextareaText([NewText, textareaText[1], textareaText[2]]);
-  };
+    const NewText = `${newText}`
+    setTextareaText([NewText, textareaText[1], textareaText[2]])
+  }
 
-  const regex = /\w+/g;
+  const regex = /\w+/g
 
   /*
     Component that contains the REACT (JSX) code of the body the app
@@ -114,7 +114,7 @@ const Home = () => {
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

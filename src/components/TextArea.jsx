@@ -17,7 +17,7 @@ TextArea Component that contains a text area and its label.
     NotEditable  string which is added to the classname of the textarea, it is used mainly to set 
     the text area as read only
 */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
 export const TextArea = ({
   Area = "",
@@ -25,23 +25,23 @@ export const TextArea = ({
   AreaText = "",
   NotEditable = "",
 }) => {
-  let row = AreaText.split("\n").length;
+  let row = AreaText.split("\n").length
 
   const handleTextareaChange = (event) => {
-    GetText(event.target.value);
-  };
+    GetText(event.target.value)
+  }
 
   const handleLine = (event) => {
     event.keyCode === 13 || event.keyCode === 8
       ? (row = AreaText.split("\n").length)
-      : null;
-  };
+      : null
+  }
 
-  const AreaTextClass = `${NotEditable}  auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`;
+  const AreaTextClass = `${NotEditable}  auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`
 
   useEffect(() => {
-    row = AreaText.split("\n").length;
-  });
+    row = AreaText.split("\n").length
+  })
 
   return (
     <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -71,5 +71,5 @@ export const TextArea = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
