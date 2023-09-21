@@ -224,7 +224,7 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved }) => {
           setFileSaved(fileName)
           afterProcess(await response.json());
         } else {
-          alert("El archivo ha recuperar debe ser de la carpeta private")
+          alert("El archivo a recuperar debe ser de la carpeta private")
         }
       } catch (error) {
         console.error("Error de red:", error);
