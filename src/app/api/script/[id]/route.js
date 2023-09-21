@@ -1,56 +1,41 @@
-/*
-Developers: 
-Andres Leon Orozco
-Eduardo Ojeda Paladino
-Rony Chinchilla Azofeifa
-Kairo Chacon Maleanos
-
-Description: 
-the file is the endpoint /script/[id] in the API of the application that receives the request to
-load files in the Edition Textual Area (EA).
-*/
-
 import fs from "fs/promises"
 import path from "path"
 import { NextResponse } from "next/server"
-import { ReadFileByName, editFileNameByName } from "@/data/script/Crud"
-import { Console } from "console"
-import { stat } from "fs"
 
-/*
-
-  GET method: Reads the content of a file specified by the 'id' parameter from the request URL and returns it as a JSON response.
-
-*/
-
-export const GET = async (_, { params }) => {
+export const POST = async (request) => {
   try {
+    const { fileName, fileContent } = await request.json() // Recibe datos del cliente
+    // Define la ruta del archivo en el servidor
+    const filePath = path.join(process.cwd(), "private", fileName)
 
-    const fileContent = await ReadFileByName(params.id)
-    
-    return NextResponse.json(fileContent)
+    // Escribe el contenido en el archivo
+    await fs.writeFile(filePath, fileContent, "utf-8")
 
+    return NextResponse.json({ message: "Archivo guardado correctamente" })
   } catch (error) {
-
-    return NextResponse.json("Error Al leer el Archivo", { status: 500 })
+    console.error(error);
+    return NextResponse.json({ message: "Error guardado incorrectamente" })
   }
-}
+};
 
-/*
-
-  PUT method: Renames a file with the specified 'id' to a new name provided in the request body.
-
-*/
-
-export const PUT = async (request, { params }) => {
+export const GET = async (request) => {
   try {
-    
-    const newName = await request.json()
-   
-    const response  = await editFileNameByName(params.id, newName);
+    // Recibe el nombre del archivo como parámetro en la URL
+    const { searchParams } = new URL(request.url)
+    const fileName = searchParams.get("fileName")
+    // Define la ruta del archivo en el servidor
+    const filePath = path.join(process.cwd(), "private", fileName)
 
-    return NextResponse.json("Rename Success")
+    // Lee el contenido del archivo
+    const fileContent = await fs.readFile(filePath, "utf-8")
+
+    // Devuelve el contenido como respuesta
+    return NextResponse.json(fileContent)
   } catch (error) {
-    return NextResponse.json("Error", { status: 500 })
+    console.error(error)
+    return NextResponse.json(
+      { message: "Error al leer el archivo" },
+      { status: 500 }
+    )
   }
 }
