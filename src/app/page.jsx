@@ -10,15 +10,16 @@ Component Main page of the project, this is the components that contains all the
 web application. 
 */
 
-"use client"
-import React from "react"
-import { TextArea } from "@/components/TextArea"
+"use client";
+import React from "react";
+import { TextArea } from "@/components/TextArea";
 import {
   RequestButtom,
   RetrieveButton,
   SaveButton,
-} from "@/components/Buttons"
-import { useState } from "react"
+} from "@/components/Buttons";
+import { FileSpan } from "@/components/Span";
+import { useState } from "react";
 
 const Home = () => {
   /*
@@ -27,16 +28,16 @@ const Home = () => {
     The value of the Execution output
   */
 
-  const [textareaText, setTextareaText] = useState(["", "", ""])
+  const [textareaText, setTextareaText] = useState(["", "", ""]);
 
-  const [FileSaved, setFileSaved] = useState("Unsaved Text")
+  const [FileSaved, setFileSaved] = useState("Unsaved Text");
 
   /*
      Function that changes the The value of the Edition textual Area
   */
 
   const SetEditionTextualArea = (newText) => {
-    setTextareaText([newText, textareaText[1], textareaText[2]])
+    setTextareaText([newText, textareaText[1], textareaText[2]]);
   };
 
   /*
@@ -44,25 +45,29 @@ const Home = () => {
   */
 
   const handlerSetText = (newText) => {
-    const NewText = `${newText.time}\n${newText.text}`
-    setTextareaText([textareaText[0], NewText, textareaText[2]])
+    const NewText = `${newText.time}\n${newText.text}`;
+    setTextareaText([textareaText[0], NewText, textareaText[2]]);
   };
 
   const handlerSetText1 = (newText) => {
-    const NewText = `${newText}`
-    setTextareaText([NewText, textareaText[1], textareaText[2]])
+    const NewText = `${newText}`;
+    setTextareaText([NewText, textareaText[1], textareaText[2]]);
   };
 
-  const regex = /\w+/g
+  const regex = /\w+/g;
 
   /*
     Component that contains the REACT (JSX) code of the body the app
   */
   return (
     <main>
-      <span className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
-            {FileSaved}
-          </span>
+      {/*       <span className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
+        {FileSaved}
+      </span> */}
+      <FileSpan
+        processData={{ text: textareaText[0] }}
+        file={{ setFileSaved: setFileSaved, fileName: FileSaved }}
+      />
       <div className="grid grid-cols-3 gap-4 place-content-stretch h-48 ">
         <div className="px-1">
           <TextArea
@@ -71,10 +76,17 @@ const Home = () => {
             AreaText={textareaText[0]}
           />
           <div className="flex p-5 space-x-4">
-            <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile:setFileSaved , fileName:FileSaved}}>
+            <SaveButton
+              processData={{ text: textareaText[0] }}
+              url="script"
+              setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }}
+            >
               Save
             </SaveButton>
-            <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} />
+            <RetrieveButton
+              afterProcess={handlerSetText1}
+              setFileSaved={setFileSaved}
+            />
           </div>
           <div id="the-count">
             <span id="current">
@@ -115,4 +127,4 @@ const Home = () => {
   );
 };
 
-export default Home
+export default Home;
