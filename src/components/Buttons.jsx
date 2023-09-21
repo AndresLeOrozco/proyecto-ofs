@@ -125,37 +125,49 @@ const Post = async (bodyReq, url, callback) => {
     callback(await res.json());
 }
 
-export const SaveButton = ({ children, url, processData }) => {
-    const [fileName, setFileName] = useState("");
-    const [showModal, setShowModal] = useState(false);
+export const SaveButton = ({ children, url, processData, setFileSaved }) => {
+    const [fileName, setFileName] = useState("")
+    const [showModal, setShowModal] = useState(false)
+
+    const handleShowModal = () => {
+        setFileSaved.fileName !== 'Unsaved Text' ? handleSaveExistedFile() : setShowModal(true)
+    }
+
+    const handleSaveExistedFile = () => {
+        url = url + `/${setFileSaved.fileName}`
+        let fileContent = processData.text
+        let fileName = setFileSaved.fileName
+        let body = { fileName, fileContent }
+        Post(body, url, (newText) => null)
+        alert("Archivo guardado correctamente")
+    }
 
     const handleSaveFile = async () => {
         try {
             // Validar si fileContent no están vacíos antes de guardar
+
             if (!processData.text || fileName === "") {
                 alert("Area de texto o nombre de archivo vacio.")
-                return;
+                return
             }
 
             let fileContent = processData.text
-            console.log(fileName)
+            setFileSaved.setFile(fileName)
             url = url + `/${fileName}`
             let body = { fileName, fileContent }
-            let nothing = (newText) => null
-            Post(body, url, nothing)
+            Post(body, url, (newText) => null)
             setShowModal(false)
-            alert('Archivo guardado correctamente')
-
+            alert("Archivo guardado correctamente")
         } catch (error) {
-            console.error('Error de red:', error);
+            console.error("Error de red:", error)
         }
-    };
+    }
     return (
         <>
             <button
                 className="btn-save"
                 type="button"
-                onClick={() => setShowModal(true)}
+                onClick={handleShowModal}
             >
                 <Image src={save}></Image>
                 {children}
