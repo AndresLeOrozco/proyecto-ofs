@@ -61,16 +61,18 @@ const Home = () => {
   */
   return (
     <main>
+      <span className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
+            {FileSaved}
+          </span>
       <div className="grid grid-cols-3 gap-4 place-content-stretch h-48 ">
         <div className="px-1">
-          <label>{FileSaved}</label>
           <TextArea
             Area="OFS"
             GetText={SetEditionTextualArea}
             AreaText={textareaText[0]}
           />
           <div className="flex p-5 space-x-4">
-            <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={setFileSaved}>
+            <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile:setFileSaved , fileName:FileSaved}}>
               Save
             </SaveButton>
             <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} />

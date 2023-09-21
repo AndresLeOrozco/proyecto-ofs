@@ -135,7 +135,7 @@ export const SaveButton = ({ children, url, processData, setFileSaved }) => {
       url = url + `/${fileName}`;
       let body = { fileName, fileContent };
       Post(body, url, (newText) => null);
-      setFileSaved(fileName)
+      setFileSaved.setFile(fileName)
       setShowModal(false);
       alert("Archivo guardado correctamente");
     } catch (error) {
