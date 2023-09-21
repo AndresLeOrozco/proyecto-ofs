@@ -1,3 +1,15 @@
+/*
+Developers: 
+Andres Leon Orozco
+Eduardo Ojeda Paladino
+Rony Chinchilla Azofeifa
+Kairo Chacon Maleanos
+
+Description: 
+the file is the endpoint /script/[id] in the API of the application that receives the request to
+save and load files in the Edition Textual Area (EA).
+*/
+
 import fs from "fs/promises"
 import path from "path"
 import { NextResponse } from "next/server"

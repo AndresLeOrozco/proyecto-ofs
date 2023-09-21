@@ -12,10 +12,10 @@ Modal Buttom: Create and show a dynamic content modal.
 */
 
 "use client"
- import { useState, useRef } from "react"
- import Image from "next/image"
- import upload from '../../public/images/upload.png'
- import save from '../../public/images/save.png'
+import { useState, useRef } from "react"
+import Image from "next/image"
+import upload from '../../public/images/upload.png'
+import save from '../../public/images/save.png'
 
 /*
     the request buttom have four properties: 
@@ -32,9 +32,7 @@ export const RequestButtom = ({ children, afterProcess, url, processData }) => {
         <buttom
             className="btn-compile"
             onClick={() => {
-                processData.text != ""
-                    ? Post(processData, url, afterProcess)
-                    : alert("Area de texto Vacio")
+                Post(processData, url, afterProcess)
             }}
         >
             {children}
@@ -42,6 +40,10 @@ export const RequestButtom = ({ children, afterProcess, url, processData }) => {
 
     )
 }
+
+/*
+    Modal Buttom
+*/
 
 export const ModalButtons = ({ data, name, url }) => {
     const users = data.Desarrolladores
@@ -110,21 +112,8 @@ export const ModalButtons = ({ data, name, url }) => {
 }
 
 /*
-    Post request function, it is reusable because of the dynamic url, dynamic function that manage the response data
-    and also dynamic body request
+    Save Buttom
 */
-
-const Post = async (bodyReq, url, callback) => {
-    const res = await fetch(`http://localhost:3000/api/${url}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(bodyReq)
-    })
-    callback(await res.json())
-}
-
 export const SaveButton = ({ children, url, processData, setFileSaved }) => {
     const [fileName, setFileName] = useState("")
     const [showModal, setShowModal] = useState(false)
@@ -278,4 +267,25 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved }) => {
             </button>
         </div>
     )
+}
+
+/*
+    Eval Buttom
+*/
+
+
+/*
+    Post request function, it is reusable because of the dynamic url, dynamic function that manage the response data
+    and also dynamic body request
+*/
+
+const Post = async (bodyReq, url, callback) => {
+    const res = await fetch(`http://localhost:3000/api/${url}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyReq)
+    })
+    callback(await res.json())
 }

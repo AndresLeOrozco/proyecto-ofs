@@ -52,9 +52,8 @@ const Home = () => {
     setTextareaText([textareaText[0], NewText, textareaText[2]])
   }
 
-  const handlerSetText1 = (newText) => {
-    const NewText = `${newText}`
-    setTextareaText([NewText, textareaText[1], textareaText[2]])
+  const handlerSetTerminal = (newText) => {
+    setTextareaText([textareaText[0], textareaText[1], newText])
   }
 
   const regex = /\w+/g
@@ -85,10 +84,11 @@ const Home = () => {
                  className="img-play"
                />
              </RequestButtom>
+             
              <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }}>
 
              </SaveButton>
-             <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} />
+             <RetrieveButton afterProcess={SetEditionTextualArea} setFileSaved={setFileSaved} />
            </div>
          </div>
          <div className="text-TA">
