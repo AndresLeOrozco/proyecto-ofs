@@ -7,3 +7,35 @@
   padding: 0.1rem 0 0 0;
   font-size: 0.875rem;
 }
+
+
+.text-EA, .text-TA{
+  display: inline-flex;
+  width: 50%;
+  
+}
+
+.btns-all{
+  display: block;
+  margin: 2px;
+  padding: auto;
+  width: 10%;
+}
+
+.text-all{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-save, .btn-upload, .btn-compile{
+  width: 50%;
+  cursor: pointer;
+  margin: 4px;
+  padding: 5px;
+
+}
+
+.img-play{
+  width: 60%;
+}

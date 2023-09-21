@@ -12,10 +12,10 @@ Modal Buttom: Create and show a dynamic content modal.
 */
 
 "use client";
-import { useState, useRef } from "react";
-import Image from "next/image";
-import upload from '../../public/images/upload.png'
-import save from '../../public/images/save.png'
+ import { useState, useRef } from "react";
+ import Image from "next/image";
+ import upload from '../../public/images/upload.png'
+ import save from '../../public/images/save.png'
 
 /*
     the request buttom have four properties: 

@@ -44,30 +44,30 @@ export const TextArea = ({
   });
 
   return (
-    <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-      <label
-        htmlFor="message"
-        className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
-      >
-        {Area}
-      </label>
-      <div className="flex">
-        <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">
-          <textarea
-            spellCheck="false"
-            value={AreaText}
-            onChange={handleTextareaChange}
-            rows={row > 14 ? row : 14}
-            className={AreaTextClass}
-            onKeyDown={handleLine}
-          ></textarea>
-          <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
-            {AreaText.split("\n").map((_, index) => (
-              <div key={index} className="mb-1 mt-1 text-xs">
-                {index + 1}
-              </div>
-            ))}
-          </div>
+    <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+       <label
+         htmlFor="message"
+         className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
+       >
+         {Area}
+       </label>
+       <div className="flex">
+         <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">
+           <textarea
+             spellCheck="false"
+             value={AreaText}
+             onChange={handleTextareaChange}
+             rows={row > 14 ? row : 14}
+             className={AreaTextClass}
+             onKeyDown={handleLine}
+           ></textarea>
+           <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
+             {AreaText.split("\n").map((_, index) => (
+               <div key={index} className="mb-1 mt-1 text-xs">
+                 {index + 1}
+               </div>
+             ))}
+           </div>
         </div>
       </div>
     </div>
