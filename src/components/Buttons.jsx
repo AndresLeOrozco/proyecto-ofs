@@ -26,7 +26,7 @@ import save from '../../public/images/save.png'
 
 */
 
-export const RequestButtom = ({ children, afterProcess, url, processData }) => {
+export const RequestButtom = ({ children, afterProcess, url, processData, placeholder }) => {
     return (
 
         <buttom
@@ -34,6 +34,7 @@ export const RequestButtom = ({ children, afterProcess, url, processData }) => {
             onClick={() => {
                 Post(processData, url, afterProcess)
             }}
+            title = {placeholder}
         >
             {children}
         </buttom>
@@ -45,7 +46,7 @@ export const RequestButtom = ({ children, afterProcess, url, processData }) => {
 /*
     Save Buttom
 */
-export const SaveButton = ({ children, url, processData, setFileSaved }) => {
+export const SaveButton = ({ children, url, processData, setFileSaved, placeholder }) => {
     const [fileName, setFileName] = useState("")
     const [showModal, setShowModal] = useState(false)
 
@@ -88,6 +89,7 @@ export const SaveButton = ({ children, url, processData, setFileSaved }) => {
                 className="btn-save"
                 type="button"
                 onClick={handleShowModal}
+                title={placeholder}
             >
                 <Image src={save}></Image>
                 {children}
@@ -155,7 +157,7 @@ export const SaveButton = ({ children, url, processData, setFileSaved }) => {
 
 
 
-export const RetrieveButton = ({ children, afterProcess, setFileSaved }) => {
+export const RetrieveButton = ({ children, afterProcess, setFileSaved, placeholder }) => {
     const fileInputRef = useRef(null)
 
     const handleFileInputChange = async () => {
@@ -184,13 +186,13 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved }) => {
                 type="file"
                 //accept=".txt"
                 ref={fileInputRef}
-                accept=".txt, .js"
                 style={{ display: "none" }}
                 onChange={handleFileInputChange}
             />
             <button
                 className="btn-upload"
                 type="button"
+                title={placeholder}
                 onClick={() => fileInputRef.current.click()}
             >
                 <Image src={upload}></Image>

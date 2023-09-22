@@ -18,7 +18,7 @@ import {
   RetrieveButton,
   SaveButton,
 } from "@/components/Buttons"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import Image from "next/image"
 import play from '../../public/images/play.png'
 
@@ -52,15 +52,19 @@ const Home = () => {
     setTextareaText([textareaText[0], NewText, textareaText[2]])
   }
 
+  /*
+    Function that changes the The value of the Terminal
+  */
   const handlerSetText1 = (newText) => {
     const NewText = `${newText}`
     setTextareaText([NewText, textareaText[1], textareaText[2]])
   }
 
-    const [totalRows, setTotalRows] = useState(0)
+  const [totalRows, setTotalRows] = useState(0)
 
   const regex = /\w+/g
 
+  
   /*
     Component that contains the REACT (JSX) code of the body the app
   */
@@ -81,16 +85,17 @@ const Home = () => {
                afterProcess={handlerSetText}
                url="compile"
                processData={{ text: textareaText[0] }}
+               placeholder="Compile"
              >
                <Image
                  src={play}
                  className="img-play"
                />
              </RequestButtom>
-             <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }}>
+             <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }} placeholder="Save File">
 
              </SaveButton>
-             <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} />
+             <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} placeholder="Load File"/>
            </div>
          </div>
          <div className="text-TA">
