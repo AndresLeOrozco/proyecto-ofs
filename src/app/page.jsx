@@ -69,7 +69,7 @@ const Home = () => {
     Function that set/clear all textareas after click on the ClickButton.
   */
 
-  const handleClickClear = () => {
+  const handleClearClick = () => {
     setTextareaText([""])
   }
 
@@ -113,7 +113,7 @@ const Home = () => {
                />
              </RequestButtom>
              <ClearButton
-               clickEvent={handleClickClear}
+               clickEvent={handleClearClick}
              >
                <Image
                  src={clear}
