@@ -17,11 +17,13 @@ import {
   RequestButtom,
   RetrieveButton,
   SaveButton,
+  ClearButton
 } from "@/components/Buttons"
 import { useState,useEffect } from "react"
 import Image from "next/image"
 import play from '../../public/images/play.png'
 import evaluate from '../../public/images/evaluation.png'
+import clear from '../../public/images/clear.png'
 
 
 const Home = () => {
@@ -63,6 +65,14 @@ const Home = () => {
 
   const regex = /\w+/g
 
+  /*
+    Function that set/clear all textareas after click on the ClickButton.
+  */
+
+  const handleClickClear = () => {
+    setTextareaText([""])
+  }
+
   
   /*
     Component that contains the REACT (JSX) code of the body the app
@@ -102,6 +112,14 @@ const Home = () => {
                  className="img-play"
                />
              </RequestButtom>
+             <ClearButton
+               clickEvent={handleClickClear}
+             >
+               <Image
+                 src={clear}
+                 className="img-play"
+               />
+             </ClearButton>
              <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }} placeholder="Save File">
 
              </SaveButton>
