@@ -43,6 +43,20 @@ export const RequestButtom = ({ children, afterProcess, url, processData, placeh
 }
 
 
+export const ClearButton = ({ children, clickEvent}) => {
+    return (
+
+        <buttom
+            className="btn-clear"
+            onClick={clickEvent}
+        >
+            {children}
+        </buttom>
+
+    )
+}
+
+
 /*
     Save Buttom
 */

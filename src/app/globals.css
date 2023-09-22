@@ -30,7 +30,7 @@
   width: 100%;
 }
 
-.btn-save, .btn-upload, .btn-compile{
+.btn-save, .btn-upload, .btn-compile, .btn-clear{
   width: 50%;
   cursor: pointer;
   margin: 4px;
