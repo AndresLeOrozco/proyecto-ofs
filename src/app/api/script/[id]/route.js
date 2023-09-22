@@ -44,10 +44,6 @@ export const GET = async (request) => {
     // Devuelve el contenido como respuesta
     return NextResponse.json(fileContent)
   } catch (error) {
-    console.error(error)
-    return NextResponse.json(
-      { message: "Error al leer el archivo" },
-      { status: 500 }
-    )
+    return NextResponse.json("Error Al leer el Archivo")
   }
 }

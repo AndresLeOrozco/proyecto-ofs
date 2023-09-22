@@ -18,10 +18,10 @@ export const POST = async (request) => {
     try {
       const { text } = await request.json() 
       const filePath = path.join(process.cwd(), "private", text)
-      console.log(filePath)
       return NextResponse.json(await fs.readFile(filePath, "utf-8"))
+
     } catch (error) {
       console.error(error)
-      return NextResponse.json({ message: "Error guardado incorrectamente" })
+      return NextResponse.json("Archivo No Existe")
     }
   }
