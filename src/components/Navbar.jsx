@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { ModalButtons } from "@/components/Buttons"
+import { About } from "./Modals"
 
 const Navbar = async () => {
-  const data = await getAbout()
+  
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -16,21 +16,11 @@ const Navbar = async () => {
             OFS Playground
           </span>
         </Link>
-        <ModalButtons data={data} name="About" url="about" />
+        <About/>
       </div>
     </nav>
   )
 }
 
-const getAbout = async () => {
-  const res = await fetch("http://localhost:3000/api/about", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-  const data = await res.json()
-  return data
-}
 
 export default Navbar

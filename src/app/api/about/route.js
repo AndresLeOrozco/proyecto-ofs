@@ -2,11 +2,11 @@ import { NextResponse } from "next/server"
 
 export function GET() {
   return NextResponse.json({
-    Desarrolladores: [
-      { nombre: "Andres Leon Orozco", cualidad: "Programming Skills" },
-      { nombre: "Eduardo Ojeda Paladino", cualidad: "Front End Skills" },
-      { nombre: "Rony Chinchilla Azofeifa", cualidad: "Data Management Skills" },
-      { nombre: "Kairo Chacon Maleanos", cualidad: "Design Skills" },
+    Developers: [
+      { name: "Andres Leon Orozco", skills: "Programming Skills" },
+      { name: "Eduardo Ojeda Paladino", skills: "Front End Skills" },
+      { name: "Rony Chinchilla Azofeifa", skills: "Data Management Skills" },
+      { name: "Kairo Chacon Maleanos", skills: "Design Skills" },
     ],
   })
 }

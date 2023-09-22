@@ -24,6 +24,7 @@ export const TextArea = ({
   GetText = () => {},
   AreaText = "",
   NotEditable = "",
+ 
 }) => {
   let row = AreaText.split("\n").length
 
@@ -73,3 +74,5 @@ export const TextArea = ({
     </div>
   )
 }
+
+
