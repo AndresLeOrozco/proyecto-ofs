@@ -20,6 +20,8 @@
   margin: 2px;
   padding: auto;
   width: 10%;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-all{
@@ -33,7 +35,7 @@
   cursor: pointer;
   margin: 4px;
   padding: 5px;
-
+  
 }
 
 .img-play{

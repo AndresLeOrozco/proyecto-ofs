@@ -17,7 +17,6 @@ TextArea Component that contains a text area and its label.
     NotEditable  string which is added to the classname of the textarea, it is used mainly to set 
     the text area as read only
 */
-import React, { useState, useEffect } from "react"
 
 export const TextArea = ({
   Area = "",
@@ -33,19 +32,15 @@ export const TextArea = ({
   }
 
   const handleLine = (event) => {
-    event.keyCode === 13 || event.keyCode === 8
-      ? (row = AreaText.split("\n").length)
-      : null
+    row = AreaText.split("\n").length
+    console.log(AreaText.split("\n"))
   }
 
-  const AreaTextClass = `${NotEditable}  auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`
+  const AreaTextClass = `${NotEditable} whitespace-no-wrap auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`
 
-  useEffect(() => {
-    row = AreaText.split("\n").length
-  })
 
   return (
-    <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+    <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 px-10">
        <label
          htmlFor="message"
          className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
@@ -59,6 +54,7 @@ export const TextArea = ({
              value={AreaText}
              onChange={handleTextareaChange}
              rows={row > 14 ? row : 14}
+             cols={100}
              className={AreaTextClass}
              onKeyDown={handleLine}
            ></textarea>

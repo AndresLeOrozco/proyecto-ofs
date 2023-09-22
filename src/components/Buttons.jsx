@@ -91,7 +91,7 @@ export const SaveButton = ({ children, url, processData, setFileSaved, placehold
                 onClick={handleShowModal}
                 title={placeholder}
             >
-                <Image src={save}></Image>
+                <Image className="img-play" src={save}></Image>
                 {children}
             </button>
 
@@ -195,7 +195,7 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved, placehold
                 title={placeholder}
                 onClick={() => fileInputRef.current.click()}
             >
-                <Image src={upload}></Image>
+                <Image className="img-play" src={upload}></Image>
                 {children}
             </button>
         </div>
@@ -220,5 +220,6 @@ const Post = async (bodyReq, url, callback) => {
         },
         body: JSON.stringify(bodyReq)
     })
+
     callback(await res.json())
 }

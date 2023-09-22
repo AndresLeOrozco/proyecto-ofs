@@ -21,7 +21,7 @@ import {
 import { useState,useEffect } from "react"
 import Image from "next/image"
 import play from '../../public/images/play.png'
-
+import evaluate from '../../public/images/evaluation.png'
 
 
 const Home = () => {
@@ -47,7 +47,7 @@ const Home = () => {
     Function that changes the The value of the Transpilation Area
   */
 
-  const handlerSetText = (newText) => {
+  const setTranpileArea = (newText) => {
     const NewText = `${newText.time}\n${newText.text}`
     setTextareaText([textareaText[0], NewText, textareaText[2]])
   }
@@ -55,9 +55,8 @@ const Home = () => {
   /*
     Function that changes the The value of the Terminal
   */
-  const handlerSetText1 = (newText) => {
-    const NewText = `${newText}`
-    setTextareaText([NewText, textareaText[1], textareaText[2]])
+  const setTerminalArea = (newText) => {
+    setTextareaText([textareaText[0], textareaText[1], newText])
   }
 
   const [totalRows, setTotalRows] = useState(0)
@@ -82,7 +81,7 @@ const Home = () => {
            />
            <div className="btns-all">
              <RequestButtom
-               afterProcess={handlerSetText}
+               afterProcess={setTranpileArea}
                url="compile"
                processData={{ text: textareaText[0] }}
                placeholder="Compile"
@@ -92,10 +91,21 @@ const Home = () => {
                  className="img-play"
                />
              </RequestButtom>
+             <RequestButtom
+               afterProcess={setTerminalArea}
+               url="eval"
+               processData={{ text: "eval.txt" }}
+               placeholder="Evaluate"
+             >
+               <Image
+                 src={evaluate}
+                 className="img-play"
+               />
+             </RequestButtom>
              <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }} placeholder="Save File">
 
              </SaveButton>
-             <RetrieveButton afterProcess={handlerSetText1} setFileSaved={setFileSaved} placeholder="Load File"/>
+             <RetrieveButton afterProcess={SetEditionTextualArea} setFileSaved={setFileSaved} placeholder="Load File"/>
            </div>
          </div>
          <div className="text-TA">
