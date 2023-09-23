@@ -22,6 +22,7 @@ export const TextArea = ({
   Area = "",
   GetText = () => {},
   AreaText = "",
+  Time = "",
   NotEditable = "",
  
 }) => {
@@ -51,7 +52,7 @@ export const TextArea = ({
          <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">
            <textarea
              spellCheck="false"
-             value={AreaText}
+             value={Time + AreaText}
              onChange={handleTextareaChange}
              rows={row > 14 ? row : 14}
              cols={20}

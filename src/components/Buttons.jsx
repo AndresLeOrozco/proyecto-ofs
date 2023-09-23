@@ -26,19 +26,22 @@ import save from '../../public/images/save.png'
 
 */
 
-export const ActionButtom = ({ children, OnClick, placeholder }) => {
+
+
+export const Button = ({ children, clickEvent, title}) => {
     return (
 
         <buttom
-            className="btn-compile"
-            onClick={OnClick}
-            title = {placeholder}
+            className="btn-clear"
+            onClick={clickEvent}
+            title = {title}
         >
             {children}
         </buttom>
 
     )
 }
+
 
 /*
     Save Buttom
@@ -199,12 +202,14 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved, placehold
     )
 }
 
-/*
-    Eval Buttom
-*/
+const Post = async (bodyReq, url, callback) => {
+    const res = await fetch(`http://localhost:3000/api/${url}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bodyReq)
+    })
 
-
-/*
-    Post request function, it is reusable because of the dynamic url, dynamic function that manage the response data
-    and also dynamic body request
-*/
+    callback(await res.json())
+}
