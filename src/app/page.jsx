@@ -51,8 +51,9 @@ const Home = () => {
   */
 
   const handleTranspileClick  = async () => {
-    const compiledText = await Post(textEA, 'compile')
-    setTextTA(compiledText)
+    const compiledText = await Post({text : textEA}, 'compile')
+    const NewText = `${compiledText.time}\n${compiledText.text}`
+    setTextTA(NewText)
   }
 
   /*
@@ -130,8 +131,7 @@ const Home = () => {
          <div className="text-TA">
            <TextArea
              Area="JS"
-             AreaText={textTA.text}
-             Time={textTA.time}
+             AreaText={textTA}
              NotEditable="pointer-events-none"
            />
          </div>

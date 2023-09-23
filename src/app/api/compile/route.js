@@ -19,12 +19,10 @@ attribute that is also a string with the current date and returns an object with
 the request and with other string containing the current date.
 
 */
-export async function POST(request) {
-  const text = await request.json()
-  const time = new Date().toString()
-  const code = {
-    text,
-    time
-  }
+
+export async function POST(request){  
+  let code = await request.json()
+  code.time = new Date().toString()
+  console.log(code)
   return NextResponse.json(code)
 }
