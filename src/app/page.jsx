@@ -14,12 +14,12 @@ web application.
 import React from "react"
 import { TextArea } from "@/components/TextArea"
 import {
-  RequestButtom,
+  ActionButtom,
   RetrieveButton,
-  SaveButton,
-  ClearButton
+  SaveButton
 } from "@/components/Buttons"
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
+import { Post } from "@/RequestFunctions/Post"
 import Image from "next/image"
 import play from '../../public/images/play.png'
 import evaluate from '../../public/images/evaluation.png'
@@ -61,8 +61,6 @@ const Home = () => {
     setTextareaText([textareaText[0], textareaText[1], newText])
   }
 
-  const [totalRows, setTotalRows] = useState(0)
-
   const regex = /\w+/g
 
   /*
@@ -71,81 +69,79 @@ const Home = () => {
 
   const handleClickClear = () => {
     setTextareaText([""])
+    setFileSaved("Unsaved Text")
   }
 
-  
+
   /*
     Component that contains the REACT (JSX) code of the body the app
   */
   return (
     <main>
       <span className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
-         {FileSaved}
-       </span>
-       <div className="text-all">
-         <div className="text-EA">
-           <TextArea
-             Area="OFS"
-             GetText={SetEditionTextualArea}
-             AreaText={textareaText[0]}
-           />
-           <div className="btns-all">
-             <RequestButtom
-               afterProcess={setTranpileArea}
-               url="compile"
-               processData={{ text: textareaText[0] }}
-               placeholder="Compile"
-             >
-               <Image
-                 src={play}
-                 className="img-play"
-               />
-             </RequestButtom>
-             <RequestButtom
-               afterProcess={setTerminalArea}
-               url="eval"
-               processData={{ text: "eval.txt" }}
-               placeholder="Evaluate"
-             >
-               <Image
-                 src={evaluate}
-                 className="img-play"
-               />
-             </RequestButtom>
-             <ClearButton
-               clickEvent={handleClickClear}
-             >
-               <Image
-                 src={clear}
-                 className="img-play"
-               />
-             </ClearButton>
-             <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }} placeholder="Save File">
+        {FileSaved}
+      </span>
+      <div className="text-all">
+        <div className="text-EA">
+          <TextArea
+            Area="OFS"
+            GetText={SetEditionTextualArea}
+            AreaText={textareaText[0]}
+          />
+          <div className="btns-all">
+            <ActionButtom
+              OnClick={() => Post({ text: textareaText[0] }, "compile", setTranpileArea)}
+              placeholder="Compile"
+            >
+              <Image
+                src={play}
+                className="img-play"
+              />
+            </ActionButtom>
+            <ActionButtom
+              OnClick={() => Post({ text: "eval.txt" }, "eval", setTerminalArea)}
+              placeholder="Evaluate"
+            >
+              <Image
+                src={evaluate}
+                className="img-play"
+              />
+            </ActionButtom>
+            <ActionButtom
+              OnClick={() => handleClickClear()}
+              placeholder="Clear"
+            >
+              <Image
+                src={clear}
+                className="img-play"
+              />
+            </ActionButtom>
+            <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }} placeholder="Save File">
 
-             </SaveButton>
-             <RetrieveButton afterProcess={SetEditionTextualArea} setFileSaved={setFileSaved} placeholder="Load File"/>
-           </div>
-         </div>
-         <div className="text-TA">
-           <TextArea
-             Area="JS"
-             AreaText={textareaText[1]}
-             NotEditable="pointer-events-none"
-           />
-         </div>
-         <div id="the-count" className="container mx-auto inline-block">
-           <span id="current">
-             Words: {textareaText[0].match(regex)?.length}{"   "}
-           </span>
-            <span></span>
-           <span id="rows">Rows: {textareaText[0].split("\n").length}</span>
-         </div>
-         <div className="text-RA">
-           <TextArea
-             Area="Terminal"
-             AreaText={textareaText[2]}
-             NotEditable="pointer-events-none"
-           />
+            </SaveButton>
+            <RetrieveButton afterProcess={SetEditionTextualArea} setFileSaved={setFileSaved} placeholder="Load File" />
+          </div>
+        </div>
+        <div className="text-TA">
+          <TextArea
+            Area="JS"
+            AreaText={textareaText[1]}
+            NotEditable="pointer-events-none"
+          />
+        </div>
+        <div id="the-count" className="container mx-auto inline-block">
+          <span id="current">
+            Words: {textareaText[0].match(regex)?.length}{"   "}
+          </span>
+          <span></span>
+          <span id="rows">Rows: {textareaText[0].split("\n").length}</span>
+        </div>
+        <div className="text-RA">
+          <TextArea
+            Area="Terminal"
+            AreaText={textareaText[2]}
+            NotEditable="pointer-events-none"
+          />
         </div>
       </div>
     </main>

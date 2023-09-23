@@ -1,9 +1,21 @@
+/*
+Developers: 
+Andres Leon Orozco
+Eduardo Ojeda Paladino
+Rony Chinchilla Azofeifa
+Kairo Chacon Maleanos
+
+Description: 
+Modal Components 
+*/
+
+
 "use client"
 import { useState } from "react"
 
 
 /*
-    ABout Button
+    About Button
 */
 
 export const About = ({ headerName, name }) => {

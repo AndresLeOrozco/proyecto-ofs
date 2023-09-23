@@ -54,7 +54,7 @@ export const TextArea = ({
              value={AreaText}
              onChange={handleTextareaChange}
              rows={row > 14 ? row : 14}
-             cols={100}
+             cols={20}
              className={AreaTextClass}
              onKeyDown={handleLine}
            ></textarea>
