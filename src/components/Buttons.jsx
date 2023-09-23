@@ -30,7 +30,6 @@ import save from '../../public/images/save.png'
 
 export const Button = ({ children, clickEvent, title}) => {
     return (
-
         <buttom
             className="btn-clear"
             onClick={clickEvent}
@@ -38,7 +37,6 @@ export const Button = ({ children, clickEvent, title}) => {
         >
             {children}
         </buttom>
-
     )
 }
 
