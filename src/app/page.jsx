@@ -154,10 +154,6 @@ const Home = () => {
   )
 }
 
-/*
-    Post request function, it is reusable because of the dynamic url, dynamic function that manage the response data
-    and also dynamic body request
-*/
 
 
 

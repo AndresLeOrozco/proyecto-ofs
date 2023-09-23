@@ -10,8 +10,8 @@ In this js file we will create and export all the request functions to be used o
 */
 
 /*
-    Post request function, it is reusable because of the dynamic url, dynamic function that manage the response data
-    and also dynamic body request
+    Post request function, it is reusable because of the dynamic url and also dynamic body request
+    it returns a value to follows FP behavior avoiding secondary effects
 */
 
 export const Post = async (bodyRequest, url) => {
@@ -25,6 +25,5 @@ export const Post = async (bodyRequest, url) => {
     })
     
     const data = await res.json()
-    console.log(data)
     return data
   }
