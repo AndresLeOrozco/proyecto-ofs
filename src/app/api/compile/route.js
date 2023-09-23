@@ -20,7 +20,11 @@ the request and with other string containing the current date.
 
 */
 export async function POST(request) {
-  let code = await request.json()
-  code.time = new Date().toString()
+  const text = await request.json()
+  const time = new Date().toString()
+  const code = {
+    text,
+    time
+  }
   return NextResponse.json(code)
 }

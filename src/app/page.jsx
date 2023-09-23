@@ -14,10 +14,9 @@ web application.
 import React from "react"
 import { TextArea } from "@/components/TextArea"
 import {
-  RequestButtom,
+  Button,
   RetrieveButton,
   SaveButton,
-  ClearButton
 } from "@/components/Buttons"
 import { useState,useEffect } from "react"
 import Image from "next/image"
@@ -33,7 +32,9 @@ const Home = () => {
     The value of the Execution output
   */
 
-  const [textareaText, setTextareaText] = useState(["", "", ""])
+  const [textEA, setTextEA] = useState("")
+  const [textTA, setTextTA] = useState("")
+  const [textRA, setTextRA] = useState("")
 
   const [FileSaved, setFileSaved] = useState("Unsaved Text")
 
@@ -42,26 +43,26 @@ const Home = () => {
   */
 
   const SetEditionTextualArea = (newText) => {
-    setTextareaText([newText, textareaText[1], textareaText[2]])
+    setTextEA(newText)
   }
 
   /*
     Function that changes the The value of the Transpilation Area
   */
 
-  const setTranpileArea = (newText) => {
-    const NewText = `${newText.time}\n${newText.text}`
-    setTextareaText([textareaText[0], NewText, textareaText[2]])
+  const handleTranspileClick  = async () => {
+    const compiledText = await Post(textEA, 'compile')
+    setTextTA(compiledText)
   }
 
   /*
     Function that changes the The value of the Terminal
   */
-  const setTerminalArea = (newText) => {
-    setTextareaText([textareaText[0], textareaText[1], newText])
+  const handleEvalClick = async () => {
+    const terminalText = await Post({text: "saasd.txt"}, "eval")
+    setTextRA(terminalText)
   }
 
-  const [totalRows, setTotalRows] = useState(0)
 
   const regex = /\w+/g
 
@@ -70,7 +71,10 @@ const Home = () => {
   */
 
   const handleClearClick = () => {
-    setTextareaText([""])
+    setTextEA("")
+    setTextTA("")
+    setTextRA("")
+    setFileSaved("Unsaved Text")
   }
 
   
@@ -87,40 +91,37 @@ const Home = () => {
            <TextArea
              Area="OFS"
              GetText={SetEditionTextualArea}
-             AreaText={textareaText[0]}
+             AreaText={textEA}
            />
            <div className="btns-all">
-             <RequestButtom
-               afterProcess={setTranpileArea}
-               url="compile"
-               processData={{ text: textareaText[0] }}
-               placeholder="Compile"
+             <Button
+               clickEvent={handleTranspileClick}
+               title="Compile"
              >
                <Image
                  src={play}
                  className="img-play"
                />
-             </RequestButtom>
-             <RequestButtom
-               afterProcess={setTerminalArea}
-               url="eval"
-               processData={{ text: "eval.txt" }}
-               placeholder="Evaluate"
+             </Button>
+             <Button
+               clickEvent={handleEvalClick}
+               title="Evaluate"
              >
                <Image
                  src={evaluate}
                  className="img-play"
                />
-             </RequestButtom>
-             <ClearButton
+             </Button>
+             <Button
                clickEvent={handleClearClick}
+               title = {"Clear"}
              >
                <Image
                  src={clear}
                  className="img-play"
                />
-             </ClearButton>
-             <SaveButton processData={{ text: textareaText[0] }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }} placeholder="Save File">
+             </Button>
+             <SaveButton processData={{ text: textEA }} url="script" setFileSaved={{ setFile: setFileSaved, fileName: FileSaved }} placeholder="Save File">
 
              </SaveButton>
              <RetrieveButton afterProcess={SetEditionTextualArea} setFileSaved={setFileSaved} placeholder="Load File"/>
@@ -129,27 +130,47 @@ const Home = () => {
          <div className="text-TA">
            <TextArea
              Area="JS"
-             AreaText={textareaText[1]}
+             AreaText={textTA.text}
+             Time={textTA.time}
              NotEditable="pointer-events-none"
            />
          </div>
          <div id="the-count" className="container mx-auto inline-block">
            <span id="current">
-             Words: {textareaText[0].match(regex)?.length}{"   "}
+             Words: {textEA.match(regex)?.length}{"   "}
            </span>
             <span></span>
-           <span id="rows">Rows: {textareaText[0].split("\n").length}</span>
+           <span id="rows">Rows: {textEA.split("\n").length}</span>
          </div>
          <div className="text-RA">
            <TextArea
              Area="Terminal"
-             AreaText={textareaText[2]}
+             AreaText={textRA}
              NotEditable="pointer-events-none"
            />
         </div>
       </div>
     </main>
   )
+}
+
+/*
+    Post request function, it is reusable because of the dynamic url, dynamic function that manage the response data
+    and also dynamic body request
+*/
+
+const Post = async (bodyRequest, url) => {
+  console.log(JSON.stringify(bodyRequest))
+  const res = await fetch(`http://localhost:3000/api/${url}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(bodyRequest)
+  })
+  
+  const data = await res.json()
+  return data
 }
 
 export default Home

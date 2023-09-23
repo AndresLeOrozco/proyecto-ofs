@@ -16,7 +16,7 @@ import { NextResponse } from "next/server"
 
 export const POST = async (request) => {
     try {
-      const { text } = await request.json() 
+      const { text } = await request.json()
       const filePath = path.join(process.cwd(), "private", text)
       return NextResponse.json(await fs.readFile(filePath, "utf-8"))
 
