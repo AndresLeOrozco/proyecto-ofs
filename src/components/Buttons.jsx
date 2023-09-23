@@ -201,15 +201,3 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved, placehold
         </div>
     )
 }
-
-const Post = async (bodyReq, url, callback) => {
-    const res = await fetch(`http://localhost:3000/api/${url}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(bodyReq)
-    })
-
-    callback(await res.json())
-}

@@ -19,12 +19,11 @@ import {
   SaveButton,
 } from "@/components/Buttons"
 import { useState, useEffect } from "react"
-import { Post } from "@/RequestFunctions/Post"
 import Image from "next/image"
 import play from '../../public/images/play.png'
 import evaluate from '../../public/images/evaluation.png'
 import clear from '../../public/images/clear.png'
-
+import {Post} from "@/RequestFunctions/Post"
 
 const Home = () => {
   /*
@@ -160,18 +159,6 @@ const Home = () => {
     and also dynamic body request
 */
 
-const Post = async (bodyRequest, url) => {
-  console.log(JSON.stringify(bodyRequest))
-  const res = await fetch(`http://localhost:3000/api/${url}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(bodyRequest)
-  })
-  
-  const data = await res.json()
-  return data
-}
+
 
 export default Home
