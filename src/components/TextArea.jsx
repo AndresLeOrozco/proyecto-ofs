@@ -36,7 +36,7 @@ export const TextArea = ({
     console.log(AreaText.split("\n"))
   }
 
-  const AreaTextClass = `${NotEditable} whitespace-no-wrap auto overflow:hidden block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10`
+  const AreaTextClass = `${NotEditable} w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10 p-2.5`
 
 
   return (
@@ -57,6 +57,8 @@ export const TextArea = ({
              cols={20}
              className={AreaTextClass}
              onKeyDown={handleLine}
+             wrap="off" 
+             overflow-x="auto"
            ></textarea>
            <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
              {AreaText.split("\n").map((_, index) => (
