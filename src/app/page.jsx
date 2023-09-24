@@ -38,6 +38,13 @@ const Home = () => {
   const [textTA, setTextTA] = useState("")
   const [textRA, setTextRA] = useState("")
 
+  /*
+    react hook of use state. This state is to handle hte posisition
+    of the textarea line. 
+  */
+
+  const [teaxtLine, setTextLine] = useState(1)
+
   const [FileSaved, setFileSaved] = useState("")
   const [ActualSaved,setActualSaved] = useState("")
   /*
@@ -101,6 +108,7 @@ const Home = () => {
             Area="OFS"
             GetText={SetEditionTextualArea}
             AreaText={textEA}
+            GetLine={setTextLine}
           />
           <div className="btns-all">
             <Button
@@ -147,9 +155,9 @@ const Home = () => {
         </div>
         <div id="the-count" className="container mx-auto inline-block">
           <span id="current">
-            Words: {textEA.match(regex)?.length}{"   "}
+            Words: {textEA.match(regex)?.length || 0}
           </span>
-          <span></span>
+          <span className="m-1">Ln: {teaxtLine}</span>
           <span id="rows">Rows: {textEA.split("\n").length}</span>
         </div>
         <div className="text-RA">

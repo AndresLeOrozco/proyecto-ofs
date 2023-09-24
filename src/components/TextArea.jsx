@@ -17,24 +17,34 @@ TextArea Component that contains a text area and its label.
     NotEditable  string which is added to the classname of the textarea, it is used mainly to set 
     the text area as read only
 */
+import { useEffect, useRef } from "react";
 
 export const TextArea = ({
   Area = "",
   GetText = () => {},
   AreaText = "",
   NotEditable = "",
- 
+  GetLine = 0,
 }) => {
+  const textAreaRef = useRef(null);
   let row = AreaText.split("\n").length
 
   const handleTextareaChange = (event) => {
     GetText(event.target.value)
   }
-
-  const handleLine = (event) => {
+  
+  const handleKeyDown = () => {   
     row = AreaText.split("\n").length
     console.log(AreaText.split("\n"))
   }
+
+  const handleLine = () => {
+    const textArea = textAreaRef.current
+    const startPos = textArea.selectionStart
+    const line = textArea.value.substr(0, startPos).split("\n").length
+    GetLine(line)
+  }
+
 
   const AreaTextClass = `${NotEditable} w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10 p-2.5`
 
@@ -50,15 +60,21 @@ export const TextArea = ({
        <div className="flex">
          <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">
            <textarea
+             id={`ta-${Area}`}
+             ref={textAreaRef}
              spellCheck="false"
              value={AreaText}
              onChange={handleTextareaChange}
+             onKeyDown={handleKeyDown}
+             onKeyUp={handleLine}
+             onClick={handleLine}
+             onKeyPress={handleLine}
              rows={row > 14 ? row : 14}
              cols={20}
              className={AreaTextClass}
-             onKeyDown={handleLine}
              wrap="off" 
              overflow-x="auto"
+             autoFocus
            ></textarea>
            <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
              {AreaText.split("\n").map((_, index) => (
