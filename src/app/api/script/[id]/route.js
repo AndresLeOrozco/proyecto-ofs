@@ -30,14 +30,10 @@ export const POST = async (request, {params}) => {
   }
 }
 
-export const GET = async (request) => {
+export const GET = async (request,{params}) => {
   try {
-    // Recibe el nombre del archivo como parámetro en la URL
-    const { searchParams } = new URL(request.url)
-    const fileName = searchParams.get("fileName")
-    // Define la ruta del archivo en el servidor
-    const filePath = path.join(process.cwd(), "private", fileName)
-
+    const filePath = path.join(process.cwd(), "private", params.id)
+   
     // Lee el contenido del archivo
     const fileContent = await fs.readFile(filePath, "utf-8")
 

@@ -165,7 +165,7 @@ export const RetrieveButton = ({ children, afterProcess, setFileSaved, placehold
             const fileName = selectedFile.name
             try {
                 const response = await fetch(
-                    `http://localhost:3000/api/script/${fileName}?fileName=${fileName}`
+                    `http://localhost:3000/api/script/${fileName}`
                 )
                 if (response.ok) {
                     setFileSaved(fileName)
