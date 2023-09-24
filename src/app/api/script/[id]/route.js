@@ -55,16 +55,20 @@ export const GET = async (_, { params }) => {
   }
 }
 
-export const PUT = async (_, { params }) => {
+export const PUT = async (request, { params }) => {
   try {
-
-    const filePath = path.join(process.cwd(), "private", params.id)
-
-    // Lee el contenido del archivo
-    const fileContent = await fs.readFile(filePath, "utf-8")
-
-    // Devuelve el contenido como respuesta
-    return NextResponse.json(fileContent)
+    
+    const fileOldNamePath = path.join(process.cwd(), "private", params.id)
+    const fileNewNamePath = path.join(process.cwd(), "private", request.body.newName)
+    
+    let fileResponse = ""
+    fs.rename(fileOldNamePath, fileNewNamePath, (err) => {
+      err ?
+        fileResponse = params.id
+        :
+        fileResponse = request.body.newName
+    });
+    return NextResponse.json(fileResponse)
   } catch (error) {
     return NextResponse.json("Error Al leer el Archivo")
   }
