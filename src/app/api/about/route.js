@@ -1,12 +1,7 @@
 import { NextResponse } from "next/server"
+import {Read} from "@/data/about/Crud"
 
 export function GET() {
-  return NextResponse.json({
-    Developers: [
-      { name: "Andres Leon Orozco", skills: "Programming Skills" },
-      { name: "Eduardo Ojeda Paladino", skills: "Front End Skills" },
-      { name: "Rony Chinchilla Azofeifa", skills: "Data Management Skills" },
-      { name: "Kairo Chacon Maleanos", skills: "Design Skills" },
-    ],
-  })
+  const developers =  Read()
+  return NextResponse.json(developers)
 }
