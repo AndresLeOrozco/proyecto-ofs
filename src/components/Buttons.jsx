@@ -30,7 +30,6 @@ import {Post} from "@/RequestFunctions/Post"
 
 export const Button = ({ children, clickEvent, title}) => {
     return (
-
         <buttom
             className="btn-clear"
             onClick={clickEvent}
@@ -38,7 +37,6 @@ export const Button = ({ children, clickEvent, title}) => {
         >
             {children}
         </buttom>
-
     )
 }
 
