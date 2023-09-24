@@ -23,10 +23,10 @@ export const POST = async (request) => {
     // Escribe el contenido en el archivo
     await fs.writeFile(filePath, fileContent, "utf-8")
 
-    return NextResponse.json({ message: "Archivo guardado correctamente" })
+    return NextResponse.json("Archivo guardado correctamente" )
   } catch (error) {
     console.error(error)
-    return NextResponse.json({ message: "Error guardado incorrectamente" })
+    return NextResponse.json("Error guardado incorrectamente" )
   }
 }
 

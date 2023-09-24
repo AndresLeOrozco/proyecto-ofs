@@ -16,7 +16,7 @@ import { useState, useRef } from "react"
 import Image from "next/image"
 import upload from '../../public/images/upload.png'
 import save from '../../public/images/save.png'
-
+import {Post} from "@/RequestFunctions/Post"
 /*
     the request buttom have four properties: 
     children = places the children of the request buttom as the child of the inside buttom.
@@ -76,7 +76,7 @@ export const SaveButton = ({ children, url, processData, setFileSaved, placehold
             setFileSaved.setFile(fileName)
             url = url + `/${fileName}`
             let body = { fileName, fileContent }
-            Post(body, url, (newText) => null)
+            let response = await Post(body, url)
             setShowModal(false)
             alert("Archivo guardado correctamente")
         } catch (error) {
