@@ -12,7 +12,7 @@ Modal Components
 
 "use client"
 import { useState } from "react"
-import { Get } from "@/RequestFunctions/Get"
+import { Get } from "@/app/RequestFunctions/Get"
 
 
 /*
@@ -24,7 +24,7 @@ export const About = ({ headerName, name }) => {
     const [users, setUsers] = useState([])
 
     const handleClick = async () => {
-        const getAbout = Get()
+        const getAbout = Get('about')
         const data = await getAbout
         setUsers(data.Developers)
     }

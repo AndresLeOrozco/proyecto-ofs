@@ -1,6 +1,6 @@
 
-export const Get = async () => {
-    const res = await fetch("http://localhost:3000/api/about", {
+export const Get = async (URL) => {
+    const res = await fetch(`http://localhost:3000/api/${URL}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

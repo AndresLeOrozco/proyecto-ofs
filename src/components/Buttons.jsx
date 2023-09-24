@@ -13,7 +13,7 @@ Modal Buttom: Create and show a dynamic content modal.
 
 "use client"
 
-import { Post } from "@/RequestFunctions/Post"
+import { Post } from "@/app/RequestFunctions/Post"
 /*
     the request buttom have four properties: 
     children = places the children of the request buttom as the child of the inside buttom.

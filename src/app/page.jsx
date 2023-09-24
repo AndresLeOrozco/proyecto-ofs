@@ -23,7 +23,7 @@ import Image from "next/image"
 import play from '../../public/images/play.png'
 import evaluate from '../../public/images/evaluation.png'
 import clear from '../../public/images/clear.png'
-import { Post } from "@/RequestFunctions/Post"
+import { Post } from "@/app/RequestFunctions/Post"
 import save from '../../public/images/save.png'
 import upload from '../../public/images/upload.png'
 
