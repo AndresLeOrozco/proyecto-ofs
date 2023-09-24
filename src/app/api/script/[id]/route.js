@@ -14,26 +14,52 @@ import fs from "fs/promises"
 import path from "path"
 import { NextResponse } from "next/server"
 
-export const POST = async (request, {params}) => {
+export const POST = async (request, { params }) => {
   try {
-    const fileContent = await request.json() 
+    let message = ""
+
+    const fileContent = await request.json()
 
     const filePath = path.join(process.cwd(), "private", params.id)
+
+    fs.access(filePath, fs.constants.F_OK)
+      .then(() => {
+        message = " Existed File, Successfully overwrited"
+      })
+      .catch((err) => {
+        message = " Successfully Saved"
+      })
 
     await fs.writeFile(filePath, fileContent, "utf-8")
 
-    return NextResponse.json( "Archivo guardado correctamente" )
+    return NextResponse.json(params.id + message)
   } catch (error) {
 
     console.error(error)
-    return NextResponse.json( "Error" )
+    return NextResponse.json("Error")
   }
 }
 
-export const GET = async (request,{params}) => {
+export const GET = async (_, { params }) => {
   try {
+
     const filePath = path.join(process.cwd(), "private", params.id)
-   
+
+    // Lee el contenido del archivo
+    const fileContent = await fs.readFile(filePath, "utf-8")
+
+    // Devuelve el contenido como respuesta
+    return NextResponse.json(fileContent)
+  } catch (error) {
+    return NextResponse.json("Error Al leer el Archivo")
+  }
+}
+
+export const PUT = async (_, { params }) => {
+  try {
+
+    const filePath = path.join(process.cwd(), "private", params.id)
+
     // Lee el contenido del archivo
     const fileContent = await fs.readFile(filePath, "utf-8")
 
