@@ -73,10 +73,11 @@ export const SaveButton = ({ children, url, processData, setFileSaved, placehold
             let fileContent = processData.text
             setFileSaved.setFile(fileName)
             url = url + `/${fileName}`
-            let body = { fileName, fileContent }
-            let response = await Post(body, url)
+            console.log(url)
+            let response = await Post(fileContent, url)
             setShowModal(false)
-            alert("Archivo guardado correctamente")
+            setFileName("")
+            alert(response)
         } catch (error) {
             console.error("Error de red:", error)
         }

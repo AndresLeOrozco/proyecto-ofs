@@ -14,19 +14,19 @@ import fs from "fs/promises"
 import path from "path"
 import { NextResponse } from "next/server"
 
-export const POST = async (request) => {
+export const POST = async (request, {params}) => {
   try {
-    const { fileName, fileContent } = await request.json() // Recibe datos del cliente
-    // Define la ruta del archivo en el servidor
-    const filePath = path.join(process.cwd(), "private", fileName)
+    const fileContent = await request.json() 
 
-    // Escribe el contenido en el archivo
+    const filePath = path.join(process.cwd(), "private", params.id)
+
     await fs.writeFile(filePath, fileContent, "utf-8")
 
-    return NextResponse.json("Archivo guardado correctamente" )
+    return NextResponse.json( "Archivo guardado correctamente" )
   } catch (error) {
+
     console.error(error)
-    return NextResponse.json("Error guardado incorrectamente" )
+    return NextResponse.json( "Error" )
   }
 }
 
