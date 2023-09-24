@@ -24,7 +24,7 @@ export const TextArea = ({
   GetText = () => {},
   AreaText = "",
   NotEditable = "",
-  GetLine = 0,
+  GetLine,
 }) => {
   const textAreaRef = useRef(null);
   let row = AreaText.split("\n").length
@@ -33,12 +33,7 @@ export const TextArea = ({
     GetText(event.target.value)
   }
   
-  const handleKeyDown = () => {   
-    row = AreaText.split("\n").length
-    console.log(AreaText.split("\n"))
-  }
-
-  const handleLine = () => {
+  const handleKeywordEvent = () => {
     const textArea = textAreaRef.current
     const startPos = textArea.selectionStart
     const line = textArea.value.substr(0, startPos).split("\n").length
@@ -65,10 +60,9 @@ export const TextArea = ({
              spellCheck="false"
              value={AreaText}
              onChange={handleTextareaChange}
-             onKeyDown={handleKeyDown}
-             onKeyUp={handleLine}
-             onClick={handleLine}
-             onKeyPress={handleLine}
+             onKeyUp={handleKeywordEvent}
+             onClick={handleKeywordEvent}
+             onKeyDown={handleKeywordEvent}
              rows={row > 14 ? row : 14}
              cols={20}
              className={AreaTextClass}
