@@ -24,8 +24,8 @@ export const About = ({ headerName, name }) => {
     const [users, setUsers] = useState([])
 
     const handleClick = async () => {
-        const getAbout = Get('about')
-        const data = await getAbout
+        const getAbout = await Get('about')
+        const data = getAbout
         setUsers(data.Developers)
     }
     return (

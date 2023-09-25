@@ -26,7 +26,8 @@ import clear from '../../public/images/clear.png'
 import { Post } from "@/app/RequestFunctions/Post"
 import save from '../../public/images/save.png'
 import upload from '../../public/images/upload.png'
-import { GET } from "@/app/RequestFunctions/Get"
+import { Get } from "@/app/RequestFunctions/Get"
+import { ComboBox } from "@/components/ComboBox"
 
 const Home = () => {
   /*
@@ -47,6 +48,8 @@ const Home = () => {
   const [teaxtLine, setTextLine] = useState(1)
 
   const [FileSaved, setFileSaved] = useState("")
+
+  const [allScripts, setScripts] = useState([])
   /*
      Function that changes the The value of the Edition textual Area
   */
@@ -83,13 +86,39 @@ const Home = () => {
     setTextTA("")
     setTextRA("")
     setFileSaved("")
+    setScripts([])
   }
 
   const handleInputChange = (event) => {
     setFileSaved(event.target.value)
   }
 
+  const handleCursorLine = line => setTextLine(line)
 
+
+  /*
+    This is to recover all the scrips (just name).
+   */
+  const handleRecoverScript = async () => {
+    const scripts = await Get('script')
+    console.log(scripts)
+    setScripts(scripts)
+  }
+
+  /*
+    This useEffect is just to load all the information
+    related to the scripts after either reload the page
+    or the first time loading.
+  */
+  useEffect(() => {
+    handleRecoverScript()
+    console.log("EFECTOOOOOO")
+  }, [])
+
+  const handleRecoverFile = async (selected) => {
+    const file = await Get(`script/${selected}`)
+    setTextEA(file)
+  }
 
 
   /*
@@ -98,17 +127,17 @@ const Home = () => {
   return (
     <main>
       <div className="inline-block">
-        <input type="text" value={FileSaved} placeholder="File Name" onChange={handleInputChange} className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
+        <input id="fileSave" type="text" value={FileSaved} placeholder="File Name" onChange={handleInputChange} className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
         </input>
-        <span></span>
       </div>
+      <ComboBox selectedFile={handleRecoverFile} items={allScripts} />
       <div className="text-all">
         <div className="text-EA">
           <TextArea
             Area="OFS"
             GetText={setTextEA}
             AreaText={textEA}
-            GetLine={setTextLine}
+            GetLine={handleCursorLine}
           />
           <div className="btns-all">
             <Button
@@ -117,6 +146,7 @@ const Home = () => {
             >
               <Image
                 src={play}
+                alt='This is a play button img'
                 className="img-play"
               />
             </Button>
@@ -126,6 +156,7 @@ const Home = () => {
             >
               <Image
                 src={evaluate}
+                alt='This is a evaluate button img'
                 className="img-play"
               />
             </Button>
@@ -135,6 +166,7 @@ const Home = () => {
             >
               <Image
                 src={clear}
+                alt='This is a clear button img'
                 className="img-play"
               />
             </Button>
