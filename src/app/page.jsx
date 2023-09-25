@@ -26,6 +26,7 @@ import clear from '../../public/images/clear.png'
 import { Post } from "@/app/RequestFunctions/Post"
 import save from '../../public/images/save.png'
 import upload from '../../public/images/upload.png'
+import { GET } from "@/app/RequestFunctions/Get"
 
 const Home = () => {
   /*
@@ -46,7 +47,6 @@ const Home = () => {
   const [teaxtLine, setTextLine] = useState(1)
 
   const [FileSaved, setFileSaved] = useState("")
-  const [ActualSaved,setActualSaved] = useState("")
   /*
      Function that changes the The value of the Edition textual Area
   */
@@ -90,6 +90,8 @@ const Home = () => {
   const handleInputChange = (event) => {
     setFileSaved(event.target.value)
   }
+
+
 
 
   /*
