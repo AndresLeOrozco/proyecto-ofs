@@ -13,24 +13,14 @@ save and load files in the Edition Textual Area (EA).
 import fs from "fs/promises"
 import path from "path"
 import { NextResponse } from "next/server"
+import { ReadFileByName, WriteFileByName } from "@/data/script/Crud"
 
 export const POST = async (request, { params }) => {
   try {
-    let message = ""
 
     const fileContent = await request.json()
 
-    const filePath = path.join(process.cwd(), "private", params.id)
-
-    fs.access(filePath, fs.constants.F_OK)
-      .then(() => {
-        message = " Existed File, Successfully overwrited"
-      })
-      .catch((err) => {
-        message = " Successfully Saved"
-      })
-
-    await fs.writeFile(filePath, fileContent, "utf-8")
+    const message = await WriteFileByName(params.id, fileContent)
 
     return NextResponse.json(params.id + message)
   } catch (error) {
@@ -43,24 +33,22 @@ export const POST = async (request, { params }) => {
 export const GET = async (_, { params }) => {
   try {
 
-    const filePath = path.join(process.cwd(), "private", params.id)
-
-    // Lee el contenido del archivo
-    const fileContent = await fs.readFile(filePath, "utf-8")
-
-    // Devuelve el contenido como respuesta
+    const fileContent = await ReadFileByName(params.id)
+    
     return NextResponse.json(fileContent)
+
   } catch (error) {
+
     return NextResponse.json("Error Al leer el Archivo")
   }
 }
 
 export const PUT = async (request, { params }) => {
   try {
-    
+
     const fileOldNamePath = path.join(process.cwd(), "private", params.id)
     const fileNewNamePath = path.join(process.cwd(), "private", request.body.newName)
-    
+
     let fileResponse = ""
     fs.rename(fileOldNamePath, fileNewNamePath, (err) => {
       err ?

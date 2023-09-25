@@ -10,15 +10,13 @@ the file is the endpoint /eval in the API of the application that receives the r
 evaluate the Transpile Area (TA).
 */
 
-import fs from "fs/promises"
-import path from "path"
+import { EvaluateFile } from "@/data/eval/CRUD"
 import { NextResponse } from "next/server"
 
 export const POST = async (request) => {
     try {
       const { text } = await request.json()
-      const filePath = path.join(process.cwd(), "private", text)
-      return NextResponse.json(await fs.readFile(filePath, "utf-8"))
+      return NextResponse.json(await EvaluateFile(text))
 
     } catch (error) {
       console.error(error)
