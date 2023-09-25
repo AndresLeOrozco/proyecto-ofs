@@ -14,14 +14,12 @@ export const ReadAllFiles = async () => {
 }
 
 export const ReadFileByName = async (name) => {
-
     const filePath = path.join(process.cwd(), "private", name)
-
     try {
         const fileContent = await fs.readFile(filePath, "utf-8")
         return fileContent;
     } catch (err) {
-        return("Error reading file: ", name);
+        throw("ERROR, no such file or directory");
     }
 }
 
@@ -41,6 +39,7 @@ export const WriteFileByName = async (name, content) => {
             })
 
         await fs.writeFile(filePath, content, "utf-8")
+        console.log(message)
         return message;
     } catch (err) {
         return("Error writting at: ", err);

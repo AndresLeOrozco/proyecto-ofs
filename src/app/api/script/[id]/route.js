@@ -19,13 +19,12 @@ export const POST = async (request, { params }) => {
   try {
 
     const fileContent = await request.json()
-
+    
     const message = await WriteFileByName(params.id, fileContent)
 
     return NextResponse.json(params.id + message)
   } catch (error) {
 
-    console.error(error)
     return NextResponse.json("Error")
   }
 }
@@ -39,7 +38,7 @@ export const GET = async (_, { params }) => {
 
   } catch (error) {
 
-    return NextResponse.json("Error Al leer el Archivo")
+    return NextResponse.json("Error Al leer el Archivo", { status: 500 })
   }
 }
 

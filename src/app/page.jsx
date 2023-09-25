@@ -51,9 +51,7 @@ const Home = () => {
      Function that changes the The value of the Edition textual Area
   */
 
-  const SetEditionTextualArea = (newText) => {
-    setTextEA(newText)
-  }
+
 
   /*
     Function that changes the The value of the Transpilation Area
@@ -69,7 +67,7 @@ const Home = () => {
     Function that changes the The value of the Terminal
   */
   const handleEvalClick = async () => {
-    const terminalText = await Post({ text: "saasd.txt" }, "eval")
+    const terminalText = await Post({ text: "Siuuuuu.txt" }, "eval")
     setTextRA(terminalText)
   }
 
@@ -108,7 +106,7 @@ const Home = () => {
         <div className="text-EA">
           <TextArea
             Area="OFS"
-            GetText={SetEditionTextualArea}
+            GetText={setTextEA}
             AreaText={textEA}
             GetLine={setTextLine}
           />
@@ -143,7 +141,7 @@ const Home = () => {
             <SaveButton processData={{ text: textEA }} url="script" FileSaved={FileSaved} placeholder="Save File">
               <Image className="img-play" src={save}></Image>
             </SaveButton>
-            <RetrieveButton afterProcess={SetEditionTextualArea} FileSaved={FileSaved} placeholder="Load File" >
+            <RetrieveButton afterProcess={setTextEA} FileSaved={FileSaved} placeholder="Load File" >
               <Image className="img-play" src={upload}></Image>
             </RetrieveButton>
           </div>
