@@ -27,7 +27,6 @@ import save from '../../public/images/save.png'
 import upload from '../../public/images/upload.png'
 import { Get } from "@/app/RequestFunctions/Get"
 import { ComboBox } from "@/components/ComboBox"
-
 const Home = () => {
   /*
     react hook of use state, the state is an array that contains
@@ -124,7 +123,7 @@ const Home = () => {
     Component that contains the REACT (JSX) code of the body the app
   */
   return (
-    <main>
+    <>
       <div className="inline-block">
         <input id="fileSave" type="text" value={FileSaved} placeholder="File Name" onChange={handleInputChange} className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
         </input>
@@ -196,7 +195,7 @@ const Home = () => {
           />
         </div>
       </div>
-    </main>
+    </>
   )
 }
 
