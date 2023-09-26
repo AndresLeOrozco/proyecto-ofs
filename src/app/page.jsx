@@ -110,7 +110,7 @@ const Home = () => {
   const handleSavedFile = file => setFileSaved(file)
   
   const handleSaveClick = async () => {
-    allScripts.includes(fileSaved)? alert("Already Exists!") : await Post(textEA, `script/${fileSaved}`)
+    await Post(textEA, `script/${fileSaved}`)
     handleRecoverScript()
     
   }
