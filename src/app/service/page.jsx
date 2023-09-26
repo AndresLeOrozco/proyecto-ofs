@@ -17,44 +17,41 @@ export const Home = () => {
             </div>
             <div class="ml-4">
                 <h1 class="text-2xl font-semibold">Our Services</h1><br />
-                <p class="text-gray-700"> Estamos a la vanguardia de la revolución en el mundo de la programación,
-                    ofreciendo una plataforma integral para el lenguaje de programación ficticio llamado OFS. Nuestros
-                    servicios están diseñados para hacer que la programación sea más accesible y eficiente que nunca.</p><br />
+                <p class="text-gray-700"> We are at the forefront of the revolution in the programming
+                    world, offering a comprehensive platform for the fictional programming language called OFS. Our services
+                    are designed to make programming more accessible and efficient than ever before.</p><br />
 
-                <h6 class="text-2xl font-semibold">Compilación Avanzada a Javascript</h6>
+                <h6 class="text-2xl font-semibold">Advanced Compilation to Javascript</h6>
                 <p class="text-gray-700">
-                    Nuestra plataforma cuenta con un potente compilador que transpila código OFS a Javascript de manera
-                    rápida y precisa. Esto significa que puedes escribir y depurar tu código en OFS, y luego ejecutarlo
-                    en la web como código Javascript completamente funcional. La transpilación a Javascript abre un mundo
-                    de posibilidades para tu desarrollo web.</p><br />
+                    Our platform features a powerful compiler that transpiles OFS code to Javascript quickly and accurately.
+                    This means you can write and debug your code in OFS, and then run it on the web as fully functional Javascript
+                    code. Transpiling to Javascript opens up a world of possibilities for your web development.</p><br />
 
-                <h6 class="text-2xl font-semibold">Almacenamiento Seguro de Código</h6>
+                <h6 class="text-2xl font-semibold">Secure Code Storage</h6>
                 <p class="text-gray-700">
-                    Entendemos la importancia de proteger tus proyectos. Ofrecemos almacenamiento
-                    seguro en la nube para tu código OFS, lo que significa que tus creaciones están protegidas y disponibles
-                    en cualquier momento y lugar. Nunca más perderás un trabajo importante.</p><br />
+                    We understand the importance of protecting your projects. We offer secure cloud storage for your
+                    OFS code, ensuring that your creations are safeguarded and available anytime, anywhere. You'll never lose important
+                    work again</p><br />
 
-                <h6 class="text-2xl font-semibold">Evaluación Inteligente</h6>
+                <h6 class="text-2xl font-semibold">Intelligent Evaluation</h6>
                 <p class="text-gray-700">
-                    Nuestra plataforma no solo te permite compilar tu código, sino que también ofrece herramientas de evaluación
-                    inteligente. Detecta errores en tu código OFS antes de la transpilación, lo que te ahorra tiempo y frustración
-                    en el proceso de desarrollo.</p><br />
+                    Our platform not only allows you to compile your code but also provides intelligent evaluation tools. It detects errors
+                    in your OFS code before transpilation, saving you time and frustration in the development process.</p><br />
 
-                <h6 class="text-2xl font-semibold">Ejecución en Tiempo Real</h6>
+                <h6 class="text-2xl font-semibold">Real-Time Execution</h6>
                 <p class="text-gray-700">
-                    La funcionalidad estrella de nuestra plataforma es la ejecución en tiempo real de tu código Javascript generado.
-                    Puedes ver tus aplicaciones cobrar vida y probar su funcionalidad directamente en nuestro entorno de ejecución. Es
-                    la manera perfecta de asegurarte de que todo funcione como se espera.</p><br />
+                    Our standout feature is real-time execution of your generated Javascript code. You can see your applications
+                    come to life and test their functionality directly in our execution environment. It's the perfect way to ensure that everything
+                    works as expected.</p><br />
 
-                <h6 class="text-2xl font-semibold">Soporte Técnico Expertizado</h6>
+                <h6 class="text-2xl font-semibold">Expert Technical Support</h6>
                 <p class="text-gray-700">
-                    Nuestro equipo de soporte técnico está siempre listo para ayudarte. Desde preguntas sobre el lenguaje OFS hasta
-                    problemas técnicos, estamos aquí para brindarte la asistencia que necesitas en tu viaje de desarrollo.</p><br />
+                    Our team of technical support experts is always ready to assist you. From questions about the OFS language to technical issues, we
+                    are here to provide the assistance you need on your development journey.</p><br />
 
                 <p class="text-gray-700">
-                    Estamos comprometidos en simplificar el proceso de desarrollo de software y abrir nuevas 
-                    posibilidades para los programadores. Únete a nosotros en este emocionante viaje y descubre todo lo que puedes lograr 
-                    con OFS. ¡Comienza a programar de manera más inteligente hoy mismo!</p><br />
+                    We are committed to simplifying the software development process and opening up new possibilities for programmers.
+                    Join us on this exciting journey and discover all that you can achieve with OFS. Start programming smarter today!</p><br />
             </div>
         </div>
     )
