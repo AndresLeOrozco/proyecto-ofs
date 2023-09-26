@@ -86,6 +86,7 @@ const Home = () => {
     setTextRA("")
     setFileSaved("")
     setScripts([])
+    handleRecoverScript()
   }
 
 
@@ -97,7 +98,6 @@ const Home = () => {
    */
   const handleRecoverScript = async () => {
     const scripts = await Get('script')
-    console.log(scripts)
     setScripts(scripts)
   }
 
@@ -112,6 +112,7 @@ const Home = () => {
   const handleSaveClick = async () => {
     allScripts.includes(fileSaved)? alert("Already Exists!") : await Post(textEA, `script/${fileSaved}`)
     handleRecoverScript()
+    
   }
   
   /*
