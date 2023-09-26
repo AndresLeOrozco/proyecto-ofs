@@ -10,11 +10,12 @@ ComboBox Component
 */
 
 
-export const ComboBox = ({ items = [], selectedFile }) => {
+export const ComboBox = ({ items = [], selectedFile, updateSaved }) => {
     
     const handleChangeOp = ({target: {value}}) => {
         const selectedScript = value
         selectedFile(selectedScript)
+        updateSaved(value)
     } 
 
     return (

@@ -17,7 +17,7 @@ TextArea Component that contains a text area and its label.
     NotEditable  string which is added to the classname of the textarea, it is used mainly to set 
     the text area as read only
 */
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export const TextArea = ({
   Area = "",
@@ -29,11 +29,11 @@ export const TextArea = ({
   const textAreaRef = useRef(null);
   let row = AreaText.split("\n").length
 
-  const handleTextareaChange = (event) => {
-    GetText(event.target.value)
+  const handleTextareaChange = ({target: {value}}) => {
+    GetText(value)
   }
 
-  const handleKeywordEvent = () => {
+  const handleKeyboardEvent = () => {
     const textArea = textAreaRef.current
     const startPos = textArea.selectionStart
     const line = textArea.value.substr(0, startPos).split("\n").length
@@ -61,9 +61,9 @@ export const TextArea = ({
             spellCheck="false"
             value={AreaText}
             onChange={handleTextareaChange}
-            onKeyUp={handleKeywordEvent}
-            onClick={handleKeywordEvent}
-            onKeyDown={handleKeywordEvent}
+            onKeyUp={handleKeyboardEvent}
+            onClick={handleKeyboardEvent}
+            onKeyDown={handleKeyboardEvent}
             rows={row > 14 ? row : 14}
             cols={20}
             className={AreaTextClass}

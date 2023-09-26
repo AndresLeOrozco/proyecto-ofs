@@ -15,7 +15,6 @@ import React, { useReducer } from "react"
 import { TextArea } from "@/components/TextArea"
 import {
   Button,
-  SaveButton,
 } from "@/components/Buttons"
 import { useState, useEffect } from "react"
 import Image from "next/image"
@@ -27,6 +26,7 @@ import save from '../../public/images/save.png'
 import upload from '../../public/images/upload.png'
 import { Get } from "@/app/RequestFunctions/Get"
 import { ComboBox } from "@/components/ComboBox"
+import { InputFile } from "@/components/InputFile"
 
 const Home = () => {
   /*
@@ -46,7 +46,7 @@ const Home = () => {
 
   const [teaxtLine, setTextLine] = useState(1)
 
-  const [FileSaved, setFileSaved] = useState("")
+  const [fileSaved, setFileSaved] = useState("")
 
   const [allScripts, setScripts] = useState([])
   /*
@@ -88,9 +88,6 @@ const Home = () => {
     setScripts([])
   }
 
-  const handleInputChange = (event) => {
-    setFileSaved(event.target.value)
-  }
 
   const handleCursorLine = line => setTextLine(line)
 
@@ -111,7 +108,6 @@ const Home = () => {
   */
   useEffect(() => {
     handleRecoverScript()
-
   }, [])
 
   const handleRecoverFile = async (selected) => { 
@@ -119,17 +115,16 @@ const Home = () => {
     setTextEA(file)
   }
 
+  const handleSavedFile = file => setFileSaved(file) 
+
 
   /*
     Component that contains the REACT (JSX) code of the body the app
   */
   return (
     <main>
-      <div className="inline-block">
-        <input id="fileSave" type="text" value={FileSaved} placeholder="File Name" onChange={handleInputChange} className="text-m font-semibold inline-block my-3 mx-3 py-2 px-2 rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">
-        </input>
-      </div>
-      <ComboBox selectedFile={handleRecoverFile} items={allScripts} />
+      <ComboBox selectedFile = {handleRecoverFile} items = {allScripts} updateSaved = {handleSavedFile} />
+      <InputFile file = {fileSaved} />
       <div className="text-all">
         <div className="text-EA">
           <TextArea
@@ -169,9 +164,6 @@ const Home = () => {
                 className="img-play"
               />
             </Button>
-            <SaveButton processData={{ text: textEA }} url="script" FileSaved={FileSaved} placeholder="Save File">
-              <Image className="img-play" src={save}></Image>
-            </SaveButton>
           </div>
         </div>
         <div className="text-TA">
