@@ -101,6 +101,19 @@ const Home = () => {
     setScripts(scripts)
   }
 
+  
+  const handleRecoverFile = async (selected) => {
+    const file = selected ? await Get(`script/${selected}`) : selected;
+    setTextEA(file)
+  }
+  
+  const handleSavedFile = file => setFileSaved(file)
+  
+  const handleSaveClick = async () => {
+    allScripts.includes(fileSaved)? alert("Already Exists!") : await Post(textEA, `script/${fileSaved}`)
+    handleRecoverScript()
+  }
+  
   /*
     This useEffect is just to load all the information
     related to the scripts after either reload the page
@@ -109,14 +122,7 @@ const Home = () => {
   useEffect(() => {
     handleRecoverScript()
   }, [])
-
-  const handleRecoverFile = async (selected) => {
-    const file = selected ? await Get(`script/${selected}`) : selected;
-    setTextEA(file)
-  }
-
-  const handleSavedFile = file => setFileSaved(file)
-
+  
 
   /*
     Component that contains the REACT (JSX) code of the body the app
@@ -124,7 +130,7 @@ const Home = () => {
   return (
     <main>
       <ComboBox selectedFile={handleRecoverFile} items={allScripts} updateSaved={handleSavedFile} />
-      <InputFile file={fileSaved} />
+      <InputFile scrips = {allScripts} file={fileSaved} updateInput = {handleSavedFile} />
       <div className="text-all">
         <div className="text-EA">
           <TextArea
@@ -155,13 +161,23 @@ const Home = () => {
               />
             </Button>
             <Button
+              clickEvent={handleSaveClick}
+              title={"Save"}
+            >
+              <Image
+                src={save}
+                alt='This is a save button img'
+                className="img-save"
+              />
+            </Button>
+            <Button
               clickEvent={handleClearClick}
               title={"Clear"}
             >
               <Image
                 src={clear}
                 alt='This is a clear button img'
-                className="img-play"
+                className="img-clear"
               />
             </Button>
           </div>

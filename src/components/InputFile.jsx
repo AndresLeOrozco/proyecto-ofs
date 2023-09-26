@@ -11,8 +11,12 @@ ComboBox Component
 
 import { useEffect, useRef } from "react";
 
-export const InputFile = ({file}) => {
+export const InputFile = ({file, updateInput, scrips}) => {
     const inputRef = useRef(null);
+
+    const handleTypeChange = ({target: {value}}) => {
+        updateInput(value)
+    }
 
     /*
         This useEffect is used to disable typing in the input.
@@ -20,11 +24,12 @@ export const InputFile = ({file}) => {
     useEffect(() => {
         const input = inputRef.current
         input.value = file
-        file? input.disabled = true : input.disabled = false
+        updateInput(file)
+        scrips.includes(file)? input.disabled = true : input.disabled = false
     },[file])
     return(
         <div id="d-InputFile">
-            <input id="inputFile" ref={inputRef} type="text"  placeholder="File Name"/>
+            <input id="inputFile" onChange={handleTypeChange}  ref={inputRef} type="text"  placeholder="File Name"/>
         </div>
     )
 }
