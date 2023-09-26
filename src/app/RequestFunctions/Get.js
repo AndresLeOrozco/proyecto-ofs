@@ -14,12 +14,21 @@ In this js file we will create and export the Get request functions to be used o
     it returns a value to follows FP behavior avoiding secondary effects
 */
 export const Get = async (URL) => {
-    const res = await fetch(`http://localhost:3000/api/${URL}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-    const data = await res.json()
-    return data
+    try {
+
+        const response = await fetch(`http://localhost:3000/api/${URL}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+
+        if (response !== 'Error') {
+            const data = await response.json()
+            return data
+        }
+    } catch (error) {
+        console.error("Error recovering: ", error)
+        return ""
+    }
 }

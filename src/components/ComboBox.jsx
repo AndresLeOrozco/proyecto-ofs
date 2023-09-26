@@ -10,23 +10,21 @@ ComboBox Component
 */
 
 
-export const ComboBox = ({ items, selectedFile }) => {
+export const ComboBox = ({ items = [], selectedFile }) => {
     
-    const handleChangeOp = (event) => {
-        const selectedScript = event.target.value
+    const handleChangeOp = ({target: {value}}) => {
+        const selectedScript = value
         selectedFile(selectedScript)
     } 
 
-
     return (
         <div id="scriptCB">
-            <label htmlFor="scripts-select">Script:</label>
             <select onChange={handleChangeOp} id="scripts-select" name="scripts">
-            <option value="">--Please choose a script--</option>
+            <option value="">--Please choose a saved script--</option>
             {items.map((item) => (
-                 <option value = {`${item}`} >{item}</option>
+                <option key={item} value = {`${item}`} >{item}</option>
              ))}
-            </select>
+            </select>      
         </div>
     )
 }

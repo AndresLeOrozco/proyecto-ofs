@@ -11,11 +11,10 @@ web application.
 */
 
 "use client"
-import React from "react"
+import React, { useReducer } from "react"
 import { TextArea } from "@/components/TextArea"
 import {
   Button,
-  RetrieveButton,
   SaveButton,
 } from "@/components/Buttons"
 import { useState, useEffect } from "react"
@@ -112,11 +111,11 @@ const Home = () => {
   */
   useEffect(() => {
     handleRecoverScript()
-    console.log("EFECTOOOOOO")
+
   }, [])
 
-  const handleRecoverFile = async (selected) => {
-    const file = await Get(`script/${selected}`)
+  const handleRecoverFile = async (selected) => { 
+    const file = selected ? await Get(`script/${selected}`) : selected;
     setTextEA(file)
   }
 
@@ -173,9 +172,6 @@ const Home = () => {
             <SaveButton processData={{ text: textEA }} url="script" FileSaved={FileSaved} placeholder="Save File">
               <Image className="img-play" src={save}></Image>
             </SaveButton>
-            <RetrieveButton afterProcess={setTextEA} FileSaved={FileSaved} placeholder="Load File" >
-              <Image className="img-play" src={upload}></Image>
-            </RetrieveButton>
           </div>
         </div>
         <div className="text-TA">
