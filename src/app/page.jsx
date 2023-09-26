@@ -110,12 +110,12 @@ const Home = () => {
     handleRecoverScript()
   }, [])
 
-  const handleRecoverFile = async (selected) => { 
+  const handleRecoverFile = async (selected) => {
     const file = selected ? await Get(`script/${selected}`) : selected;
     setTextEA(file)
   }
 
-  const handleSavedFile = file => setFileSaved(file) 
+  const handleSavedFile = file => setFileSaved(file)
 
 
   /*
@@ -123,8 +123,8 @@ const Home = () => {
   */
   return (
     <main>
-      <ComboBox selectedFile = {handleRecoverFile} items = {allScripts} updateSaved = {handleSavedFile} />
-      <InputFile file = {fileSaved} />
+      <ComboBox selectedFile={handleRecoverFile} items={allScripts} updateSaved={handleSavedFile} />
+      <InputFile file={fileSaved} />
       <div className="text-all">
         <div className="text-EA">
           <TextArea
@@ -188,7 +188,7 @@ const Home = () => {
           />
         </div>
       </div>
-    </>
+    </main>
   )
 }
 
