@@ -42,19 +42,16 @@ export const GET = async (_, { params }) => {
 
 export const PUT = async (request, { params }) => {
   try {
-
+    
+    const newName = await request.json()
+    console.log(newName)
     const fileOldNamePath = path.join(process.cwd(), "private", params.id)
-    const fileNewNamePath = path.join(process.cwd(), "private", request.body.newName)
+    const fileNewNamePath = path.join(process.cwd(), "private", newName)
+    
 
-    let fileResponse = ""
-    fs.rename(fileOldNamePath, fileNewNamePath, (err) => {
-      err ?
-        fileResponse = params.id
-        :
-        fileResponse = request.body.newName
-    });
-    return NextResponse.json(fileResponse)
+    await fs.rename(fileOldNamePath, fileNewNamePath);
+    return NextResponse.json(newName)
   } catch (error) {
-    return NextResponse.json("Error Al leer el Archivo")
+    return NextResponse.json(params.id)
   }
 }

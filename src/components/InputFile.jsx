@@ -6,21 +6,34 @@ Rony Chinchilla Azofeifa
 Kairo Chacon Maleanos
 
 Description: 
-ComboBox Component
+Functional component that renders an input field.
 */
 
 import { useEffect, useRef } from "react";
-import { Post } from "@/app/RequestFunctions/Post";
+import { Put } from "@/app/RequestFunctions/Put";
 
-export const InputFile = ({selectedFile, updateInputText, onOff, actualFile}) => {
+/**
+ * @param {string} selectedFile - The selected file name.
+ * @param {function} updateInputText - A function to update the input text.
+ * @param {boolean} onOff - A flag to disable or enable the input field.
+ * @param {string} actualFile - The file name.
+ * @returns {JSX.Element} The rendered InputFile component with an input field that reflects the selectedFile prop value and can be edited by the user.
+ */
+
+export const InputFile = ({selectedFile, updateInputText, onOff, actualFile, setOnOff}) => {
     const inputRef = useRef(null);
 
     const handleTypeChange = ({target: {value}}) => {
         updateInputText(value)
     }
 
-    const handleChangeName = (event) =>{
-        
+    const changeName = async (url, body) => {
+        const response = await Put(body, url)
+        setOnOff()
+    }
+
+    const handleChangeName = ({key, target:{value}}) =>{
+        key === 'Enter' ? changeName(`script/${actualFile}`, value ) : null
     }
 
     useEffect(() => {
@@ -30,8 +43,8 @@ export const InputFile = ({selectedFile, updateInputText, onOff, actualFile}) =>
     },[selectedFile])
 
     return(
-        <div className="px-10 m-3"  id="d-InputFile">
-            <input id="inputFile" disabled={onOff} onChange={handleTypeChange} onKeyPress={handleChangeName}  ref={inputRef} type="text"  placeholder="Unsaved File"/>
+        <div className="inline-block px-0 m-1"  id="d-InputFile">
+            <input className="bg-gray-600 text-white h-8 rounded" id="inputFile" disabled={onOff} onChange={handleTypeChange} onKeyPress={handleChangeName}  ref={inputRef} type="text"  placeholder="     Rename File"/>
         </div>
     )
 }

@@ -6,17 +6,16 @@ Rony Chinchilla Azofeifa
 Kairo Chacon Maleanos
 
 Description: 
-TextArea Component that contains a text area and its label.
+TextArea Component that contains a text area and its label for RA.
 */
 
-/*
-    /**
-     * Renders a textarea element with a label.
-     * 
-     * @param {string} AreaText - The initial value of the textarea.
-     * 
-     * @returns {JSX.Element} The rendered textarea element.
-     */
+/**
+ * Renders a textarea element with a label.
+ * 
+ * @param {string} AreaText - The initial value of the textarea.
+ * 
+ * @returns {JSX.Element} The rendered textarea element.
+ */
 
 
 export const Terminal = ({AreaText = ""}) => {

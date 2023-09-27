@@ -1,7 +1,18 @@
+/*
+Developers: 
+Andres Leon Orozco
+Eduardo Ojeda Paladino
+Rony Chinchilla Azofeifa
+Kairo Chacon Maleanos
+
+Description: 
+Returns a navigation bar component.
+*/
+
 import Link from "next/link"
 import { About } from "./Modals"
 
-const Navbar = async () => {
+const Navbar = () => {
 
   return (
     <nav className="border-gray-200 bg-gray-900">

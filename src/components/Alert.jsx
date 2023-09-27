@@ -6,15 +6,16 @@ Rony Chinchilla Azofeifa
 Kairo Chacon Maleanos
 
 Description: 
-Alert modal
+Displays a modal with an alert message.
 */
 
-import { useState, useEffect } from "react";
+/**
+ * @param {string} text - The text content of the alert message.
+ * @param {boolean} open - A boolean value indicating whether the modal should be open or closed.
+ * @param {function} setOpen - A function to update the `open` state.
+ * @returns {JSX.Element|null} - The rendered modal component or `null` if the `open` prop is `false`.
+ */
 
-/* It receives 2 props:
-type : type of the modal, could be, warning = 1, succesfuly = 2 , error = 3
-text : text that will be show at de modal
-*/
 
 export const Alert = ({ text = "", open = false, setOpen = () => { } }) => {
     

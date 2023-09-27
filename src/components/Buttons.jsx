@@ -6,26 +6,18 @@ Rony Chinchilla Azofeifa
 Kairo Chacon Maleanos
 
 Description: 
-Buttom Components 
-RequestButtom: that creates a butttom and produce a request by click event.
-Modal Buttom: Create and show a dynamic content modal.
+Reusable Buttom Component for: Compile, Evaluate, Save, Edit, Clear Buttons
 */
+
+/**
+ * @param {ReactNode} children - The content to be displayed inside the button.
+ * @param {function} clickEvent - The event handler function to be executed when the button is clicked.
+ * @param {string} title - The title attribute of the button element.
+ * @returns {JSX.Element} - The rendered button element.
+ */
+
 
 "use client"
-
-import { Post } from "@/app/RequestFunctions/Post"
-import { Alert } from "./Alert/Alert"
-import { useState } from "react"
-/*
-    the request buttom have four properties: 
-    children = places the children of the request buttom as the child of the inside buttom.
-    afterProcess = function that executes with the response of the request.
-    url = the url after http://localhost:3000/api/ to reach the require endpoint.
-    processData = Data that will be sent in the request body.
-
-*/
-
-
 
 export const Button = ({ children, clickEvent, title }) => {
     return (

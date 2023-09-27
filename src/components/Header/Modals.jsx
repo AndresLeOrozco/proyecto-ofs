@@ -6,39 +6,45 @@ Rony Chinchilla Azofeifa
 Kairo Chacon Maleanos
 
 Description: 
-Modal Components 
+Modal Components : About
 */
+/**
+ * Renders a modal window that displays information about a project and its developers.
+ *
+ * @returns {JSX.Element} The JSX code for rendering the button and the modal window.
+ */
 
 
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Get } from "@/app/RequestFunctions/Get"
 
 
-/*
-    About Button
-*/
-
 export const About = () => {
     const [showModal, setShowModal] = useState(false)
-    const [users, setUsers] = useState([])
-    const [information, setInformation] = useState()
+    const [about, setAbout] = useState("")
 
-    const handleClick = async () => {
+    const getAbout = async () => {
         const getAbout = await Get('about')
         const data = JSON.parse(getAbout)
-        setUsers(data.Developers)
-        setInformation(data.Information)
+        setAbout(data)
     }
+
+    useEffect(() => {
+        getAbout()
+        console.log("Information" + JSON.stringify(about))
+        
+    }, [])
+
+    const {Information} = about
+    const {Developers} = about
+
     return (
         <>
             <button
                 className="bg-auto-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
-                onClick={async () => {
-                    await handleClick()
-                    setShowModal(true)
-                }}
+                onClick={() => setShowModal(true)}
             >
                 About
             </button>
@@ -49,38 +55,39 @@ export const About = () => {
                             {/*content*/}
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 {/*header*/}
+                                
+                                {/*Information*/}
+                                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                    <h3 className="text-3xl font-semibold">Información General</h3>
+                                  </div>
+                                    <div className="relative p-6 flex-auto">
+                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                            <b>Universidad: </b> {Information.Universidad}
+                                        </p>
+                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                            <b>Escuela:</b> {Information.Escuela}
+                                        </p>
+                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                            <b>Ciclo:</b> {Information.Ciclo}
+                                        </p>
+                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                            <b>Nombre del curso:</b>  {Information["Curso"]}
+                                        </p>
+                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                            <b>Nombre del Proyecto:</b> {Information["Proyecto"]}
+                                        </p>
+                                    </div>
+                              
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                                     <h3 className="text-3xl font-semibold">Developers</h3>
-                                    <button
-                                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                        onClick={() => setShowModal(false)}
-                                    >
-                                        <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                            ×
-                                        </span>
-                                    </button>
+
                                 </div>
                                 {/*body*/}
-                               
                                 <div className="relative p-6 flex-auto">
-                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                        information.Universidad
-                                    </p>
-                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                        information.Escuela
-                                    </p>
-                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                        information.Ciclo
-                                    </p>
-                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                        information.Curso
-                                    </p>
-                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                        information.Curso
-                                    </p>
-                                    {users.map((user, index) => (
+                             
+                                    {Developers.map((user, index) => (
                                         <p key={index} className="my-4 text-slate-500 text-lg leading-relaxed">
-                                            Name: {user.name}  -  Skills: {user.skills}
+                                            <b>Name:</b> {user.name}  -  <b>Skills:</b> {user.skills}
                                         </p>
                                     ))}
                                 </div>

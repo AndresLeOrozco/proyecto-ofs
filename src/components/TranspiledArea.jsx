@@ -1,3 +1,19 @@
+/*
+Developers: 
+Andres Leon Orozco
+Eduardo Ojeda Paladino
+Rony Chinchilla Azofeifa
+Kairo Chacon Maleanos
+
+Description: 
+    /**
+     * Renders a React component that displays a text area for transpiled JavaScript code.
+     * It also includes information about the file, such as line number, row count, column count, and word count.
+     *
+     * @param {string} AreaText - The transpiled JavaScript code to be displayed in the text area.
+     * @param {string} FileName - The name of the file being transpiled.
+     * @returns {JSX.Element} - A React component that renders a block with a label, a text area, and file information.
+     */
 
 import AreaInformation from "./AreaInformation"
 

@@ -7,8 +7,9 @@ Kairo Chacon Maleanos
 
 Description: 
 Component Main page of the project, this is the components that contains all the body of the 
-web application. 
+web application.
 */
+
 
 "use client";
 import React, { useReducer } from "react";
@@ -22,16 +23,13 @@ import clear from "../../public/images/clear.png";
 import { Post } from "@/app/RequestFunctions/Post";
 import save from "../../public/images/save.png";
 import edit from "../../public/images/edit.png";
-import upload from "../../public/images/upload.png";
 import { Get } from "@/app/RequestFunctions/Get";
 import { ComboBox } from "@/components/ComboBox";
 import { InputFile } from "@/components/InputFile";
-import Footer from "@/components/Footer";
 import { Alert } from "@/components/Alert";
 import { Terminal } from "@/components/Terminal";
 import { TranspiledArea } from "@/components/TranspiledArea";
 
-const regex = /\w+/g;
 
 const initialState = {
   textEA: "",
@@ -87,7 +85,6 @@ const Home = () => {
       dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${state.inputText}.js` });
       return
     }
-    console.log("Llegue")
     setAndShowAlert("Error, You must add text in EA to Compile")
   };
 
@@ -103,6 +100,7 @@ const Home = () => {
     dispatch({ type: "setInputText", payload: "" });
     dispatch({ type: "setScripts", payload: [] });
     dispatch({ type: "setTAfileName", payload: "" });
+    dispatch({ type: "setSelectedFile", payload: "" });
     handleRecoverScript();
   };
 
@@ -137,7 +135,8 @@ const Home = () => {
       handleRecoverScript();
       handleOnSelected(state.inputText);
       handleSelectFile(state.inputText);
-      message = "Succesfully Saved";
+      handleComboBoxValue(state.inputText)
+      message = nameFile;
     }
 
     setAndShowAlert(message);
@@ -151,6 +150,13 @@ const Home = () => {
 
   const handleEditClick = () => {
     dispatch({ type: "setOnSelected", payload: false });
+    state.fileSelected ?
+    setAndShowAlert("You can now edit file name") : 
+    setAndShowAlert("Error, You cant rename an Unsaved File")
+  };
+
+  const handleEditClickOn = () => {
+    dispatch({ type: "setOnSelected", payload: true });
   };
 
   useEffect(() => {
@@ -170,6 +176,7 @@ const Home = () => {
         selectedFile={state.inputText}
         updateInputText={handleInputText}
         actualFile={state.fileSelected}
+        setOnOff={handleEditClickOn}
       />
       <div className="text-all">
         <div className="text-EA">
@@ -177,7 +184,7 @@ const Home = () => {
             Area="OFS"
             GetText={(text) => dispatch({ type: "setTextEA", payload: text })}
             AreaText={state.textEA}
-            FileName={state.selectedFile}
+            FileName={state.fileSelected}
           />
           <div className="btns-all">
             <Button clickEvent={handleTranspileClick} title="Compile">
