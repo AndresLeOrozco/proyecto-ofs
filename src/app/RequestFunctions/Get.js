@@ -9,10 +9,11 @@ Description:
 In this js file we will create and export the Get request functions to be used on components.
 */
 
+
 /*
-    Post request function, it is reusable because of the dynamic url and also dynamic body request
-    it returns a value to follows FP behavior avoiding secondary effects
+  Get function: Performs an HTTP GET request to a specified URL and returns the response data.
 */
+
 export const Get = async (URL) => {
     try {
 

@@ -18,17 +18,30 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## If port 3000 is already in use and you want to run a Next.js application on a different port:
 
-To learn more about Next.js, take a look at the following resources:
+Then, you can specify a different port when starting your application. 
+To do this, you can use the -p or --port option followed by the port number you want to use. 
+For example, if you want to run your application on port 4000 instead of port 3000, you can do the following:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev -- -p 4000
+# or if you're using yarn:
+yarn dev -p 4000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## To build and Run application in production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+First, compile and optimize the code, ready to be deployed:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run build
+```
+
+then start the start the application with the optimize code:
+
+```bash
+npm start
+```
+

@@ -1,12 +1,4 @@
-
 {
-    "Information":{
-        "Universidad": "Universidad Nacional",
-        "Escuela":"Escuela de Informática",
-        "Ciclo": "Ciclo II 2023",
-        "Curso": "Paradigmas de Programación",
-        "Proyecto": "OFS Playground"
-    },
     "Developers": [
         {
             "name": "Andres Leon Orozco",

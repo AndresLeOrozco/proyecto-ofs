@@ -20,7 +20,7 @@ import { Put } from "@/app/RequestFunctions/Put";
  * @returns {JSX.Element} The rendered InputFile component with an input field that reflects the selectedFile prop value and can be edited by the user.
  */
 
-export const InputFile = ({selectedFile, updateInputText, onOff, actualFile, setOnOff}) => {
+export const InputFile = ({selectedFile, updateInputText, onOff, actualFile, setOnOff, setRename}) => {
     const inputRef = useRef(null);
 
     const handleTypeChange = ({target: {value}}) => {
@@ -34,6 +34,7 @@ export const InputFile = ({selectedFile, updateInputText, onOff, actualFile, set
 
     const handleChangeName = ({key, target:{value}}) =>{
         key === 'Enter' ? changeName(`script/${actualFile}`, value ) : null
+        // setRename()
     }
 
     useEffect(() => {

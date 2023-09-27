@@ -6,7 +6,7 @@ Rony Chinchilla Azofeifa
 Kairo Chacon Maleanos
 
 Description: 
-Modal Components : About
+Modal Components
 */
 /**
  * Renders a modal window that displays information about a project and its developers.
@@ -32,7 +32,6 @@ export const About = () => {
 
     useEffect(() => {
         getAbout()
-        console.log("Information" + JSON.stringify(about))
         
     }, [])
 

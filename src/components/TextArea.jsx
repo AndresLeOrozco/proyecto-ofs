@@ -14,8 +14,7 @@ TextArea Component that contains a text area and its label.
     Area = string inside the label that gives a name to the textarea.
     GetText = Function that recover all the text inside the textarea each time the area is modified.
     AreaText = string that set the value of the textarea.   
-    NotEditable  string which is added to the classname of the textarea, it is used mainly to set 
-    the text area as read only
+    FileName = name of the file associated to de TextArea
 */
 import { Get } from "@/app/RequestFunctions/Get";
 import { useEffect, useRef, useState } from "react";

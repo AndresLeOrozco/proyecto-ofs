@@ -44,7 +44,7 @@ export const PUT = async (request, { params }) => {
   try {
     
     const newName = await request.json()
-    console.log(newName)
+   
     const fileOldNamePath = path.join(process.cwd(), "private", params.id)
     const fileNewNamePath = path.join(process.cwd(), "private", newName)
     

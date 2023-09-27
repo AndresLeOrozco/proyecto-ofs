@@ -16,8 +16,7 @@ import { promises as fs } from 'fs';
 
 /*
   GET method: Reads and retrieves the content of all files and returns them as a JSON response.
-  
-  @returns - A JSON response containing the content of all files or an error message.
+
 */
 
  export const GET = async () => {

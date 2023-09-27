@@ -6,7 +6,7 @@ Rony Chinchilla Azofeifa
 Kairo Chacon Maleanos
 
 Description: 
-
+Page that  gives ifnormation about other services that we offer.
 */
 
 export const Home = () => {

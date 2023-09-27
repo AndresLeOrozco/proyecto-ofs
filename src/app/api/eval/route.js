@@ -13,6 +13,13 @@ evaluate the Transpile Area (TA).
 import { EvaluateFile } from "@/data/eval/CRUD"
 import { NextResponse } from "next/server"
 
+/*
+
+  POST method: Receives a JSON object from the request body containing 'text'.
+  It evaluates the 'text' using the EvaluateFile function and returns the result as a JSON response.
+  
+*/
+
 export const POST = async (request) => {
     try {
       const { text } = await request.json()
@@ -20,7 +27,6 @@ export const POST = async (request) => {
       return NextResponse.json(fileContent)
 
     } catch (error) {
-      console.error(error)
       return NextResponse.json("Error, Archivo no existe")
     }
   }
