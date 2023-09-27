@@ -39,7 +39,6 @@ const initialState = {
   inputText: "",
   allScripts: [],
   onSelected: false,
-  column: 0,
   alertText: "",
   openAlert: false,
   taFileName: ""
@@ -61,8 +60,6 @@ const reducer = (state, action) => {
       return { ...state, allScripts: action.payload };
     case "setOnSelected":
       return { ...state, onSelected: action.payload };
-    case "setColumn":
-      return { ...state, column: action.payload };
     case "setAlertText":
       return { ...state, alertText: action.payload };
     case "setOpenAlert":
@@ -101,17 +98,12 @@ const Home = () => {
     dispatch({ type: "setInputText", payload: "" });
     dispatch({ type: "setScripts", payload: [] });
     dispatch({ type: "setTAfileName", payload: "" });
-    dispatch({ type: "setColumn", payload: 1 });
     handleRecoverScript();
   };
 
   const setAndShowAlert = (message) => {
     dispatch({ type: "setAlertText", payload: message });
     dispatch({ type: "setOpenAlert", payload: true });
-  };
-
-  const handleCursorLine = (line) => {
-    dispatch({ type: "setTextLine", payload: line });
   };
 
   const handleRecoverScript = async () => {
@@ -174,8 +166,7 @@ const Home = () => {
             Area="OFS"
             GetText={(text) => dispatch({ type: "setTextEA", payload: text })}
             AreaText={state.textEA}
-            GetLine={handleCursorLine}
-            Column={(col) => dispatch({ type: "setColumn", payload: col })}
+            FileName={state.inputText}
           />
           <div className="btns-all">
             <Button clickEvent={handleTranspileClick} title="Compile">
@@ -220,6 +211,7 @@ const Home = () => {
             Area="JS"
             AreaText={state.textTA}
             NotEditable="pointer-events-none"
+            FileName={state.taFileName}
           />
         </div>
 
@@ -235,17 +227,6 @@ const Home = () => {
         text={state.alertText}
         open={state.openAlert}
         setOpen={(open) => dispatch({ type: "setOpenAlert", payload: open })}
-      />
-      <Footer
-        information={[
-          `Words: ${state.textEA.match(regex)?.length || 0}`,
-          `Line: ${state.textLine}`,
-          `Row: ${state.textEA.split("\n").length}`,
-          `Col: ${state.column}`,
-        ]
-        }
-        fileNameEA = { state.inputText }
-        fileNameTA = { state.taFileName }
       />
     </main>
   );

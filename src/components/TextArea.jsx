@@ -19,28 +19,34 @@ TextArea Component that contains a text area and its label.
 */
 import { Get } from "@/app/RequestFunctions/Get";
 import { useEffect, useRef, useState } from "react";
+import { AreaInformation } from "./AreaInformation";
 
 export const TextArea = ({
   Area = "",
   GetText = () => { },
   AreaText = "",
   NotEditable = "",
-  GetLine,
-  Column = () => { },
+  FileName = ""
 }) => {
   const [suggest, setSuggest] = useState([])
   const [type, setType] = useState([])
-  const textAreaRef = useRef(null);
+  const textAreaRef = useRef(null)
+  const [fileInfo, setFileInfo] = useState({
+    line: 1,
+    row: AreaText.split("\n").length,
+    col: 1,
+  });
+
   let row = AreaText.split("\n").length
 
   const handleTextareaChange = ({ target: { value } }) => {
     GetText(value)
     const text = value
     const words = text.split(/\s+/)
-    const lastWord = words[words.length -1]
+    const lastWord = words[words.length - 1]
     const autoSuggestion = suggest.filter((word) => word.startsWith(lastWord))
     setType(autoSuggestion)
-    
+
   }
 
   const loadSuggest = async () => {
@@ -49,24 +55,28 @@ export const TextArea = ({
     setSuggest(keywords.keywords)
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     loadSuggest()
     console.log(suggest)
   }, [suggest === ""])
 
-  const handleKeyboardEvent = ({code}) => {
+  const handleKeyboardEvent = (event) => {
+    event.key === 'Tab' ? event.preventDefault() : null
     const textArea = textAreaRef.current
     const startPos = textArea.selectionStart
     const line = textArea.value.substr(0, startPos).split("\n").length
-    Column(startPos - textArea.value.lastIndexOf('\n', startPos - 1))
-    GetLine(line)
-    code === "Space"? setType([]) : code
+    setFileInfo({
+      line: line,
+      row: row,
+      col: startPos - textArea.value.lastIndexOf('\n', startPos - 1),
+    });
+    event.key === "Space" ? setType([]) : event.key
   }
 
 
   const AreaTextClass = `${NotEditable} w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10 p-2.5`
 
-  const handleSuggestButton = ({target:{value}}) => {
+  const handleSuggestButton = ({ target: { value } }) => {
     const textArea = textAreaRef.current
     const current = textArea.value
     const wordsArray = current.split(' ')
@@ -80,16 +90,23 @@ export const TextArea = ({
       <div>
         {type.map((word) => (
           <button value={word} onClick={handleSuggestButton} className="m-1">{word}</button>
-          
-          ))}
+
+        ))}
       </div>
       <label
-
         htmlFor={`ta-${Area}`}
         className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
       >
         <strong>{Area}</strong>
       </label>
+      <div className="bg-gray-700 text-white p-2 border border-white">
+        <AreaInformation information={[
+          Area !== "Terminal" ? `Line: ${fileInfo.line}` : "",
+          Area !== "Terminal" ? `Row: ${fileInfo.row}` : "",
+          Area !== "Terminal" ? `Col: ${fileInfo.col}` : "",
+        ]}
+          fileName={Area !== "Terminal" ? `File: ${FileName}` : ""} />
+      </div>
       <div className="flex">
         <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">
           <textarea
