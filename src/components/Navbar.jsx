@@ -4,7 +4,7 @@ import { About } from "./Modals"
 const Navbar = async () => {
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="border-gray-200 bg-gray-900">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center">
           <img
@@ -12,7 +12,7 @@ const Navbar = async () => {
             className="h-20 mr-3"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             OFS Playground
           </span>
         </Link>

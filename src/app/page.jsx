@@ -28,6 +28,8 @@ import { ComboBox } from "@/components/ComboBox";
 import { InputFile } from "@/components/InputFile";
 import Footer from "@/components/Footer";
 import { Alert } from "@/components/Alert";
+import { Terminal } from "@/components/Terminal";
+import { TranspiledArea } from "@/components/TranspiledArea";
 
 const regex = /\w+/g;
 
@@ -207,19 +209,15 @@ const Home = () => {
           </div>
         </div>
         <div className="text-TA">
-          <TextArea
-            Area="JS"
+          <TranspiledArea
             AreaText={state.textTA}
-            NotEditable="pointer-events-none"
             FileName={state.taFileName}
           />
         </div>
 
         <div className="text-RA">
-          <TextArea
-            Area="Terminal"
+          <Terminal
             AreaText={state.textRA}
-            NotEditable="pointer-events-none"
           />
         </div>
       </div>

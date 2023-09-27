@@ -25,7 +25,6 @@ export const TextArea = ({
   Area = "",
   GetText = () => { },
   AreaText = "",
-  NotEditable = "",
   FileName = ""
 }) => {
   const [suggest, setSuggest] = useState([])
@@ -37,7 +36,6 @@ export const TextArea = ({
     col: 1,
   });
   
-  const AreaTextClass = `${NotEditable} w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10 p-2.5`
   let row = AreaText.split("\n").length
 
   const handleTextareaChange = ({ target: { value } }) => {
@@ -88,29 +86,23 @@ export const TextArea = ({
   }
 
   return (
-    <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 px-10">
-      <div>
-        {type.map((word, index) => (
-          <button key={`btn-${index}`} value={word} onClick={handleSuggestButton} className="m-1">{word}</button>
-
-        ))}
-      </div>
+    <div className="block w-full mb-2 text-sm font-medium text-gray-400 px-10">
       <label
         htmlFor={`ta-${Area}`}
-        className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
-      >
+        className="block mb-2 text-sm font-medium text-gray-100"
+        >
         <strong>{Area}</strong>
       </label>
-      <div className="bg-gray-700 text-white p-2 border border-white">
+      <div className="bg-gray-800 text-white p-2 border border-white">
         <AreaInformation information={[
-          Area !== "Terminal" ? `Line: ${fileInfo.line}` : "",
-          Area !== "Terminal" ? `Row: ${fileInfo.row}` : "",
-          Area !== "Terminal" ? `Col: ${fileInfo.col}` : "",
+          `Line: ${fileInfo.line}`,
+         `Row: ${fileInfo.row}`,
+          `Col: ${fileInfo.col}`,
         ]}
-          fileName={Area !== "Terminal" ? `File: ${FileName}` : ""} />
+        fileName={`File: ${FileName}`} />
       </div>
       <div className="flex">
-        <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto dark:bg-gray-700 ">
+        <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto bg-gray-800 ">
           <textarea
             id={`ta-${Area}`}
             ref={textAreaRef}
@@ -122,17 +114,23 @@ export const TextArea = ({
             onKeyDown={handleKeyboardEvent}
             rows={row > 14 ? row : 14}
             cols={20}
-            className={AreaTextClass}
+            className="w-full text-sm bg-gray-800 placeholder-gray-400 text-white ml-10 p-2.5"
             wrap="off"
             overflow-x="auto"
+            placeholder="Writting..."
             autoFocus
-          ></textarea>
+            ></textarea>
           <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
             {AreaText.split("\n").map((_, index) => (
               <div key={index} className="mb-1 mt-1 text-xs">
                 {index + 1}
               </div>
             ))}
+            <div>
+              {type.map((word, index) => (
+                <button key={`btn-${index}`} value={word} onClick={handleSuggestButton} className="m-1 bg-gray-700 text-gray-100">{word}</button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
