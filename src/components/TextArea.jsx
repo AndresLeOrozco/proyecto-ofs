@@ -90,8 +90,8 @@ export const TextArea = ({
   return (
     <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 px-10">
       <div>
-        {type.map((word) => (
-          <button value={word} onClick={handleSuggestButton} className="m-1">{word}</button>
+        {type.map((word, index) => (
+          <button key={`btn-${index}`} value={word} onClick={handleSuggestButton} className="m-1">{word}</button>
 
         ))}
       </div>
