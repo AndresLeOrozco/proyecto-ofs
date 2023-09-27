@@ -226,21 +226,11 @@ const Home = () => {
   It clears/reset various state variables, updates the UI, and recovers scripts.
 */
 
-  // const handleRename = async () => {
-  //   const scripts = await Get("script");
-  //   dispatch({ type: "setScripts", payload: scripts });
-  //   dispatch({ type: "setTextRA", payload: "" });
-  //   // dispatch({ type: "setInputText", payload: "" });
-  //   dispatch({ type: "setScripts", payload: [] });
-  //   dispatch({ type: "setTAfileName", payload: "" });
-  //   dispatch({ type: "setSelectedFile", payload: "" });
-  //   handleRecoverScript();
-    
-  // };
+
 
   useEffect(() => {
     handleRecoverScript();
-  }, []);
+  }, [handleClearClick]);
 
   return (
     <main>
@@ -249,6 +239,7 @@ const Home = () => {
         items={state.allScripts}
         updateInputText={handleInputText}
         setComboBoxValue={handleComboBoxValue}
+        recoverScript={handleRecoverScript}
       />
       <InputFile
         onOff={state.onSelected}
@@ -256,7 +247,7 @@ const Home = () => {
         updateInputText={handleInputText}
         actualFile={state.fileSelected}
         setOnOff={handleEditClickOn}
-        // setRename={handleRename}
+        setRename={handleClearClick}
       />
       <div className="text-all">
         <div className="text-EA">

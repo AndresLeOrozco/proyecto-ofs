@@ -34,7 +34,10 @@ export const InputFile = ({selectedFile, updateInputText, onOff, actualFile, set
 
     const handleChangeName = ({key, target:{value}}) =>{
         key === 'Enter' ? changeName(`script/${actualFile}`, value ) : null
-        // setRename()
+        if(key === 'Enter'){
+
+            setRename()
+        }
     }
 
     useEffect(() => {
