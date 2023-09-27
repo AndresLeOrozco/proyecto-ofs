@@ -28,7 +28,7 @@ export const InputFile = ({selectedFile, updateInputText, onOff}) => {
     },[selectedFile])
     return(
         <div id="d-InputFile">
-            <input id="inputFile" disabled={onOff} onChange={handleTypeChange}  ref={inputRef} type="text"  placeholder="File Name"/>
+            <input id="inputFile" disabled={onOff} onChange={handleTypeChange}  ref={inputRef} type="text"  placeholder="Unkown File"/>
         </div>
     )
 }

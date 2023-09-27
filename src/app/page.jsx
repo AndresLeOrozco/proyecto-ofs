@@ -23,10 +23,13 @@ import evaluate from '../../public/images/evaluation.png'
 import clear from '../../public/images/clear.png'
 import { Post } from "@/app/RequestFunctions/Post"
 import save from '../../public/images/save.png'
+import edit from '../../public/images/edit.png'
 import upload from '../../public/images/upload.png'
 import { Get } from "@/app/RequestFunctions/Get"
 import { ComboBox } from "@/components/ComboBox"
 import { InputFile } from "@/components/InputFile"
+import Footer from "@/components/Footer"
+import { Alert } from "@/components/Alert"
 
 const Home = () => {
   /*
@@ -44,13 +47,22 @@ const Home = () => {
     of the textarea line. 
   */
 
-  const [teaxtLine, setTextLine] = useState(1)
+  const [textLine, setTextLine] = useState(1)
 
   const [inputText, setInputText] = useState("")
 
   const [allScripts, setScripts] = useState([])
 
   const [onSelected, setOnSelected] = useState(false)
+
+  const [column, setColumn] = useState(0)
+
+  const [alertText, setAlertText] = useState("")
+
+  const [openAlert, setOpenAlert] = useState(false)
+   
+
+
 
   /*
      Function that changes the The value of the Edition textual Area
@@ -92,6 +104,11 @@ const Home = () => {
     handleRecoverScript()
   }
 
+  const setAndShowAlert = (message) => {
+    setAlertText(message)
+    setOpenAlert(true)
+  }
+
 
   const handleCursorLine = line => setTextLine(line)
 
@@ -104,24 +121,33 @@ const Home = () => {
     setScripts(scripts)
   }
 
-  
+
   const handleSelectFile = async (selected) => {
     const file = selected ? await Get(`script/${selected}`) : selected;
     setTextEA(file)
     handleOnSelected(file)
   }
-  
+
   const handleInputText = file => setInputText(file)
-  
+
   const handleSaveClick = async () => {
-    const nameFile = await Post(textEA, `script/${inputText}`)
-    handleRecoverScript()
-    handleOnSelected(nameFile)
-    
+    let message = "Error, Empty EA Area or FileName field"
+    if (textEA && inputText) {
+      const nameFile = await Post(textEA, `script/${inputText}`)
+      handleRecoverScript()
+      handleOnSelected(inputText)
+      handleSelectFile(inputText)
+      message = "Succesfully Saved"
+    }
+
+    setAndShowAlert(message)
+
   }
 
-  const handleOnSelected = text => text? setOnSelected(true) : setOnSelected(false) 
-  
+  const handleOnSelected = text => text ? setOnSelected(true) : setOnSelected(false)
+
+  const handleEditClick = () => setOnSelected(false)
+
   /*
     This useEffect is just to load all the information
     related to the scripts after either reload the page
@@ -130,7 +156,7 @@ const Home = () => {
   useEffect(() => {
     handleRecoverScript()
   }, [])
-  
+
 
   /*
     Component that contains the REACT (JSX) code of the body the app
@@ -138,7 +164,7 @@ const Home = () => {
   return (
     <main>
       <ComboBox selectedFile={handleSelectFile} items={allScripts} updateInputText={handleInputText} />
-      <InputFile onOff = {onSelected} selectedFile={inputText} updateInputText = {handleInputText} />
+      <InputFile onOff={onSelected} selectedFile={inputText} updateInputText={handleInputText} />
       <div className="text-all">
         <div className="text-EA">
           <TextArea
@@ -146,6 +172,7 @@ const Home = () => {
             GetText={setTextEA}
             AreaText={textEA}
             GetLine={handleCursorLine}
+            Column={setColumn}
           />
           <div className="btns-all">
             <Button
@@ -179,6 +206,16 @@ const Home = () => {
               />
             </Button>
             <Button
+              clickEvent={handleEditClick}
+              title={"Edit"}
+            >
+              <Image
+                src={edit}
+                alt='This is a edit button img'
+                className="img-edit"
+              />
+            </Button>
+            <Button
               clickEvent={handleClearClick}
               title={"Clear"}
             >
@@ -197,13 +234,7 @@ const Home = () => {
             NotEditable="pointer-events-none"
           />
         </div>
-        <div id="the-count" className="container mx-auto inline-block">
-          <span id="current">
-            Words: {textEA.match(regex)?.length || 0}
-          </span>
-          <span className="m-1">Ln: {teaxtLine}</span>
-          <span id="rows">Rows: {textEA.split("\n").length}</span>
-        </div>
+
         <div className="text-RA">
           <TextArea
             Area="Terminal"
@@ -212,7 +243,9 @@ const Home = () => {
           />
         </div>
       </div>
-    </main>
+      <Alert text={alertText} open={openAlert} setOpen = {setOpenAlert} />
+      <Footer information={[`Words: ${textEA.match(regex)?.length || 0}`, `Line: ${textLine}`, `Row: ${textEA.split("\n").length}`, `Col: ${column}`]} />
+    </main >
   )
 }
 

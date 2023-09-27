@@ -25,11 +25,12 @@ export const TextArea = ({
   AreaText = "",
   NotEditable = "",
   GetLine,
+  Column = () => { }
 }) => {
   const textAreaRef = useRef(null);
   let row = AreaText.split("\n").length
 
-  const handleTextareaChange = ({target: {value}}) => {
+  const handleTextareaChange = ({ target: { value } }) => {
     GetText(value)
   }
 
@@ -37,6 +38,7 @@ export const TextArea = ({
     const textArea = textAreaRef.current
     const startPos = textArea.selectionStart
     const line = textArea.value.substr(0, startPos).split("\n").length
+    Column(startPos - textArea.value.lastIndexOf('\n', startPos - 1))
     GetLine(line)
   }
 
@@ -47,7 +49,7 @@ export const TextArea = ({
   return (
     <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 px-10">
       <label
-        
+
         htmlFor={`ta-${Area}`}
         className="block mb-2 text-sm font-medium text-black dark:text-gray-400"
       >

@@ -21,7 +21,7 @@ export const ComboBox = ({ items = [], selectedFile, updateInputText }) => {
     return (
         <div id="scriptCB">
             <select  onChange={handleChangeOp} id="scripts-select" name="scripts">
-            <option value="">--Please choose a saved script--</option>
+            <option value="">--Select your file--</option>
             {items.map((item) => (
                 <option key={item} value = {`${item}`} >{item}</option>
              ))}
