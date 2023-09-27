@@ -38,9 +38,14 @@ const Home = () => {
     The value of the Execution output
   */
 
-  const [textEA, setTextEA] = useState("")
-  const [textTA, setTextTA] = useState("")
-  const [textRA, setTextRA] = useState("")
+
+
+  const [textArea, setTextArea] = useState({
+    textEA: "",
+    textTA: "",
+    textRA: "",
+  })
+
 
   /*
     react hook of use state. This state is to handle hte posisition
@@ -60,7 +65,7 @@ const Home = () => {
   const [alertText, setAlertText] = useState("")
 
   const [openAlert, setOpenAlert] = useState(false)
-   
+
 
 
 
@@ -75,9 +80,9 @@ const Home = () => {
   */
 
   const handleTranspileClick = async () => {
-    const compiledText = await Post({ text: textEA }, 'compile')
-    const NewText = `${compiledText.time}\n${compiledText.text}`
-    setTextTA(NewText)
+    const compiledText = await Post({ text: textArea.textEA }, 'compile')
+    const newText = `${compiledText.time}\n${compiledText.text}`
+    setTextArea({...textArea, textTA: newText})
   }
 
   /*
@@ -96,9 +101,9 @@ const Home = () => {
   */
 
   const handleClearClick = () => {
-    setTextEA("")
-    setTextTA("")
-    setTextRA("")
+    const clearText = {...textArea}
+    Object.keys(clearText).map((key) => (clearText[key] = ""))
+    setTextArea(clearText)
     setInputText("")
     setScripts([])
     handleRecoverScript()
@@ -124,7 +129,7 @@ const Home = () => {
 
   const handleSelectFile = async (selected) => {
     const file = selected ? await Get(`script/${selected}`) : selected;
-    setTextEA(file)
+    setTextArea({...textArea, textEA: file})
     handleOnSelected(file)
   }
 
@@ -132,8 +137,8 @@ const Home = () => {
 
   const handleSaveClick = async () => {
     let message = "Error, Empty EA Area or FileName field"
-    if (textEA && inputText) {
-      const nameFile = await Post(textEA, `script/${inputText}`)
+    if (textArea.textEA && inputText) {
+      const nameFile = await Post(textArea.textEA, `script/${inputText}`)
       handleRecoverScript()
       handleOnSelected(inputText)
       handleSelectFile(inputText)
@@ -169,8 +174,8 @@ const Home = () => {
         <div className="text-EA">
           <TextArea
             Area="OFS"
-            GetText={setTextEA}
-            AreaText={textEA}
+            GetText={setTextArea}
+            AreaText={textArea.textEA}
             GetLine={handleCursorLine}
             Column={setColumn}
           />
@@ -230,7 +235,7 @@ const Home = () => {
         <div className="text-TA">
           <TextArea
             Area="JS"
-            AreaText={textTA}
+            AreaText={textArea.textTA}
             NotEditable="pointer-events-none"
           />
         </div>
@@ -238,13 +243,13 @@ const Home = () => {
         <div className="text-RA">
           <TextArea
             Area="Terminal"
-            AreaText={textRA}
+            AreaText={TextArea.textRA}
             NotEditable="pointer-events-none"
           />
         </div>
       </div>
-      <Alert text={alertText} open={openAlert} setOpen = {setOpenAlert} />
-      <Footer information={[`Words: ${textEA.match(regex)?.length || 0}`, `Line: ${textLine}`, `Row: ${textEA.split("\n").length}`, `Col: ${column}`]} />
+      <Alert text={alertText} open={openAlert} setOpen={setOpenAlert} />
+      <Footer information={[`Words: ${textArea.textEA.match(regex)?.length || 0}`, `Line: ${textLine}`, `Row: ${textArea.textEA.split("\n").length}`, `Col: ${column}`]} />
     </main >
   )
 }
