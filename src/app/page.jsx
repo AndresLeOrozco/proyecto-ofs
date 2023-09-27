@@ -101,6 +101,7 @@ const Home = () => {
     dispatch({ type: "setInputText", payload: "" });
     dispatch({ type: "setScripts", payload: [] });
     dispatch({ type: "setTAfileName", payload: "" });
+    dispatch({ type: "setColumn", payload: 1 });
     handleRecoverScript();
   };
 
@@ -181,39 +182,35 @@ const Home = () => {
               <Image
                 src={play}
                 alt="This is a play button img"
-                className="img-play"
+                className="img"
               />
             </Button>
             <Button clickEvent={handleEvalClick} title="Evaluate">
               <Image
                 src={evaluate}
                 alt="This is a evaluate button img"
-                className="img-play"
-                width={512}
-                height={512}
+                className="img"
               />
             </Button>
             <Button clickEvent={handleSaveClick} title={"Save"}>
               <Image
                 src={save}
                 alt="This is a save button img"
-                className="img-save"
-                width={512}
-                height={512}
+                className="img"
               />
             </Button>
             <Button clickEvent={handleEditClick} title={"Edit"}>
               <Image
                 src={edit}
                 alt="This is a edit button img"
-                className="img-edit"
+                className="img"
               />
             </Button>
             <Button clickEvent={handleClearClick} title={"Clear"}>
               <Image
                 src={clear}
                 alt="This is a clear button img"
-                className="img-clear"
+                className="img"
               />
             </Button>
           </div>
