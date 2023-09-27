@@ -16,14 +16,23 @@ In this js file we will create and export all the request functions to be used o
 
 export const Post = async (bodyRequest, url) => {
 
-  const res = await fetch(`http://localhost:3000/api/${url}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(bodyRequest)
-  })
+  try{
+    const response = await fetch(`http://localhost:3000/api/${url}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bodyRequest)
+    })
+    
+    if (response !== 'Error') {
+      const data = await response.json()
+      return data
+  }
 
-  const data = await res.json()
-  return data
+  } catch (error) {
+    console.error("Error recovering: ", error)
+    return ""
+}
+
 }

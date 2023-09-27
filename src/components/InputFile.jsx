@@ -11,11 +11,11 @@ ComboBox Component
 
 import { useEffect, useRef } from "react";
 
-export const InputFile = ({file, updateInput, scrips}) => {
+export const InputFile = ({selectedFile, updateInputText, onOff}) => {
     const inputRef = useRef(null);
 
     const handleTypeChange = ({target: {value}}) => {
-        updateInput(value)
+        updateInputText(value)
     }
 
     /*
@@ -23,13 +23,12 @@ export const InputFile = ({file, updateInput, scrips}) => {
     */
     useEffect(() => {
         const input = inputRef.current
-        input.value = file
-        updateInput(file)
-        scrips.includes(file)? input.disabled = true : input.disabled = false
-    },[file])
+        input.value = selectedFile
+        
+    },[selectedFile])
     return(
         <div id="d-InputFile">
-            <input id="inputFile" onChange={handleTypeChange}  ref={inputRef} type="text"  placeholder="File Name"/>
+            <input id="inputFile" disabled={onOff} onChange={handleTypeChange}  ref={inputRef} type="text"  placeholder="File Name"/>
         </div>
     )
 }

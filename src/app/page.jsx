@@ -46,9 +46,12 @@ const Home = () => {
 
   const [teaxtLine, setTextLine] = useState(1)
 
-  const [fileSaved, setFileSaved] = useState("")
+  const [inputText, setInputText] = useState("")
 
   const [allScripts, setScripts] = useState([])
+
+  const [onSelected, setOnSelected] = useState(false)
+
   /*
      Function that changes the The value of the Edition textual Area
   */
@@ -84,7 +87,7 @@ const Home = () => {
     setTextEA("")
     setTextTA("")
     setTextRA("")
-    setFileSaved("")
+    setInputText("")
     setScripts([])
     handleRecoverScript()
   }
@@ -102,18 +105,22 @@ const Home = () => {
   }
 
   
-  const handleRecoverFile = async (selected) => {
+  const handleSelectFile = async (selected) => {
     const file = selected ? await Get(`script/${selected}`) : selected;
     setTextEA(file)
+    handleOnSelected(file)
   }
   
-  const handleSavedFile = file => setFileSaved(file)
+  const handleInputText = file => setInputText(file)
   
   const handleSaveClick = async () => {
-    await Post(textEA, `script/${fileSaved}`)
+    const nameFile = await Post(textEA, `script/${inputText}`)
     handleRecoverScript()
+    handleOnSelected(nameFile)
     
   }
+
+  const handleOnSelected = text => text? setOnSelected(true) : setOnSelected(false) 
   
   /*
     This useEffect is just to load all the information
@@ -130,8 +137,8 @@ const Home = () => {
   */
   return (
     <main>
-      <ComboBox selectedFile={handleRecoverFile} items={allScripts} updateSaved={handleSavedFile} />
-      <InputFile scrips = {allScripts} file={fileSaved} updateInput = {handleSavedFile} />
+      <ComboBox selectedFile={handleSelectFile} items={allScripts} updateInputText={handleInputText} />
+      <InputFile onOff = {onSelected} selectedFile={inputText} updateInputText = {handleInputText} />
       <div className="text-all">
         <div className="text-EA">
           <TextArea
