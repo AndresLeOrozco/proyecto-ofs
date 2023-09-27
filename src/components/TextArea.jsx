@@ -36,7 +36,8 @@ export const TextArea = ({
     row: AreaText.split("\n").length,
     col: 1,
   });
-
+  
+  const AreaTextClass = `${NotEditable} w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10 p-2.5`
   let row = AreaText.split("\n").length
 
   const handleTextareaChange = ({ target: { value } }) => {
@@ -44,7 +45,7 @@ export const TextArea = ({
     const text = value
     const words = text.split(/\s+/)
     const lastWord = words[words.length - 1]
-    const autoSuggestion = suggest.filter((word) => word.startsWith(lastWord))
+    const autoSuggestion = lastWord? suggest.filter((word) => word.startsWith(lastWord)) : []
     setType(autoSuggestion)
 
   }
@@ -60,8 +61,8 @@ export const TextArea = ({
     console.log(suggest)
   }, [suggest === ""])
 
-  const handleKeyboardEvent = (event) => {
-    event.key === 'Tab' ? event.preventDefault() : null
+  const handleKeyboardEvent = ({key}) => {
+    key === 'Tab' ? event.preventDefault() : null
     const textArea = textAreaRef.current
     const startPos = textArea.selectionStart
     const line = textArea.value.substr(0, startPos).split("\n").length
@@ -70,19 +71,20 @@ export const TextArea = ({
       row: row,
       col: startPos - textArea.value.lastIndexOf('\n', startPos - 1),
     });
-    event.key === "Space" ? setType([]) : event.key
+    
   }
 
 
-  const AreaTextClass = `${NotEditable} w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10 p-2.5`
 
   const handleSuggestButton = ({ target: { value } }) => {
     const textArea = textAreaRef.current
     const current = textArea.value
     const wordsArray = current.split(' ')
-    const joinText = wordsArray.slice(0, -1).join(' ');
+    const joinText = wordsArray.slice(0, -1).join(' ')
     const newText = joinText + " " + value
+    setType([])
     GetText(newText)
+    textArea.focus()
   }
 
   return (
