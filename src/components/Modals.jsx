@@ -19,13 +19,13 @@ import { Get } from "@/app/RequestFunctions/Get"
     About Button
 */
 
-export const About = ({ headerName, name }) => {
+export const About = () => {
     const [showModal, setShowModal] = useState(false)
     const [users, setUsers] = useState([])
 
     const handleClick = async () => {
         const getAbout = await Get('about')
-        const data = getAbout
+        const data = JSON.parse(getAbout)
         setUsers(data.Developers)
     }
     return (

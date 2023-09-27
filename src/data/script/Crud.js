@@ -8,7 +8,7 @@ export const ReadAllFiles = async () => {
         const files = await fs.readdir(filePath);
         return files;
     } catch (err) {
-        console.error("Error al leer la carpeta:", err);
+        console.error("Error reading the file:", err);
         throw err;
     }
 }

@@ -17,7 +17,8 @@ TextArea Component that contains a text area and its label.
     NotEditable  string which is added to the classname of the textarea, it is used mainly to set 
     the text area as read only
 */
-import { useRef } from "react";
+import { Get } from "@/app/RequestFunctions/Get";
+import { useEffect, useRef, useState } from "react";
 
 export const TextArea = ({
   Area = "",
@@ -25,29 +26,63 @@ export const TextArea = ({
   AreaText = "",
   NotEditable = "",
   GetLine,
-  Column = () => { }
+  Column = () => { },
 }) => {
+  const [suggest, setSuggest] = useState([])
+  const [type, setType] = useState([])
   const textAreaRef = useRef(null);
   let row = AreaText.split("\n").length
 
   const handleTextareaChange = ({ target: { value } }) => {
     GetText(value)
+    const text = value
+    const words = text.split(/\s+/)
+    const lastWord = words[words.length -1]
+    const autoSuggestion = suggest.filter((word) => word.startsWith(lastWord))
+    setType(autoSuggestion)
+    
   }
 
-  const handleKeyboardEvent = () => {
+  const loadSuggest = async () => {
+    const keywordList = await Get('keywords')
+    const keywords = JSON.parse(keywordList)
+    setSuggest(keywords.keywords)
+  }
+
+  useEffect(()=> {
+    loadSuggest()
+    console.log(suggest)
+  }, [suggest === ""])
+
+  const handleKeyboardEvent = ({code}) => {
     const textArea = textAreaRef.current
     const startPos = textArea.selectionStart
     const line = textArea.value.substr(0, startPos).split("\n").length
     Column(startPos - textArea.value.lastIndexOf('\n', startPos - 1))
     GetLine(line)
+    code === "Space"? setType([]) : code
   }
 
 
   const AreaTextClass = `${NotEditable} w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white ml-10 p-2.5`
 
+  const handleSuggestButton = ({target:{value}}) => {
+    const textArea = textAreaRef.current
+    const current = textArea.value
+    const wordsArray = current.split(' ')
+    const joinText = wordsArray.slice(0, -1).join(' ');
+    const newText = joinText + " " + value
+    GetText(newText)
+  }
 
   return (
     <div className="block w-full mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 px-10">
+      <div>
+        {type.map((word) => (
+          <button value={word} onClick={handleSuggestButton} className="m-1">{word}</button>
+          
+          ))}
+      </div>
       <label
 
         htmlFor={`ta-${Area}`}

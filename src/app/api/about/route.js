@@ -3,18 +3,17 @@ import path from 'path';
 import { promises as fs } from 'fs';
 
 
-
  export const GET = async () => {
   
-  const filePath = path.join(process.cwd(), 'data')
+  const filePath = path.join(process.cwd(), 'src', 'data')
 
   try {
     const fileContents = await fs.readFile(filePath + '/about.json', 'utf-8')
-    return NextResponse(fileContents)
+    return NextResponse.json(fileContents)
     
   } catch (error) {
 
-    return NextResponse.json(error, { status: 500 })
+    return NextResponse.json('Error Al leer el Archivo', { status: 500 })
   }
 
 }

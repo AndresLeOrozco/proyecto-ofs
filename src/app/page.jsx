@@ -14,7 +14,7 @@ web application.
 import React, { useReducer } from "react";
 import { TextArea } from "@/components/TextArea";
 import { Button } from "@/components/Buttons";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import play from "../../public/images/play.png";
 import evaluate from "../../public/images/evaluation.png";
@@ -90,7 +90,7 @@ const Home = () => {
   };
 
   const handleEvalClick = async () => {
-    const terminalText = await Post({ text: "prueba.txt" }, "eval");
+    const terminalText = await Post({ text: "ra_fake.txt" }, "eval");
     terminalText.includes("Error") ? setAndShowAlert(terminalText) : dispatch({ type: "setTextRA", payload: terminalText })
   };
 
