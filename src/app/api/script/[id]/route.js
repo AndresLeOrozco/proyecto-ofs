@@ -15,6 +15,11 @@ import path from "path"
 import { NextResponse } from "next/server"
 import { ReadFileByName, WriteFileByName } from "@/data/script/Crud"
 
+/*
+
+  GET method: Reads the content of a file specified by the 'id' parameter from the request URL and returns it as a JSON response.
+
+*/
 
 export const GET = async (_, { params }) => {
   try {
@@ -28,6 +33,12 @@ export const GET = async (_, { params }) => {
     return NextResponse.json("Error Al leer el Archivo", { status: 500 })
   }
 }
+
+/*
+
+  PUT method: Renames a file with the specified 'id' to a new name provided in the request body.
+
+*/
 
 export const PUT = async (request, { params }) => {
   try {

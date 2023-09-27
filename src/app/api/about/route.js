@@ -1,7 +1,24 @@
+/*
+Developers: 
+Andres Leon Orozco
+Eduardo Ojeda Paladino
+Rony Chinchilla Azofeifa
+Kairo Chacon Maleanos
+
+Description: 
+the file is the endpoint /about in the API of the application that receives the request to
+return general information about the project and developers.
+*/
+
 import { NextResponse } from "next/server"
 import path from 'path';
 import { promises as fs } from 'fs';
 
+/*
+  GET method: Reads and retrieves the content of all files and returns them as a JSON response.
+  
+  @returns - A JSON response containing the content of all files or an error message.
+*/
 
  export const GET = async () => {
   

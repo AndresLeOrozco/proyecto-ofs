@@ -1,27 +1,28 @@
 
-import AreaInformation from "./AreaInformation"
+
 
 
 export const TranspiledArea = ({ AreaText = "", FileName = "" }) => {
     const regex = /\w+/g
-
-    const handleTextareaChange = ({ target: { value } }) => {
-        GetText(value)
-        const text = value
-        const words = text.split(/\s+/)
-        const lastWord = words[words.length - 1]
-        const autoSuggestion = lastWord ? suggest.filter((word) => word.startsWith(lastWord)) : []
-        setType(autoSuggestion)
-      }
+    const [Line, setLine] = useState(0)
+    const [type, setType] = useState([])
     return (
         <div className="block w-full mb-2 text-sm font-medium text-gray-400 px-10">
+            <label
+                htmlFor={`ta-JS`}
+                className="block mb-2 text-sm font-medium text-gray-100"
+            >
+                <strong>JS</strong>
+            </label>
             <div className="bg-gray-800 text-white p-2 border border-white">
                 <AreaInformation information={[
+                    `Line: ${fileInfo.line}`,
                     `Row: ${AreaText.split("\n").length}`,
-                    `Words: ${AreaText ? AreaText.match(regex)?.length : 0}`
+                    `Col: ${fileInfo.col}`,
+                    `Words ${AreaText ? AreaText.match(regex)?.length : 0}`
                 ]}
                     fileName={`File: ${FileName}`}
-                    AreaName="JS" />
+                    AreaName= "TA" />
             </div>
             <div className="flex">
                 <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto bg-gray-800">

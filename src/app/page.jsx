@@ -43,7 +43,8 @@ const initialState = {
   onSelected: false,
   alertText: "",
   openAlert: false,
-  taFileName: ""
+  taFileName: "",
+  fileSelected: ""
 };
 
 const reducer = (state, action) => {
@@ -68,6 +69,8 @@ const reducer = (state, action) => {
       return { ...state, openAlert: action.payload };
     case "setTAfileName":
       return { ...state, taFileName: action.payload };
+    case "setSelectedFile":
+      return { ...state, fileSelected: action.payload };
     default:
       return state;
   }
@@ -81,7 +84,7 @@ const Home = () => {
       const compiledText = await Post({ text: state.textEA }, "compile");
       const NewText = `${compiledText.time}\n${compiledText.text}`;
       dispatch({ type: "setTextTA", payload: NewText });
-      dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${ state.inputText }.js`});
+      dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${state.inputText}.js` });
       return
     }
     console.log("Llegue")
@@ -123,6 +126,10 @@ const Home = () => {
     dispatch({ type: "setInputText", payload: file });
   };
 
+  const handleComboBoxValue = (file) => {
+    dispatch({ type: "setSelectedFile", payload: file });
+  };
+
   const handleSaveClick = async () => {
     let message = "Error, Empty EA Area or FileName field";
     if (state.textEA && state.inputText) {
@@ -156,11 +163,13 @@ const Home = () => {
         selectedFile={handleSelectFile}
         items={state.allScripts}
         updateInputText={handleInputText}
+        setComboBoxValue={handleComboBoxValue}
       />
       <InputFile
         onOff={state.onSelected}
         selectedFile={state.inputText}
         updateInputText={handleInputText}
+        actualFile={state.fileSelected}
       />
       <div className="text-all">
         <div className="text-EA">
@@ -168,7 +177,7 @@ const Home = () => {
             Area="OFS"
             GetText={(text) => dispatch({ type: "setTextEA", payload: text })}
             AreaText={state.textEA}
-            FileName={state.inputText}
+            FileName={state.selectedFile}
           />
           <div className="btns-all">
             <Button clickEvent={handleTranspileClick} title="Compile">

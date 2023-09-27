@@ -14,7 +14,7 @@ Modal Buttom: Create and show a dynamic content modal.
 "use client"
 
 import { Post } from "@/app/RequestFunctions/Post"
-import { Alert } from "./Alert"
+import { Alert } from "./Alert/Alert"
 import { useState } from "react"
 /*
     the request buttom have four properties: 

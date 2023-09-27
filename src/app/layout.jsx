@@ -11,7 +11,7 @@ components will inherit
 */
 
 import "./globals.css"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/Header/Navbar"
 
 export const metadata = {
   //Modifies Metadata o the project, in this case only the title and description

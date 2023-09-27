@@ -19,7 +19,7 @@ TextArea Component that contains a text area and its label.
 */
 import { Get } from "@/app/RequestFunctions/Get";
 import { useEffect, useRef, useState } from "react";
-import { AreaInformation } from "./AreaInformation";
+import { AreaInformation } from "../AreaInformation";
 
 export const TextArea = ({
   Area = "",
@@ -35,7 +35,7 @@ export const TextArea = ({
     row: AreaText.split("\n").length,
     col: 1,
   });
-  const regex = /\w+/g
+  
   let row = AreaText.split("\n").length
 
   const handleTextareaChange = ({ target: { value } }) => {
@@ -43,7 +43,7 @@ export const TextArea = ({
     const text = value
     const words = text.split(/\s+/)
     const lastWord = words[words.length - 1]
-    const autoSuggestion = lastWord ? suggest.filter((word) => word.startsWith(lastWord)) : []
+    const autoSuggestion = lastWord? suggest.filter((word) => word.startsWith(lastWord)) : []
     setType(autoSuggestion)
 
   }
@@ -56,9 +56,10 @@ export const TextArea = ({
 
   useEffect(() => {
     loadSuggest()
-  }, [])
+    console.log(suggest)
+  }, [suggest === ""])
 
-  const handleKeyboardEvent = ({ key}) => {
+  const handleKeyboardEvent = ({key}) => {
     key === 'Tab' ? event.preventDefault() : null
     const textArea = textAreaRef.current
     const startPos = textArea.selectionStart
@@ -68,7 +69,7 @@ export const TextArea = ({
       row: row,
       col: startPos - textArea.value.lastIndexOf('\n', startPos - 1),
     });
-
+    
   }
 
 
@@ -76,7 +77,9 @@ export const TextArea = ({
   const handleSuggestButton = ({ target: { value } }) => {
     const textArea = textAreaRef.current
     const current = textArea.value
-    const newText = current.replace(/(\w+)(?=\s*$)/, value)
+    const wordsArray = current.split(' ')
+    const joinText = wordsArray.slice(0, -1).join(' ')
+    const newText = joinText + " " + value
     setType([])
     GetText(newText)
     textArea.focus()
@@ -84,6 +87,12 @@ export const TextArea = ({
 
   return (
     <div className="block w-full mb-2 text-sm font-medium text-gray-400 px-10">
+      <label
+        htmlFor={`ta-${Area}`}
+        className="block mb-2 text-sm font-medium text-gray-100"
+        >
+        <strong>{Area}</strong>
+      </label>
       <div className="bg-gray-800 text-white p-2 border border-white">
         <AreaInformation information={[
           `Line: ${fileInfo.line}`,
@@ -91,8 +100,7 @@ export const TextArea = ({
           `Col: ${fileInfo.col}`,
           `Words: ${AreaText ? AreaText.match(regex)?.length : 0}`
         ]}
-          fileName={FileName ? `File: ${FileName}` : `File: Unsaved File`}
-          AreaName="OFS" />
+        fileName={`File: ${FileName}`} />
       </div>
       <div className="flex">
         <div className="h-72 relative flex-1 overflow-x-auto overflow-y-auto bg-gray-800 ">
@@ -112,7 +120,7 @@ export const TextArea = ({
             overflow-x="auto"
             placeholder="Writting..."
             autoFocus
-          ></textarea>
+            ></textarea>
           <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
             {AreaText.split("\n").map((_, index) => (
               <div key={index} className="mb-1 mt-1 text-xs">

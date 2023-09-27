@@ -22,7 +22,7 @@ import { Get } from "@/app/RequestFunctions/Get"
 export const About = () => {
     const [showModal, setShowModal] = useState(false)
     const [users, setUsers] = useState([])
-    const [information, setInformation] = useState(null)
+    const [information, setInformation] = useState()
 
     const handleClick = async () => {
         const getAbout = await Get('about')
@@ -49,39 +49,38 @@ export const About = () => {
                             {/*content*/}
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 {/*header*/}
-                                
-                                {/*Information*/}
-                                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                                    <h3 className="text-3xl font-semibold">Información General</h3>
-                                    </div>
-                                    <div className="relative p-6 flex-auto">
-                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                            <b>Universidad: </b>{information.Universidad}
-                                        </p>
-                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                            <b>Escuela:</b> {information.Escuela}
-                                        </p>
-                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                            <b>Ciclo:</b> {information.Ciclo}
-                                        </p>
-                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                            <b>Nombre del curso:</b>  {information["Curso"]}
-                                        </p>
-                                        <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                                            <b>Nombre del Proyecto:</b> {information["Proyecto"]}
-                                        </p>
-                                    </div>
-                              
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                                     <h3 className="text-3xl font-semibold">Developers</h3>
-
+                                    <button
+                                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        onClick={() => setShowModal(false)}
+                                    >
+                                        <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                            ×
+                                        </span>
+                                    </button>
                                 </div>
                                 {/*body*/}
+                               
                                 <div className="relative p-6 flex-auto">
-                             
+                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                        information.Universidad
+                                    </p>
+                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                        information.Escuela
+                                    </p>
+                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                        information.Ciclo
+                                    </p>
+                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                        information.Curso
+                                    </p>
+                                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                                        information.Curso
+                                    </p>
                                     {users.map((user, index) => (
                                         <p key={index} className="my-4 text-slate-500 text-lg leading-relaxed">
-                                            <b>Name:</b> {user.name}  -  <b>Skills:</b> {user.skills}
+                                            Name: {user.name}  -  Skills: {user.skills}
                                         </p>
                                     ))}
                                 </div>

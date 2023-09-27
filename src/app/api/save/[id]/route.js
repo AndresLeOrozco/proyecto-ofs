@@ -13,6 +13,12 @@ save files in the Edition Textual Area (EA).
 import { NextResponse } from "next/server"
 import { WriteFileByName } from "@/data/script/Crud"
 
+/*
+  POST method: Receives a JSON object from the request body containing data and an 'id' parameter from the request URL.
+  It writes the received data to a file specified by the 'id' parameter and returns a JSON response with a message.
+  
+*/
+
 export const POST = async (request, { params }) => {
   try {
 
