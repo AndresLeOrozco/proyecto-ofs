@@ -20,6 +20,6 @@ export const EvaluateFile = async (name) => {
         const fileContent = await fs.readFile(filePath, "utf-8")
         return fileContent;
     } catch (err) {
-        return("Error reading file: ", name);
+        throw("Error reading file: ", name);
     }
 }

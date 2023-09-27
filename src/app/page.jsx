@@ -42,6 +42,7 @@ const initialState = {
   column: 0,
   alertText: "",
   openAlert: false,
+  taFileName: ""
 };
 
 const reducer = (state, action) => {
@@ -66,6 +67,8 @@ const reducer = (state, action) => {
       return { ...state, alertText: action.payload };
     case "setOpenAlert":
       return { ...state, openAlert: action.payload };
+    case "setTAfileName":
+      return { ...state, taFileName: action.payload };
     default:
       return state;
   }
@@ -75,14 +78,20 @@ const Home = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleTranspileClick = async () => {
-    const compiledText = await Post({ text: state.textEA }, "compile");
-    const NewText = `${compiledText.time}\n${compiledText.text}`;
-    dispatch({ type: "setTextTA", payload: NewText });
+    if (state.textEA) {
+      const compiledText = await Post({ text: state.textEA }, "compile");
+      const NewText = `${compiledText.time}\n${compiledText.text}`;
+      dispatch({ type: "setTextTA", payload: NewText });
+      dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${ state.inputText }.js`});
+      return
+    }
+    console.log("Llegue")
+    setAndShowAlert("Error, You must add text in EA to Compile")
   };
 
   const handleEvalClick = async () => {
-    const terminalText = await Post({ text: "Siuuuuu.txt" }, "eval");
-    dispatch({ type: "setTextRA", payload: terminalText });
+    const terminalText = await Post({ text: "prueba.txt" }, "eval");
+    terminalText.includes("Error") ? setAndShowAlert(terminalText) : dispatch({ type: "setTextRA", payload: terminalText })
   };
 
   const handleClearClick = () => {
@@ -91,6 +100,7 @@ const Home = () => {
     dispatch({ type: "setTextRA", payload: "" });
     dispatch({ type: "setInputText", payload: "" });
     dispatch({ type: "setScripts", payload: [] });
+    dispatch({ type: "setTAfileName", payload: "" });
     handleRecoverScript();
   };
 
@@ -121,7 +131,7 @@ const Home = () => {
   const handleSaveClick = async () => {
     let message = "Error, Empty EA Area or FileName field";
     if (state.textEA && state.inputText) {
-      const nameFile = await Post(state.textEA, `script/${state.inputText}`);
+      const nameFile = await Post(state.textEA, `save/${state.inputText}`);
       handleRecoverScript();
       handleOnSelected(state.inputText);
       handleSelectFile(state.inputText);
@@ -179,6 +189,8 @@ const Home = () => {
                 src={evaluate}
                 alt="This is a evaluate button img"
                 className="img-play"
+                width={512}
+                height={512}
               />
             </Button>
             <Button clickEvent={handleSaveClick} title={"Save"}>
@@ -186,6 +198,8 @@ const Home = () => {
                 src={save}
                 alt="This is a save button img"
                 className="img-save"
+                width={512}
+                height={512}
               />
             </Button>
             <Button clickEvent={handleEditClick} title={"Edit"}>
@@ -231,7 +245,10 @@ const Home = () => {
           `Line: ${state.textLine}`,
           `Row: ${state.textEA.split("\n").length}`,
           `Col: ${state.column}`,
-        ]}
+        ]
+        }
+        fileNameEA = { state.inputText }
+        fileNameTA = { state.taFileName }
       />
     </main>
   );

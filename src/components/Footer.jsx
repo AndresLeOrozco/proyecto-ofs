@@ -11,15 +11,21 @@ Footer
 
 
 
-export const Footer = ({ information }) => {
+export const Footer = ({ information, fileNameEA = "No FIle", fileNameTA = "" }) => {
     return (
         <footer className='footer'>
             <div className="container mx-auto flex items-center justify-center">
-                {information.map((elements,index) => (
+                <div className='mx-10'>
+                    <span>File: {fileNameEA ? fileNameEA : "Unsaved File"} </span>
+                </div>
+                {information.map((elements, index) => (
                     <div key={index} className="mx-3 text-xs">
-                        <span> { elements } </span>
+                        <span> {elements} </span>
                     </div>
                 ))}
+                <div className='mx-10'>
+                    <span>{fileNameTA ? `Transpile File: ${fileNameTA}` : ""} </span>
+                </div>
             </div>
         </footer>
     );

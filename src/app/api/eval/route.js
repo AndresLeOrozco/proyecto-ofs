@@ -16,10 +16,11 @@ import { NextResponse } from "next/server"
 export const POST = async (request) => {
     try {
       const { text } = await request.json()
-      return NextResponse.json(await EvaluateFile(text))
+      const fileContent = await EvaluateFile(text)
+      return NextResponse.json(fileContent)
 
     } catch (error) {
       console.error(error)
-      return NextResponse.json("Archivo No Existe")
+      return NextResponse.json("Error, Archivo no existe")
     }
   }

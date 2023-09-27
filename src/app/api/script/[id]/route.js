@@ -7,7 +7,7 @@ Kairo Chacon Maleanos
 
 Description: 
 the file is the endpoint /script/[id] in the API of the application that receives the request to
-save and load files in the Edition Textual Area (EA).
+load files in the Edition Textual Area (EA).
 */
 
 import fs from "fs/promises"
@@ -15,19 +15,6 @@ import path from "path"
 import { NextResponse } from "next/server"
 import { ReadFileByName, WriteFileByName } from "@/data/script/Crud"
 
-export const POST = async (request, { params }) => {
-  try {
-
-    const fileContent = await request.json()
-    
-    const message = await WriteFileByName(params.id, fileContent)
-
-    return NextResponse.json(params.id + message)
-  } catch (error) {
-
-    return NextResponse.json("Error")
-  }
-}
 
 export const GET = async (_, { params }) => {
   try {

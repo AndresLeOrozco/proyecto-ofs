@@ -1,14 +1,20 @@
 import { NextResponse } from "next/server"
-import {Read} from "@/data/about/Crud"
+import path from 'path';
+import { promises as fs } from 'fs';
 
-export function GET() {
+
+
+ export const GET = async () => {
+  
+  const filePath = path.join(process.cwd(), 'data')
 
   try {
-
-    const developers =  Read()
-    return NextResponse.json(developers)
-
+    const fileContents = await fs.readFile(filePath + '/about.json', 'utf-8')
+    return NextResponse(fileContents)
+    
   } catch (error) {
-    return NextResponse.json("Error Al leer el Archivo", { status: 500 })
+
+    return NextResponse.json(error, { status: 500 })
   }
+
 }
