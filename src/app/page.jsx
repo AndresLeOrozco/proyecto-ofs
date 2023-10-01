@@ -77,11 +77,11 @@ const reducer = (state, action) => {
 const Home = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
- /*
-  handleTranspileClick function: Handles the click event for transpiling code.
-  If there is text in 'state.textEA', it compiles the text using a POST request, updates the UI with the result, and sets the file name.
-  If there is no text in 'state.textEA', it shows an error alert.
-*/
+  /*
+   handleTranspileClick function: Handles the click event for transpiling code.
+   If there is text in 'state.textEA', it compiles the text using a POST request, updates the UI with the result, and sets the file name.
+   If there is no text in 'state.textEA', it shows an error alert.
+ */
   const handleTranspileClick = async () => {
     if (state.textEA) {
       const compiledText = await Post({ text: state.textEA }, "compile");
@@ -93,21 +93,25 @@ const Home = () => {
     setAndShowAlert("Error, You must add text in EA to Compile")
   };
 
-/*
-  handleEvalClick function: Handles the click event for evaluating code.
-  It sends a POST request to evaluate code and updates the UI with the result.
-  If there's an error in the result, it shows an alert.
-*/
+  /*
+    handleEvalClick function: Handles the click event for evaluating code.
+    It sends a POST request to evaluate code and updates the UI with the result.
+    If there's an error in the result, it shows an alert.
+  */
 
   const handleEvalClick = async () => {
-    const terminalText = await Post({ text: "ra_fake.txt" }, "eval");
-    terminalText.includes("Error") ? setAndShowAlert(terminalText) : dispatch({ type: "setTextRA", payload: terminalText })
+    if (state.textTA) {
+      const terminalText = await Post({ text: "ra_fake.txt" }, "eval");
+      terminalText.includes("Error") ? setAndShowAlert(terminalText) : dispatch({ type: "setTextRA", payload: terminalText })
+      return
+    }
+    setAndShowAlert("Error, Nothing to Evaluate")
   };
 
-/*
-  handleClearClick function: Handles the click event for clearing/resetting the UI.
-  It clears/reset various state variables to their initial values and recovers scripts.
-*/
+  /*
+    handleClearClick function: Handles the click event for clearing/resetting the UI.
+    It clears/reset various state variables to their initial values and recovers scripts.
+  */
 
   const handleClearClick = () => {
     dispatch({ type: "setTextEA", payload: "" });
@@ -116,34 +120,35 @@ const Home = () => {
     dispatch({ type: "setInputText", payload: "" });
     dispatch({ type: "setScripts", payload: [] });
     dispatch({ type: "setTAfileName", payload: "" });
+    dispatch({ type: "setOnSelected", payload: false });
     dispatch({ type: "setSelectedFile", payload: "" });
     handleRecoverScript();
   };
 
-/*
-  setAndShowAlert function: Sets an alert message in the UI and displays the alert.
-  This function is used to provide user feedback or display error messages.
-*/
+  /*
+    setAndShowAlert function: Sets an alert message in the UI and displays the alert.
+    This function is used to provide user feedback or display error messages.
+  */
 
   const setAndShowAlert = (message) => {
     dispatch({ type: "setAlertText", payload: message });
     dispatch({ type: "setOpenAlert", payload: true });
   };
 
-/*
-  handleRecoverScript function: Handles the recovery of scripts.
-  It retrieves scripts using a GET request and updates the state with the retrieved scripts.
-*/
+  /*
+    handleRecoverScript function: Handles the recovery of scripts.
+    It retrieves scripts using a GET request and updates the state with the retrieved scripts.
+  */
 
   const handleRecoverScript = async () => {
     const scripts = await Get("script");
     dispatch({ type: "setScripts", payload: scripts });
   };
 
-/*
-  handleSelectFile function: Handles the selection of a file and updates the UI with its content.
-  If a file is selected, it fetches its content and updates the editing area.
-*/
+  /*
+    handleSelectFile function: Handles the selection of a file and updates the UI with its content.
+    If a file is selected, it fetches its content and updates the editing area.
+  */
 
   const handleSelectFile = async (selected) => {
     const file = selected ? await Get(`script/${selected}`) : selected;
@@ -151,29 +156,29 @@ const Home = () => {
     handleOnSelected(file);
   };
 
-/*
-  handleInputText function: Handles the input of text for a file.
-  It updates the state with the text entered in the input field.
-*/
+  /*
+    handleInputText function: Handles the input of text for a file.
+    It updates the state with the text entered in the input field.
+  */
 
   const handleInputText = (file) => {
     dispatch({ type: "setInputText", payload: file });
   };
 
-/*
-  handleComboBoxValue function: Handles the selection of a value in a combo box.
-  It updates the state with the selected value from the combo box.
-*/
+  /*
+    handleComboBoxValue function: Handles the selection of a value in a combo box.
+    It updates the state with the selected value from the combo box.
+  */
 
   const handleComboBoxValue = (file) => {
     dispatch({ type: "setSelectedFile", payload: file });
   };
 
-/*
-  handleSaveClick function: Handles the click event for saving code.
-  If there is text in 'state.textEA' and a valid file name, it sends a POST request to save the code, updates the UI, and recovers scripts.
-  Otherwise, it shows an error alert.
-*/
+  /*
+    handleSaveClick function: Handles the click event for saving code.
+    If there is text in 'state.textEA' and a valid file name, it sends a POST request to save the code, updates the UI, and recovers scripts.
+    Otherwise, it shows an error alert.
+  */
 
   const handleSaveClick = async () => {
     let message = "Error, Empty EA Area or FileName field";
@@ -189,10 +194,10 @@ const Home = () => {
     setAndShowAlert(message);
   };
 
-/*
-  handleOnSelected function: Handles whether a file is selected or not.
-  It updates the state to indicate whether a file is selected for editing or not.
-*/
+  /*
+    handleOnSelected function: Handles whether a file is selected or not.
+    It updates the state to indicate whether a file is selected for editing or not.
+  */
 
   const handleOnSelected = (text) => {
     text
@@ -200,37 +205,37 @@ const Home = () => {
       : dispatch({ type: "setOnSelected", payload: false });
   };
 
-/*
-  handleEditClick function: Handles the click event for editing a file's name.
-  If a file is selected for editing, it allows renaming, otherwise, it shows an error alert.
-*/
-  
+  /*
+    handleEditClick function: Handles the click event for editing a file's name.
+    If a file is selected for editing, it allows renaming, otherwise, it shows an error alert.
+  */
+
   const handleEditClick = () => {
     dispatch({ type: "setOnSelected", payload: false });
     state.fileSelected ?
-    setAndShowAlert("You can now edit file name") : 
-    setAndShowAlert("Error, You cant rename an Unsaved File")
+      setAndShowAlert("You can now edit file name") :
+      setAndShowAlert("Error, You cant rename an Unsaved File")
   };
 
-/*
-  handleEditClickOn function: Handles the click event for enabling file name editing.
-  It enables the file name editing mode.
-*/
+  /*
+    handleEditClickOn function: Handles the click event for enabling file name editing.
+    It enables the file name editing mode.
+  */
 
   const handleEditClickOn = () => {
     dispatch({ type: "setOnSelected", payload: true });
   };
 
-/*
-  handleRename function: Handles the renaming of a file.
-  It clears/reset various state variables, updates the UI, and recovers scripts.
-*/
+  /*
+    handleRename function: Handles the renaming of a file.
+    It clears/reset various state variables, updates the UI, and recovers scripts.
+  */
 
 
 
   useEffect(() => {
     handleRecoverScript();
-  }, [handleClearClick]);
+  }, []);
 
   return (
     <main>
