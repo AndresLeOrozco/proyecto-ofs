@@ -30,7 +30,7 @@ export const Home = () => {
                 <h6 class="text-2xl font-semibold">Secure Code Storage</h6>
                 <p class="text-gray-700">
                     We understand the importance of protecting your projects. We offer secure cloud storage for your
-                    OFS code, ensuring that your creations are safeguarded and available anytime, anywhere. You'll never lose important
+                    OFS code, ensuring that your creations are safeguarded and available anytime, anywhere. Youll never lose important
                     work again</p><br />
 
                 <h6 class="text-2xl font-semibold">Intelligent Evaluation</h6>
@@ -41,7 +41,7 @@ export const Home = () => {
                 <h6 class="text-2xl font-semibold">Real-Time Execution</h6>
                 <p class="text-gray-700">
                     Our standout feature is real-time execution of your generated Javascript code. You can see your applications
-                    come to life and test their functionality directly in our execution environment. It's the perfect way to ensure that everything
+                    come to life and test their functionality directly in our execution environment. Its the perfect way to ensure that everything
                     works as expected.</p><br />
 
                 <h6 class="text-2xl font-semibold">Expert Technical Support</h6>
