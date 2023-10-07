@@ -21,6 +21,7 @@ export const Get = async (URL) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
+                "Cache-Control": "no-store"
             },
         })
 

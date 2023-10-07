@@ -24,6 +24,11 @@ export const About = () => {
     const [showModal, setShowModal] = useState(false)
     const [about, setAbout] = useState("")
 
+    const handleShowAbout = () => {
+        getAbout()
+        setShowModal(true)
+    }
+
     const getAbout = async () => {
         const getAbout = await Get('about')
         const data = JSON.parse(getAbout)
@@ -32,7 +37,6 @@ export const About = () => {
 
     useEffect(() => {
         getAbout()
-        
     }, [])
 
     const {Information} = about
@@ -43,7 +47,7 @@ export const About = () => {
             <button
                 className="bg-auto-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
-                onClick={() => setShowModal(true)}
+                onClick={handleShowAbout}
             >
                 About
             </button>
