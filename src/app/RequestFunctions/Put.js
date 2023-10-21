@@ -15,11 +15,12 @@ In this js file we will create and export the POST request function to be used o
 */
 
 export const Put = async (bodyRequest, url) => {
-
+    console.log("bodyRequest: ", bodyRequest)
     const res = await fetch(`http://localhost:3000/api/${url}`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        next : {revalidate : 0 }
       },
       body: JSON.stringify(bodyRequest)
     })

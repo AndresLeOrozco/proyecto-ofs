@@ -10,23 +10,18 @@ In this js file we will create and export the Get request functions to be used o
 */
 
 
-/*
-  Get function: Performs an HTTP GET request to a specified URL and returns the response data.
-*/
 
 export const Get = async (URL) => {
     try {
 
         const response = await fetch(`http://localhost:3000/api/${URL}`, {
             method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Cache-Control": "no-store"
-            },
+            next : {revalidate : 0 }
         })
 
         if (response !== 'Error') {
             const data = await response.json()
+            console.log("Data: ", data)
             return data
         }
     } catch (error) {
