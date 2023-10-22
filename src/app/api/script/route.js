@@ -20,18 +20,19 @@ import { NextResponse } from "next/server"
 */
 
 
-export const GET = async () => {
+export const GET = async (req) => {
     try {
-        const files = await ReadAllFiles();
-        const cacheControlValue = 'no-store, must-revalidate'; 
+        const fileContent = await ReadAllFiles()
 
-        return NextResponse.json(files, {
-            headers: {
-                'Cache-Control': cacheControlValue,
-            },
-        });
+        return NextResponse.json(fileContent)
+
     } catch (error) {
-        return NextResponse.json("Error Al leer el Archivo", {
-        });
+
+        return NextResponse.json("Error Al leer el Archivo", { status: 500 })
     }
-};
+}
+
+
+export const POST = async (request) => {
+   
+}

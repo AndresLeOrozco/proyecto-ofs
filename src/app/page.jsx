@@ -142,6 +142,7 @@ const Home = () => {
 
   const handleRecoverScript = async () => {
     const scripts = await Get("script");
+    console.log(scripts);
     dispatch({ type: "setScripts", payload: scripts });
   };
 
