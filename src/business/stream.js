@@ -37,3 +37,11 @@ export class Stream{
         return [...this.#iterable]
     }
 }
+
+export function* iterate(init, f){
+    let current = init
+    while(true){
+        yield current
+        current = f(current)
+    }
+}
