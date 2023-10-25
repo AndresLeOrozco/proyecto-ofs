@@ -101,7 +101,7 @@ const Home = () => {
 
   const handleEvalClick = async () => {
     if (state.textTA) {
-      const terminalText = await Post({ text: "ra_fake.txt" }, "eval");
+      const terminalText = await Post({ text: "ofs_test.js" }, "eval");
       terminalText.includes("Error") ? setAndShowAlert(terminalText) : dispatch({ type: "setTextRA", payload: terminalText })
       return
     }
