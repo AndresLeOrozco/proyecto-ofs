@@ -1,4 +1,4 @@
-import { Stream, iterate } from "../src/utils/stream.js";
+import { Stream, iterate } from "@/utils/stream";
 
 const nats = iterate(0, x => x + 1)
 const even = new Stream(nats).filter(x => x % 2 == 0);
