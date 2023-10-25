@@ -12,14 +12,13 @@ this file recover a fs file and returns its content
 import fs from "fs/promises"
 import path from "path"
 
-export const compileFile = async (name) => {
+export const compileFile = async () => {
 
-    const filePath = path.join(process.cwd(), "JsFiles/ofs_test.js")
+    const filePath = path.join(process.cwd(), "jsFiles/ofs_test.js")
     try {
-        const fileContent = await fs.readFile(filePath, "utf-8")
-        return fileContent;
+        return await fs.readFile(filePath, "utf-8")
     } catch (err) {
-        throw("Error reading file: ", name);
+        return "No File"
     }
     
 }

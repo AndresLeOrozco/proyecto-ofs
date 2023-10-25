@@ -11,23 +11,33 @@ this file recover a fs file and returns its content
 
 import fs from "fs/promises"
 import path from "path"
-import { exec } from "node:child_process";
+import {exec} from "child_process"
 
 export const EvaluateFile = async (name) => {
 
     const filePath = path.join(process.cwd(), "jsFiles", name)
+    const {stdout} = exec('node jsFiles/ofs_test.js', (error, stdout, stderr) => {
+        if (error) {
+          console.error(`error: ${error.message}`);
+          return;
+        }
+      
+        if (stderr) {
+          console.error(`stderr: ${stderr}`);
+          return;
+        }
+      
+        console.log(`stdout:\n${stdout}`);
+        const a = stdout;
+        return stdout
+      });
+      
+
+    console.log("Onichan ",stdout)
     try {
-        console.log(filePath)
-        const child = execFile(`node "./jsFile/ofs_test.js"`,  (error, stdout, stderr) => {
-            if (error) {
-              throw error;
-            }
-            console.log(stdout);
-          }); 
-        //const fileContent = await fs.readFile(filePath, {encoding: "utf-8"})
-        console.log(child)
-        return fileContent;
+        const fileContent = await fs.readFile(filePath, "utf-8")
+        return stdout;
     } catch (err) {
-        throw new Error("Error reading file: ", name);
+        throw("Error reading file: ", name);
     }
 }

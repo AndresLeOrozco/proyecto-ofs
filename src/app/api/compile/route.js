@@ -11,7 +11,7 @@ compile the Edition Textual Area (EA).
 */
 
 import { NextResponse } from "next/server"
-
+import { compileFile } from "@/data/compile/CRUD"
 /*
 
 POST method : receives an object in JSON format from the body request with only one atribute that is a string, it takes this object and add another
@@ -20,8 +20,13 @@ the request and with other string containing the current date.
 
 */
 
-export async function POST(request){  
-  let code = await request.json()
-  code.time = new Date().toString()
-  return NextResponse.json(code)
+export async function POST(request) {
+  try {
+    let code = {text : await compileFile()}
+    code.time = new Date().toString()
+    return NextResponse.json(code)
+  }
+  catch (err) {
+    console.log(err)
+  }
 }

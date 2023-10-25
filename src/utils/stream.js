@@ -44,9 +44,7 @@ export function* iterate(init, f){
         yield current
         current = f(current)
     }
-
 }
-
 
 
 
