@@ -21,14 +21,6 @@ import AreaInformation from "./AreaInformation"
 export const TranspiledArea = ({ AreaText = "", FileName = "" }) => {
     const regex = /\w+/g
 
-    const handleTextareaChange = ({ target: { value } }) => {
-        GetText(value)
-        const text = value
-        const words = text.split(/\s+/)
-        const lastWord = words[words.length - 1]
-        const autoSuggestion = lastWord ? suggest.filter((word) => word.startsWith(lastWord)) : []
-        setType(autoSuggestion)
-      }
     return (
         <div className="block w-full mb-2 text-sm font-medium text-gray-400 px-10">
             <div className="bg-gray-800 text-white p-2 border border-white">
@@ -48,7 +40,7 @@ export const TranspiledArea = ({ AreaText = "", FileName = "" }) => {
                         id={`ta-JS`}
                         wrap="off"
                         readOnly
-                        value={AreaText}
+                        value={AreaText.replace(`import { Stream, iterate } from "../src/utils/stream.mjs";${'\n'}`, "")}
                         placeholder="Transpiling..."
                     ></textarea>
                     <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">

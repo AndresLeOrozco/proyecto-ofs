@@ -19,7 +19,7 @@ TextArea Component that contains a text area and its label for RA.
 
 
 export const Terminal = ({AreaText = ""}) => {
-
+   const regex = /\x1B\[[0-?]*[ -/]*[@-~]/g;
     return (
         <div className="block w-full mb-2 text-sm font-medium text-gray-400 px-10">
           <div className="flex">
@@ -31,7 +31,7 @@ export const Terminal = ({AreaText = ""}) => {
                 id={`ta-Terminal`}
                 wrap="off"
                 readOnly
-                value={AreaText}
+                value={AreaText.replaceAll(regex, "")}
                 placeholder="This the terminal..."
               ></textarea>
             </div>

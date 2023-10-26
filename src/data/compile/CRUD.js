@@ -12,9 +12,10 @@ this file recover a fs file and returns its content
 import fs from "fs/promises"
 import path from "path"
 
-export const compileFile = async () => {
+export const compileFile = async (name) => {
 
-    const filePath = path.join(process.cwd(), "jsFiles/ofs_test.js")
+    const filePath = path.join(process.cwd(), "jsFiles", name)
+    console.log(filePath)
     try {
         return await fs.readFile(filePath, "utf-8")
     } catch (err) {

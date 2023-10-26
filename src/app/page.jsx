@@ -84,10 +84,11 @@ const Home = () => {
  */
   const handleTranspileClick = async () => {
     if (state.textEA) {
-      const compiledText = await Post({ text: state.textEA }, "compile");
+      const compiledText = await Post({ text: state.textEA, name: state.inputText }, "compile");
       const NewText = `${compiledText.time}\n${compiledText.text}`;
+      const name = state.inputText.replace(".ofs", ".js")
       dispatch({ type: "setTextTA", payload: NewText });
-      dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${state.inputText}.js` });
+      dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${name}` });
       return
     }
     setAndShowAlert("Error, You must add text in EA to Compile")
@@ -101,7 +102,7 @@ const Home = () => {
 
   const handleEvalClick = async () => {
     if (state.textTA) {
-      const terminalText = await Post({ text: "ofs_test.js" }, "eval");
+      const terminalText = await Post({ text: "ofs_test.mjs" }, "eval");
       terminalText.includes("Error") ? setAndShowAlert(terminalText) : dispatch({ type: "setTextRA", payload: terminalText })
       return
     }

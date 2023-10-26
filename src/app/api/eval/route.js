@@ -24,7 +24,6 @@ export const POST = async (request) => {
     try {
       const { text } = await request.json()
       const fileContent = await EvaluateFile(text)
-      console.log("ONICHAN ", fileContent)
       return NextResponse.json(fileContent)
 
     } catch (error) {

@@ -8,7 +8,7 @@ Kairo Chacon Maleanos
 Description: 
 class Stream to manage iterables in a functional way
 */
-class Stream{
+export class Stream{
     iterable
     constructor(iterable){
         this.iterable = iterable
@@ -33,18 +33,18 @@ class Stream{
         return new Stream(generator(this.iterable))
     }
 
-    forEach( f ){ 
-        for (const item of this.iterable){
-            f(item)
-        }
-    }
+    // forEach( f ){ 
+    //     for (const item of this.iterable){
+    //         f(item)
+    //     }
+    // }
 
 
     toList(){    
         return [...this.iterable]
     }
 }
-function* iterate(init, f, end=100){
+export function* iterate(init, f, end=100){
     let current = init
     while(current <= end){
         yield current
@@ -52,6 +52,6 @@ function* iterate(init, f, end=100){
     }
 }
 
-module.exports = {Stream, iterate}
+
 
 

@@ -22,7 +22,10 @@ the request and with other string containing the current date.
 
 export async function POST(request) {
   try {
-    let code = {text : await compileFile()}
+    
+    const { name } = await request.json()
+    const nameMJS = name.replace('.ofs', '.mjs');
+    let code = {text : await compileFile(nameMJS)}
     code.time = new Date().toString()
     return NextResponse.json(code)
   }
