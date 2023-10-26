@@ -9,9 +9,9 @@ Description:
 class Stream to manage iterables in a functional way
 */
 class Stream{
-    #iterable
+    iterable
     constructor(iterable){
-        this.#iterable = iterable
+        this.iterable = iterable
     }
     map( f ){
         function* generator(iterable){
@@ -19,7 +19,7 @@ class Stream{
                 yield f(item)
             }
         }
-        return new Stream(generator(this.#iterable))
+        return new Stream(generator(this.iterable))
     }
 
     filter( f ){ 
@@ -30,16 +30,23 @@ class Stream{
                 }
             }
         }
-        return new Stream(generator(this.#iterable))
+        return new Stream(generator(this.iterable))
     }
 
+    forEach( f ){ 
+        for (const item of this.iterable){
+            f(item)
+        }
+    }
+
+
     toList(){    
-        return [...this.#iterable]
+        return [...this.iterable]
     }
 }
-function* iterate(init, f){
+function* iterate(init, f, end=100){
     let current = init
-    while(true){
+    while(current <= end){
         yield current
         current = f(current)
     }

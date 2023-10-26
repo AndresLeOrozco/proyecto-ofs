@@ -18,13 +18,9 @@ const execPromise = promisify(exec);
 
 export const EvaluateFile = async (name) => {
 
-    
-    
     try {
         const filePath = path.join(process.cwd(), "jsFiles", name)
         const {stdout, stderr} = await execPromise(`node ${filePath}`)
-        console.error(stderr)
-        console.log(stdout)
         return stdout;
     } catch (err) {
         throw("Error reading file: ", name);
