@@ -8,6 +8,7 @@
 
 % URL handlers.
 :- http_handler('/compile', handle_request, [method(post)]).
+:- http_handler('/', home, []).
 
 
 handle_request(Request) :-
@@ -38,6 +39,20 @@ get_current_time(Timestamp) :-
     get_time(Stamp),
     stamp_date_time(Stamp, DateTime, 'UTC'),
     format_time(atom(Timestamp), '%Y-%m-%d %H:%M:%S', DateTime).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+home(_Request) :-
+        reply_html_page(title('Mini Add Service'),
+                        [ h1('To use it:'),
+                          p([h4('Send a post messsage'),
+                             h4('URI:/add'),
+                             h4('body: JSON data of the form {"a":number, "b":number}'),
+                             h4('Service Responds with JSON as follows:'),
+                             ul([li('{accepted:true, answer:a+b}    if data ok'),
+                                 li('{accepted:false, answer:0, msg:some_error_message} othwerwise')])
+                            ])
+                        ]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
