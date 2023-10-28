@@ -23,13 +23,25 @@ the request and with other string containing the current date.
 export async function POST(request) {
   try {
     
-    const { name } = await request.json()
-    const nameMJS = name.replace('.ofs', '.mjs');
-    let code = {text : await compileFile(nameMJS)}
-    code.time = new Date().toString()
-    return NextResponse.json(code)
+    // const { name } = await request.json()
+    // const nameMJS = name.replace('.ofs', '.mjs');
+    // let code = {text : await compileFile(nameMJS)}
+    // code.time = new Date().toString()
+
+    
+      const response = await fetch(`http://localhost:8000/compile`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({filePath: "C:/Users/andre/proyecto-ofs/jsFiles/ofs_test.mjs"})
+      })
+      const data = await response.json()
+      console.log(data)
+      
+    return NextResponse.json(data)
   }
   catch (err) {
-    console.log(err)
+    return NextResponse.json(data)
   }
 }

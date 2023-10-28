@@ -15,7 +15,6 @@ In this js file we will create and export all the request functions to be used o
 */
 
 export const Post = async (bodyRequest, url) => {
-  console.log("bodyRequest: ", bodyRequest)
   try{
     const response = await fetch(`http://localhost:3000/api/${url}`, {
       method: 'POST',

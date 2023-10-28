@@ -85,9 +85,8 @@ const Home = () => {
   const handleTranspileClick = async () => {
     if (state.textEA) {
       const compiledText = await Post({ text: state.textEA, name: state.inputText }, "compile");
-      const NewText = `${compiledText.time}\n${compiledText.text}`;
       const name = state.inputText.replace(".ofs", ".js")
-      dispatch({ type: "setTextTA", payload: NewText });
+      dispatch({ type: "setTextTA", payload: compiledText.fileContent });
       dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${name}` });
       return
     }
