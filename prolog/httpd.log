@@ -30,3 +30,78 @@ completed(4, 0.0013419999999999994, 490, 200, ok).
 completed(5, 0.0013239999999999988, 490, 200, ok).
 /*Sat Oct 28 16:44:52 2023*/ request(6, 1698533092.793, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),cache_control('max-age=0'),sec_ch_ua('"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"macOS"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
 completed(6, 0.0012100000000000027, 490, 200, ok).
+server(started, 1698598656).
+/*Sun Oct 29 10:57:36 2023*/ request(1, 1698598656.063, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(1, 0.015625, 396, 200, ok).
+/*Sun Oct 29 11:43:36 2023*/ request(2, 1698601416.654, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(2, 0.0, 440, 200, ok).
+/*Sun Oct 29 11:51:02 2023*/ request(3, 1698601862.453, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(3, 0.0, 436, 200, ok).
+/*Sun Oct 29 11:51:12 2023*/ request(4, 1698601872.429, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(4, 0.0, 396, 200, ok).
+/*Sun Oct 29 11:51:40 2023*/ request(5, 1698601900.926, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(5, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 11:52:16 2023*/ request(6, 1698601936.596, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(6, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 11:53:45 2023*/ request(7, 1698602025.971, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(7, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 11:53:49 2023*/ request(8, 1698602029.338, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(8, 0.0, 396, 200, ok).
+/*Sun Oct 29 11:53:52 2023*/ request(9, 1698602032.632, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(9, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 11:56:04 2023*/ request(10, 1698602164.707, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(10, 0.0, 396, 200, ok).
+/*Sun Oct 29 11:56:12 2023*/ request(11, 1698602172.793, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(11, 0.0, 436, 200, ok).
+/*Sun Oct 29 11:56:32 2023*/ request(12, 1698602192.034, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(12, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 11:56:37 2023*/ request(13, 1698602197.602, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(13, 0.0, 396, 200, ok).
+/*Sun Oct 29 11:56:41 2023*/ request(14, 1698602201.990, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(14, 0.0, 396, 200, ok).
+/*Sun Oct 29 11:59:10 2023*/ request(15, 1698602350.645, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(15, 0.0, 396, 200, ok).
+/*Sun Oct 29 11:59:17 2023*/ request(16, 1698602357.251, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(16, 0.0, 436, 200, ok).
+/*Sun Oct 29 12:02:55 2023*/ request(17, 1698602575.461, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(17, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 12:03:00 2023*/ request(18, 1698602580.498, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(18, 0.0, 396, 200, ok).
+/*Sun Oct 29 12:04:28 2023*/ request(19, 1698602668.350, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(19, 0.0, 436, 200, ok).
+/*Sun Oct 29 12:05:02 2023*/ request(20, 1698602702.723, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(20, 0.0, 436, 200, ok).
+/*Sun Oct 29 12:05:08 2023*/ request(21, 1698602708.175, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(21, 0.0, 396, 200, ok).
+/*Sun Oct 29 12:05:28 2023*/ request(22, 1698602728.441, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(22, 0.0, 436, 200, ok).
+/*Sun Oct 29 13:28:07 2023*/ request(23, 1698607687.168, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(23, 0.0, 396, 200, ok).
+/*Sun Oct 29 13:28:40 2023*/ request(24, 1698607720.774, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(24, 0.0, 436, 200, ok).
+/*Sun Oct 29 13:29:18 2023*/ request(25, 1698607758.087, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(25, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 13:30:21 2023*/ request(26, 1698607821.769, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(26, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 13:36:01 2023*/ request(27, 1698608161.608, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(27, 0.0, 396, 200, ok).
+/*Sun Oct 29 13:36:28 2023*/ request(28, 1698608188.990, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(28, 0.0, 436, 200, ok).
+/*Sun Oct 29 13:36:35 2023*/ request(29, 1698608195.647, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(29, 0.0, 396, 200, ok).
+/*Sun Oct 29 13:36:40 2023*/ request(30, 1698608200.918, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(30, 0.0, 436, 200, ok).
+/*Sun Oct 29 13:37:01 2023*/ request(31, 1698608221.242, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(31, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+/*Sun Oct 29 13:41:00 2023*/ request(32, 1698608460.934, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(32, 0.0, 396, 200, ok).
+/*Sun Oct 29 13:44:18 2023*/ request(33, 1698608658.767, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(33, 0.0, 396, 200, ok).
+/*Sun Oct 29 13:44:22 2023*/ request(34, 1698608662.294, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(34, 0.0, 436, 200, ok).
+/*Sun Oct 29 13:44:25 2023*/ request(35, 1698608665.482, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(35, 0.0, 436, 200, ok).
+/*Sun Oct 29 13:53:52 2023*/ request(36, 1698609232.947, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(36, 0.0, 396, 200, ok).
+/*Sun Oct 29 14:19:18 2023*/ request(37, 1698610758.386, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
+completed(37, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).

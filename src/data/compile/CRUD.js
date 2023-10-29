@@ -21,11 +21,13 @@ export const compileFile = async (name) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ filePath: filePath })
-        })
+            body: JSON.stringify({filePath: filePath})
+        })  
         const data = await response.json()
+        console.log(data)
         return data
     } catch (err) {
+        console.error(err)
         return "No File"
     }
 
