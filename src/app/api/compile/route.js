@@ -26,19 +26,7 @@ export async function POST(request) {
   try {
     const { name } = await request.json()
     const nameMJS = name.replace('.ofs', '.mjs');
-    const filePath = path.join(process.cwd(), "jsFiles", nameMJS)
-
-
-      const response = await fetch(`http://localhost:8000/compile`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({filePath: filePath})
-      })
-      const data = await response.json()
-      console.log(data)
-      
+    const data = await compileFile(nameMJS)
     return NextResponse.json(data)
   }
   catch (err) {
