@@ -17,7 +17,6 @@ import { exec } from 'child_process';
 const execPromise = promisify(exec);
 
 export const EvaluateFile = async (name) => {
-
     try {
         const filePath = path.join(process.cwd(), "jsFiles", name)
         console.log(filePath)
