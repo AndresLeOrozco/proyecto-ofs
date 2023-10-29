@@ -39,6 +39,17 @@ export class Stream{
     //     }
     // }
 
+    cut( n ){ 
+        function* generator(iterable){
+            let i = n
+            while(i > 0){
+				yield iterable.next().value
+				i--
+			}
+        }
+        return new Stream(generator(this.iterable))
+    }
+
 
     toList(){    
         return [...this.iterable]
@@ -51,7 +62,6 @@ export function* iterate(init, f, end=100){
         current = f(current)
     }
 }
-
 
 
 

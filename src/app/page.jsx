@@ -86,7 +86,8 @@ const Home = () => {
     if (state.textEA) {
       const compiledText = await Post({ text: state.textEA, name: state.inputText }, "compile");
       const name = state.inputText.replace(".ofs", ".js")
-      dispatch({ type: "setTextTA", payload: compiledText.fileContent });
+
+      compiledText.code ? dispatch({ type: "setTextTA", payload: "File cannot be compiled" }) : dispatch({ type: "setTextTA", payload: `${compiledText.date} \n ${compiledText.fileContent}` });
       dispatch({ type: "setTAfileName", payload: !state.inputText ? "Unsaved File.js" : `${name}` });
       return
     }
@@ -101,7 +102,7 @@ const Home = () => {
 
   const handleEvalClick = async () => {
     if (state.textTA) {
-      const terminalText = await Post({ text: "ofs_test.mjs" }, "eval");
+      const terminalText = await Post({ text: state.taFileName }, "eval");
       terminalText.includes("Error") ? setAndShowAlert(terminalText) : dispatch({ type: "setTextRA", payload: terminalText })
       return
     }

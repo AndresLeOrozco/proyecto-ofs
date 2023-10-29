@@ -24,7 +24,8 @@ import { NextResponse } from "next/server"
 export const POST = async (request) => {
     try {
       const { text } = await request.json()
-      const fileContent = await EvaluateFile(text)
+      const nameMJS = text.replace('.js', '.mjs');
+      const fileContent = await EvaluateFile(nameMJS)
       return NextResponse.json(fileContent)
 
     } catch (error) {
