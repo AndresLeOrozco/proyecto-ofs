@@ -37,11 +37,12 @@ export async function POST(request) {
         body: JSON.stringify({filePath: filePath})
       })
       const data = await response.json()
-      console.log(data)
+      console.log(response)
       
     return NextResponse.json(data)
   }
   catch (err) {
-    return NextResponse.json(data)
+    console.error(err);
+    return NextResponse.json({ error: 'An error occurred' });
   }
 }

@@ -30,3 +30,177 @@ completed(4, 0.0013419999999999994, 490, 200, ok).
 completed(5, 0.0013239999999999988, 490, 200, ok).
 /*Sat Oct 28 16:44:52 2023*/ request(6, 1698533092.793, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),cache_control('max-age=0'),sec_ch_ua('"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"macOS"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
 completed(6, 0.0012100000000000027, 490, 200, ok).
+server(stopped, 1698534286).
+server(started, 1698555833).
+/*Sat Oct 28 23:03:53 2023*/ request(1, 1698555833.373, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),cache_control('max-age=0'),sec_ch_ua('"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"macOS"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(1, 0.027998, 490, 200, ok).
+/*Sat Oct 28 23:03:54 2023*/ request(2, 1698555834.707, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),cache_control('max-age=0'),sec_ch_ua('"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"macOS"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(2, 0.0015570000000000002, 490, 200, ok).
+/*Sat Oct 28 23:03:55 2023*/ request(3, 1698555835.387, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),cache_control('max-age=0'),sec_ch_ua('"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"macOS"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(3, 0.0015590000000000048, 490, 200, ok).
+/*Sat Oct 28 23:03:55 2023*/ request(4, 1698555835.610, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),cache_control('max-age=0'),sec_ch_ua('"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"macOS"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(4, 0.001954, 490, 200, ok).
+server(stopped, 1698555860).
+server(started, 1698555867).
+/*Sat Oct 28 23:04:26 2023*/ request(1, 1698555866.647, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),cache_control('max-age=0'),sec_ch_ua('"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"macOS"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(1, 0.02425, 490, 200, ok).
+/*Sat Oct 28 23:08:19 2023*/ request(2, 1698556099.886, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('c3ac8ea4-c606-43dc-8824-9ae80f247db3'),host(localhost),port(8000),connection('keep-alive'),content_length(64)]).
+completed(2, 0.005884000000000004, 113, 500, error("source_sink `\"C:/Users/andre/proyecto-ofs/jsFiles/ofs_test.mjs\"' does not exist")).
+/*Sat Oct 28 23:08:54 2023*/ request(3, 1698556134.718, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('adc96b72-390e-4355-aa40-967c833caa2b'),host(localhost),port(8000),connection('keep-alive'),content_length(62)]).
+completed(3, 0.0018180000000000002, 111, 500, error("source_sink `\"/Users/andre/proyecto-ofs/jsFiles/ofs_test.mjs\"' does not exist")).
+/*Sat Oct 28 23:09:26 2023*/ request(4, 1698556166.592, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('50ef06dd-8dc2-4aed-aaf6-1b9db3dabb92'),host(localhost),port(8000),connection('keep-alive'),content_length(39)]).
+completed(4, 0.001349999999999997, 331, 200, ok).
+/*Sat Oct 28 23:12:53 2023*/ request(5, 1698556373.783, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('aba348e2-de8a-44f3-9301-5070991a1f63'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(5, 0.0013559999999999996, 331, 200, ok).
+server(stopped, 1698560222).
+server(started, 1698560543).
+/*Sun Oct 29 00:22:23 2023*/ request(1, 1698560543.376, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('828e1bc6-c584-4783-bfc2-021cccb2b97c'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.018562, 84, 500, error("read_file/2: Unknown procedure: read_file_to_terms/2")).
+server(stopped, 1698560743).
+server(started, 1698560757).
+/*Sun Oct 29 00:25:57 2023*/ request(1, 1698560757.054, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('f01757da-0989-48cf-b112-38aff4971454'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.016852, 331, 200, ok).
+/*Sun Oct 29 00:26:30 2023*/ request(2, 1698560790.178, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('e444990b-34e2-44c7-bd9c-7f4029410749'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(2, 0.001183, 331, 200, ok).
+server(stopped, 1698560904).
+server(started, 1698560911).
+/*Sun Oct 29 00:28:30 2023*/ request(1, 1698560910.891, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('968686a7-cbf9-4f78-8336-0fed40aad5b7'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.021422, 69, 500, error("Arguments are not sufficiently instantiated")).
+server(stopped, 1698560940).
+server(started, 1698560978).
+/*Sun Oct 29 00:29:37 2023*/ request(1, 1698560977.856, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('cea1c3a7-a569-4766-9f74-104810de3c6e'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.020125, 92, 500, error("get_current_timestamp/1: Unknown procedure: http_timestamp/2")).
+server(stopped, 1698561248).
+server(started, 1698561255).
+/*Sun Oct 29 00:34:14 2023*/ request(1, 1698561254.606, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('b49b94ca-4825-488c-94be-cf5c3bd3b9d6'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.020932, 356, 200, ok).
+server(stopped, 1698561404).
+server(started, 1698561918).
+/*Sun Oct 29 00:45:18 2023*/ request(1, 1698561918.276, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('05e22cb3-2f9b-404a-b518-eebe339034b2'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.018802999999999997, 114, 500, error("stamp_date_time/3: Domain error: `timezone' expected, found `'America/Costa_Rica''")).
+server(stopped, 1698561972).
+server(started, 1698561979).
+/*Sun Oct 29 00:46:18 2023*/ request(1, 1698561978.763, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('90af895d-54e0-4c49-a771-b0de48bd0e03'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.022792, 583, 500, error("goal unexpectedly failed: user:handle_request([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0x6000008eb600),<stream>(0x6000008ebe00))),input(<stream>(0x6000008eb600)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),accept([media(_812/_814,[],1.0,[])]),postman_token('90af895d-54e0-4c49-a771-b0de48bd0e03'),host(localhost),port(8000),accept_encoding('gzip, deflate, br'),connection('keep-alive'),content_length(79)])")).
+/*Sun Oct 29 00:47:41 2023*/ request(2, 1698562061.617, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('82507cc6-ebea-4c83-a1fb-359f614de6fd'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(2, 0.0018870000000000002, 585, 500, error("goal unexpectedly failed: user:handle_request([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0x6000008c0000),<stream>(0x6000008c0100))),input(<stream>(0x6000008c0000)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),accept([media(_4914/_4916,[],1.0,[])]),postman_token('82507cc6-ebea-4c83-a1fb-359f614de6fd'),host(localhost),port(8000),accept_encoding('gzip, deflate, br'),connection('keep-alive'),content_length(79)])")).
+server(stopped, 1698562106).
+server(started, 1698562111).
+/*Sun Oct 29 00:48:31 2023*/ request(1, 1698562111.070, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('396f0d8b-14d8-403a-bebf-fd20cad8c8c7'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.023079000000000002, 356, 200, ok).
+server(stopped, 1698562237).
+server(started, 1698562241).
+/*Sun Oct 29 00:50:41 2023*/ request(1, 1698562241.263, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('eb66ee83-e1c9-413b-97ac-ec981a9a0e25'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.020775000000000002, 356, 200, ok).
+/*Sun Oct 29 00:50:54 2023*/ request(2, 1698562254.477, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('64387fee-2916-4d75-89e0-bd36f2f5d623'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(2, 0.001858, 356, 200, ok).
+/*Sun Oct 29 00:50:59 2023*/ request(3, 1698562259.504, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('9c007b03-c490-49ac-a08f-3538d0fd8412'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(3, 0.0007760000000000002, 356, 200, ok).
+/*Sun Oct 29 00:57:06 2023*/ request(4, 1698562626.147, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('1ba2c27e-c7fa-475b-8338-922a4b491cfa'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(4, 0.0010710000000000025, 356, 200, ok).
+server(stopped, 1698562745).
+server(started, 1698562750).
+/*Sun Oct 29 00:59:10 2023*/ request(1, 1698562750.037, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('6c5731d5-7bf4-48fe-800d-6c2568b92567'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.021875, 356, 200, ok).
+server(stopped, 1698562773).
+server(started, 1698563279).
+/*Sun Oct 29 01:07:58 2023*/ request(1, 1698563278.662, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('ff25e8f1-d288-4f15-8c8e-ac8018c3b78c'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.020274, 395, 200, ok).
+server(stopped, 1698564011).
+server(started, 1698564208).
+/*Sun Oct 29 01:23:28 2023*/ request(1, 1698564208.168, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('4d9f8d1c-6bae-4ec5-a377-256fbf07e5b4'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.018833, 395, 200, ok).
+/*Sun Oct 29 01:23:32 2023*/ request(2, 1698564212.563, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('926890d1-62d5-431b-bb32-7eef4146fbf5'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(2, 0.0016639999999999997, 395, 200, ok).
+server(stopped, 1698564233).
+server(started, 1698564243).
+/*Sun Oct 29 01:24:03 2023*/ request(1, 1698564243.037, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('47d48f32-a1d6-46ae-a239-8d8c82aa8f5b'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.024484, 395, 200, ok).
+/*Sun Oct 29 01:24:08 2023*/ request(2, 1698564248.767, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),user_agent('PostmanRuntime/7.33.0'),postman_token('3355ea98-a123-4286-86d4-43a38a1c8504'),host(localhost),port(8000),connection('keep-alive'),content_length(0)]).
+completed(2, 0.003281, 551, 500, error("goal unexpectedly failed: user:handle_request([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0x6000014b8600),<stream>(0x6000014b8700))),input(<stream>(0x6000014b8600)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),user_agent('PostmanRuntime/7.33.0'),accept([media(_4370/_4372,[],1.0,[])]),postman_token('3355ea98-a123-4286-86d4-43a38a1c8504'),host(localhost),port(8000),accept_encoding('gzip, deflate, br'),connection('keep-alive'),content_length(0)])")).
+/*Sun Oct 29 01:24:16 2023*/ request(3, 1698564256.413, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('10dd800e-918d-402a-b894-7fea3b675d2c'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(3, 0.0010439999999999998, 395, 200, ok).
+server(stopped, 1698564338).
+server(started, 1698564347).
+/*Sun Oct 29 01:25:47 2023*/ request(1, 1698564347.401, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('e8915f68-9b8c-4db5-88a7-d828d6dcd894'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.028156999999999998, 395, 200, ok).
+/*Sun Oct 29 01:25:52 2023*/ request(2, 1698564352.424, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),user_agent('PostmanRuntime/7.33.0'),postman_token('e2867c6d-912d-4a30-aae9-52a36061fdc0'),host(localhost),port(8000),connection('keep-alive'),content_length(0)]).
+completed(2, 0.0033179999999999998, 551, 500, error("goal unexpectedly failed: user:handle_request([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0x600003418d00),<stream>(0x600003418a00))),input(<stream>(0x600003418d00)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),user_agent('PostmanRuntime/7.33.0'),accept([media(_4480/_4482,[],1.0,[])]),postman_token('e2867c6d-912d-4a30-aae9-52a36061fdc0'),host(localhost),port(8000),accept_encoding('gzip, deflate, br'),connection('keep-alive'),content_length(0)])")).
+/*Sun Oct 29 01:26:22 2023*/ request(3, 1698564382.557, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('ce9e1a62-2d30-4def-b75d-82ee759d1319'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(3, 0.0017399999999999994, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+server(stopped, 1698564400).
+server(started, 1698564413).
+/*Sun Oct 29 01:26:53 2023*/ request(1, 1698564413.165, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('696169f4-1883-452f-a9e5-8c9b0a551e4d'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(1, 0.024746, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:26:57 2023*/ request(2, 1698564417.690, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('0c814025-9bae-4208-9024-d2a735bda3df'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(2, 0.0012840000000000004, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+server(stopped, 1698564423).
+server(started, 1698564429).
+/*Sun Oct 29 01:27:08 2023*/ request(1, 1698564428.737, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('0fc313de-9c77-48c9-b346-c35842ab3760'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(1, 0.025821, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+server(stopped, 1698564438).
+server(started, 1698564446).
+/*Sun Oct 29 01:27:25 2023*/ request(1, 1698564445.569, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('b85d265d-2f38-46b5-b674-c963baf6633c'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(1, 0.022624, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:28:26 2023*/ request(2, 1698564506.880, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('16ebc0ab-fbf2-402b-b510-f44bdb9dcc8b'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(2, 0.0011599999999999998, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_testmjs\"' does not exist")).
+/*Sun Oct 29 01:28:31 2023*/ request(3, 1698564511.880, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('b6d9ce29-743e-40e6-b372-7f29be99ad86'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(3, 0.0028380000000000002, 395, 200, ok).
+/*Sun Oct 29 01:29:10 2023*/ request(4, 1698564550.324, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('ee910750-6895-4ae1-ae16-30c204f032ae'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(4, 0.0017669999999999977, 395, 200, ok).
+server(stopped, 1698564561).
+server(started, 1698565149).
+/*Sun Oct 29 01:39:08 2023*/ request(1, 1698565148.810, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('ea21919f-2c9e-404e-a4b6-ccb54768805b'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.023110000000000002, 80, 500, error("handle_request/1: Unknown procedure: read_file/3")).
+/*Sun Oct 29 01:39:19 2023*/ request(2, 1698565159.640, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('051bd3df-8c9d-4930-92d7-c54d8502c405'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(2, 0.002436999999999998, 80, 500, error("handle_request/1: Unknown procedure: read_file/3")).
+/*Sun Oct 29 01:39:27 2023*/ request(3, 1698565167.781, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('f84f5546-f817-481d-913e-f2660425b952'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(3, 0.00191, 80, 500, error("handle_request/1: Unknown procedure: read_file/3")).
+server(stopped, 1698565209).
+server(started, 1698565217).
+/*Sun Oct 29 01:40:16 2023*/ request(1, 1698565216.602, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('dab1d82c-50b7-4ceb-ad06-87cd32d8f6b2'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.022782, 80, 500, error("handle_request/1: Unknown procedure: read_file/3")).
+server(stopped, 1698565240).
+server(started, 1698565297).
+/*Sun Oct 29 01:41:36 2023*/ request(1, 1698565296.777, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('6e11ebef-e91f-4e47-96fb-ba578e8f0130'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(1, 0.020883000000000002, 395, 200, ok).
+/*Sun Oct 29 01:41:43 2023*/ request(2, 1698565303.297, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('859bc42e-c1da-4c8c-8767-355bc6edd248'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(2, 0.001801, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:41:49 2023*/ request(3, 1698565309.473, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('3c0e4bc4-f384-4f63-b75f-1b53608ad8bf'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(3, 0.0008529999999999999, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:41:51 2023*/ request(4, 1698565311.936, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('6f38371b-89c8-4fc0-b0cd-fe72f9c970ff'),host(localhost),port(8000),connection('keep-alive'),content_length(80)]).
+completed(4, 0.0014209999999999987, 102, 500, error("Stream <stream>(0x6000007b0400):1:80 Syntax error: json(eof_in_string)")).
+/*Sun Oct 29 01:41:55 2023*/ request(5, 1698565315.513, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('2da8536a-6839-4150-9922-577feab15475'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(5, 0.0012909999999999998, 395, 200, ok).
+/*Sun Oct 29 01:42:02 2023*/ request(6, 1698565322.992, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('312c0ad9-60de-4241-99f8-7cb1fc2ebb1a'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(6, 0.0015350000000000001, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:42:19 2023*/ request(7, 1698565339.439, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('b26a9e92-7e42-43a8-8655-f019e7d146a4'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(7, 0.001268, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:42:20 2023*/ request(8, 1698565340.737, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('28334f2c-e0eb-48f1-90c9-f916742bd6dd'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(8, 0.0008089999999999998, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+server(stopped, 1698565343).
+server(started, 1698565376).
+/*Sun Oct 29 01:42:55 2023*/ request(1, 1698565375.686, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('89b25cb2-b354-4f7f-baa0-99f65c2ca696'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(1, 0.023746999999999997, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:42:57 2023*/ request(2, 1698565377.731, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('5de3350d-2222-4678-9ee7-ab28ac660cf0'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(2, 0.001624, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:42:58 2023*/ request(3, 1698565378.311, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('32890092-53c8-4e5d-aaa0-ed790060a67e'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(3, 0.0008230000000000001, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:42:59 2023*/ request(4, 1698565379.056, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('0a4877f5-304c-4522-83ca-8a0dfeee54b6'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(4, 0.00106, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:42:59 2023*/ request(5, 1698565379.503, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('b38db8f6-43df-4d2d-9a5a-3b40d7a1a099'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(5, 0.0012430000000000002, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+server(stopped, 1698565381).
+server(started, 1698565386).
+/*Sun Oct 29 01:43:05 2023*/ request(1, 1698565385.788, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('218cdc85-85e8-411b-a31b-9d7485b550bd'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(1, 0.01855, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:43:09 2023*/ request(2, 1698565389.919, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('09227e64-98b1-4908-b33c-1d71f934b117'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(2, 0.0024000000000000002, 395, 200, ok).
+/*Sun Oct 29 01:43:14 2023*/ request(3, 1698565394.773, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('18b79812-dd44-4979-ac45-6612b4e1b5ef'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(3, 0.0016819999999999995, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+server(stopped, 1698565435).
+server(started, 1698565440).
+/*Sun Oct 29 01:43:59 2023*/ request(1, 1698565439.935, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('db370903-98c8-4750-b485-6ed1bcbf1bb2'),host(localhost),port(8000),connection('keep-alive'),content_length(78)]).
+completed(1, 0.029023, 127, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test.mj\"' does not exist")).
+/*Sun Oct 29 01:44:03 2023*/ request(2, 1698565443.647, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),content_type('application/json'),user_agent('PostmanRuntime/7.33.0'),postman_token('33a2f987-88db-44c0-a189-f3cefbb5c268'),host(localhost),port(8000),connection('keep-alive'),content_length(79)]).
+completed(2, 0.0022689999999999997, 395, 200, ok).
