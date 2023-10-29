@@ -30,6 +30,7 @@ export async function POST(request) {
     return NextResponse.json(data)
   }
   catch (err) {
-    return NextResponse.json(data)
+    console.error(err);
+    return NextResponse.json({ error: 'An error occurred' });
   }
 }
