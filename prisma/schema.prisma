@@ -12,6 +12,6 @@ datasource db {
 
 model file {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
-  fileName    String
+  fileName    String @unique
   fileContent String
 }

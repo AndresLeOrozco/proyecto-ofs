@@ -14,7 +14,9 @@ import path from "path"
 
 export const compileFile = async (name) => {
     try {
+
         const filePath = path.join(process.cwd(), "jsFiles", name)
+
         console.log(filePath)
         const response = await fetch(`http://localhost:8000/compile`, {
             method: 'POST',

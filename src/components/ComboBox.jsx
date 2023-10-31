@@ -28,7 +28,7 @@ export const ComboBox = ({ items = [], selectedFile, updateInputText, setComboBo
         <select id="selectBox"  onChange={handleChangeOp} className="border border-gray-300 bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md appearance-none m-4">
             <option value="">--Saved Files--</option>
             {items.map((item) => (
-                <option key={item} value={`${item}`}>{item}</option>
+                <option key={item.fileName} value={`${item.fileName}`}>{item.fileName}</option>
             ))}
         </select>
     </div>

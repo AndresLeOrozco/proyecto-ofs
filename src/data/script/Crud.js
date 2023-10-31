@@ -21,12 +21,12 @@ Kairo Chacon Maleanos
 
 import fs from "fs/promises"
 import path from "path"
+import { getAllFiles, getByName, createFile } from "../../../prisma/DAO"
+
 export const ReadAllFiles = async () => {
 
-    const filePath = path.join(process.cwd(), "private")
-
     try {
-        const files = await fs.readdir(filePath);
+        const files = await getAllFiles();
         return files;
     } catch (err) {
         console.error("Error reading the file:", err);
@@ -43,9 +43,8 @@ export const ReadAllFiles = async () => {
 
 export const ReadFileByName = async (name) => {
 
-    const filePath = path.join(process.cwd(), "private", name)
     try {
-        const fileContent = await fs.readFile(filePath, "utf-8")
+        const fileContent = await getByName(name);
         return fileContent;
     } catch (err) {
         throw("ERROR, no such file or directory");
@@ -56,18 +55,9 @@ export const WriteFileByName = async (name, content) => {
 
     let message = ""
 
-    const filePath = path.join(process.cwd(), "private", name)
-
     try {
-        fs.access(filePath, fs.constants.F_OK)
-            .then(() => {
-                message = " Existed File, Successfully overwrited"
-            })
-            .catch((err) => {
-                message = " Successfully Saved"
-            })
-
-        await fs.writeFile(filePath, content, "utf-8")
+        const fileContent = await createFile(name, content);
+        message = "File written successfully";
         return message;
     } catch (err) {
         return("Error writting at: ", err);
