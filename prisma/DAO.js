@@ -36,13 +36,15 @@ export const createFile = async (fName, fContent) => {
   })
 }
 
-
-// main()
-//   .then(async () => {
-//     await prisma.$disconnect()
-//   })
-//   .catch(async (e) => {
-//     console.error(e)
-//     await prisma.$disconnect()
-//     process.exit(1)
-//   })
+export const updateFile = async (fName, fContent, newfName = fName) => {
+  try {
+    return await prisma.file.update({
+      where: {fileName: fName},
+      data: {fName: newfName, fileContent: fContent},
+    });
+  } catch (error) {
+    console.log("Error updating", error) 
+  } finally {
+    await prisma.$disconnect();
+  }
+}
