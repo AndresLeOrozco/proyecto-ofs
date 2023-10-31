@@ -105,3 +105,8 @@ completed(35, 0.0, 436, 200, ok).
 completed(36, 0.0, 396, 200, ok).
 /*Sun Oct 29 14:19:18 2023*/ request(37, 1698610758.386, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(64)]).
 completed(37, 0.0, 127, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\Messi.js\"' does not exist")).
+server(started, 1698724946).
+/*Mon Oct 30 22:02:25 2023*/ request(1, 1698724945.632, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(1, 0.015625, 408, 200, ok).
+/*Mon Oct 30 22:04:05 2023*/ request(2, 1698725045.571, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(2, 0.0, 408, 200, ok).
