@@ -21,7 +21,7 @@ Kairo Chacon Maleanos
 
 import fs from "fs/promises"
 import path from "path"
-import { getAllFiles, getByName, createFile } from "../../../prisma/DAO"
+import { getAllFiles, getByName, createFile, updateFile, updateFileName } from "../../../prisma/DAO"
 
 export const ReadAllFiles = async () => {
 
@@ -52,14 +52,22 @@ export const ReadFileByName = async (name) => {
 }
 
 export const WriteFileByName = async (name, content) => {
-
-    let message = ""
-
     try {
         const fileContent = await createFile(name, content);
-        message = "File written successfully";
-        return message;
-    } catch (err) {
-        return("Error writting at: ", err);
+        return `File ${name} written successfully`;
+    } catch (_) {
+        const updatedFile = await updateFile(name, content);
+        console.log(updatedFile)
+        return `File ${name} updated successfully`;
+    }
+}
+
+export const editFileNameByName = async (name, newName) => {
+
+    try {
+        const fileContent = await updateFileName(name, newName);
+        return newName;
+    } catch (error) {
+        throw error
     }
 }

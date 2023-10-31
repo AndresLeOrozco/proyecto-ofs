@@ -13,7 +13,9 @@ load files in the Edition Textual Area (EA).
 import fs from "fs/promises"
 import path from "path"
 import { NextResponse } from "next/server"
-import { ReadFileByName, WriteFileByName } from "@/data/script/Crud"
+import { ReadFileByName, editFileNameByName } from "@/data/script/Crud"
+import { Console } from "console"
+import { stat } from "fs"
 
 /*
 
@@ -45,13 +47,10 @@ export const PUT = async (request, { params }) => {
     
     const newName = await request.json()
    
-    const fileOldNamePath = path.join(process.cwd(), "private", params.id)
-    const fileNewNamePath = path.join(process.cwd(), "private", newName)
-    
+    const response  = await editFileNameByName(params.id, newName);
 
-    await fs.rename(fileOldNamePath, fileNewNamePath);
-    return NextResponse.json(newName)
+    return NextResponse.json("Rename Success")
   } catch (error) {
-    return NextResponse.json(params.id)
+    return NextResponse.json("Error", { status: 500 })
   }
 }

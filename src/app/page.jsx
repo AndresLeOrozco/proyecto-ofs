@@ -255,6 +255,7 @@ const Home = () => {
         actualFile={state.fileSelected}
         setOnOff={handleEditClickOn}
         setRename={handleClearClick}
+        alert = {setAndShowAlert}
       />
       <div className="text-all">
         <div className="text-EA">

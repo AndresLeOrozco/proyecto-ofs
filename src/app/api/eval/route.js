@@ -29,6 +29,6 @@ export const POST = async (request) => {
       return NextResponse.json(fileContent)
 
     } catch (error) {
-      return NextResponse.json("Error, Archivo no existe")
+      return NextResponse.json("Error, Nothing to evaluate")
     }
   }

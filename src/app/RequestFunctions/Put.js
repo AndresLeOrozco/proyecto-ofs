@@ -24,7 +24,6 @@ export const Put = async (bodyRequest, url) => {
       },
       body: JSON.stringify(bodyRequest)
     })
-  
-    const data = await res.json()
-    return data
+    console.log("res: ", res) 
+    return res
   }

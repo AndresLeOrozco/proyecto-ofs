@@ -26,7 +26,7 @@ export const POST = async (request, { params }) => {
     
     const message = await WriteFileByName(params.id, fileContent)
 
-    return NextResponse.json(params.id + message)
+    return NextResponse.json(message)
   } catch (error) {
 
     return NextResponse.json("Error")
