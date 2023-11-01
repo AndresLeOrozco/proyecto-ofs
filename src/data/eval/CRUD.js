@@ -20,7 +20,7 @@ export const EvaluateFile = async (name) => {
     try {
         const filePath = path.join(process.cwd(), "jsFiles", name)
         console.log(filePath)
-        const {stdout, stderr, error} = await execPromise(`node ${filePath}`)
+        const {stdout, stderr, error} = await execPromise(`node "${filePath}"`)
         console.error(stderr);
         console.error(stdout);
         return stdout;
