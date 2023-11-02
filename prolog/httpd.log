@@ -159,3 +159,8 @@ completed(8, 0.0009689999999999976, 129, 500, error("source_sink `\"/Users/eduar
 /*Wed Nov  1 21:22:04 2023*/ request(9, 1698895324.762, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
 completed(9, 0.0009449999999999736, 407, 200, ok).
 server(stopped, 1698896266).
+server(started, 1698896638).
+/*Wed Nov 01 21:43:57 2023*/ request(1, 1698896637.697, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(68)]).
+completed(1, 0.0, 408, 200, ok).
+/*Wed Nov 01 21:44:02 2023*/ request(2, 1698896642.518, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(69)]).
+completed(2, 0.0, 439, 200, ok).

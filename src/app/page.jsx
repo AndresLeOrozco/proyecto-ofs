@@ -253,7 +253,7 @@ const Home = () => {
         selectedFile={state.inputText}
         updateInputText={handleInputText}
         actualFile={state.fileSelected}
-        setOnOff={handleEditClickOn}
+        setOnOff={handleEditClick}
         setRename={handleClearClick}
         alert = {setAndShowAlert}
         recoverScript={handleRecoverScript}
