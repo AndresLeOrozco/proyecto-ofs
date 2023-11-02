@@ -158,3 +158,4 @@ completed(7, 0.0004850000000000132, 129, 500, error("source_sink `\"/Users/eduar
 completed(8, 0.0009689999999999976, 129, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test1.mjs\"' does not exist")).
 /*Wed Nov  1 21:22:04 2023*/ request(9, 1698895324.762, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
 completed(9, 0.0009449999999999736, 407, 200, ok).
+server(stopped, 1698896266).
