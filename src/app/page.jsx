@@ -144,7 +144,7 @@ const Home = () => {
   const handleRecoverScript = async () => {
     const scripts = await Get("script");
     console.log(scripts);
-    dispatch({ type: "setScripts", payload: scripts });
+    scripts ? dispatch({ type: "setScripts", payload: scripts }) : dispatch({ type: "setScripts", payload: [] });
   };
 
   /*
@@ -154,7 +154,7 @@ const Home = () => {
 
   const handleSelectFile = async (selected) => {
     const file = selected ? await Get(`script/${selected}`) : selected;
-    dispatch({ type: "setTextEA", payload: file.fileContent });
+    file ? dispatch({ type: "setTextEA", payload: file.fileContent }) : dispatch({ type: "setTextEA", payload: "Error, cannot find file" });
     handleOnSelected(file);
   };
 
