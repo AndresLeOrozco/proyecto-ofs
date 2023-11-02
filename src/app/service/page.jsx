@@ -9,11 +9,16 @@ Description:
 Page that  gives ifnormation about other services that we offer.
 */
 import Image from "next/image"
+import tec from "../../../public/images/tec.png"
 export const Home = () => {
     return (
         <div class="bg-white p-6 rounded-lg shadow-md flex">
             <div class="flex-shrink-0">
-                <Image src="https://clipground.com/images/technology-png-logo-8.jpg" alt="Imagen pequeña" class="w-16 h-16 rounded-full" />
+                <Image src={tec}
+                    alt="Imagen pequeña"
+                    width={200}
+                    height={200} 
+                    />
             </div>
             <div class="ml-4">
                 <h1 class="text-2xl font-semibold">Our Services</h1><br />

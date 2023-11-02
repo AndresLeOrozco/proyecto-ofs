@@ -12,6 +12,7 @@ Returns a navigation bar component.
 import Link from "next/link"
 import { About } from "./Modals"
 import Image from "next/image"
+import escinf from "../../../public/images/ESCINF.png"
 const Navbar = () => {
 
   return (
@@ -19,11 +20,12 @@ const Navbar = () => {
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center">
           <Image
-            src="https://www.escinf.una.ac.cr/templates/yootheme/cache/f2/logoESCINF-f2f112bd.png"
-            className="h-20 mr-3"
+            src={escinf}
+            width={100}
+            height={100}
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white mx-5">
             OFS Playground
           </span>
         </Link>
