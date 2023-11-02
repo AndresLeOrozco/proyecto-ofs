@@ -175,3 +175,11 @@ completed(1, 0.008247, 407, 200, ok).
 completed(2, 0.001058, 407, 200, ok).
 /*Thu Nov  2 00:01:01 2023*/ request(3, 1698904861.351, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
 completed(3, 0.000341000000000001, 438, 200, ok).
+server(stopped, 1698967892).
+server(started, 1698968071).
+/*Thu Nov  2 17:34:31 2023*/ request(1, 1698968071.292, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(1, 0.012880999999999998, 438, 200, ok).
+/*Thu Nov  2 17:34:31 2023*/ request(2, 1698968071.391, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(2, 0.0005830000000000002, 438, 200, ok).
+/*Thu Nov  2 17:34:37 2023*/ request(3, 1698968077.912, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(3, 0.001588, 407, 200, ok).

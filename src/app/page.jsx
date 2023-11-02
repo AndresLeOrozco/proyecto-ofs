@@ -154,7 +154,7 @@ const Home = () => {
 
   const handleSelectFile = async (selected) => {
     const file = selected ? await Get(`script/${selected}`) : selected;
-    file ? dispatch({ type: "setTextEA", payload: file.fileContent }) : dispatch({ type: "setTextEA", payload: "Error, cannot find file" });
+    file ? dispatch({ type: "setTextEA", payload: file.fileContent }) : dispatch({ type: "setTextEA", payload: "" });
     handleOnSelected(file);
   };
 
