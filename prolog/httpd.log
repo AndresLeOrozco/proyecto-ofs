@@ -139,3 +139,22 @@ completed(12, 0.0, 439, 200, ok).
 completed(13, 0.0, 439, 200, ok).
 /*Tue Oct 31 10:33:26 2023*/ request(14, 1698770006.173, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(71)]).
 completed(14, 0.0, 134, 500, error("source_sink `\"C:\\\\Users\\\\andre\\\\proyecto-ofs\\\\jsFiles\\\\HolaComoVas.txt\"' does not exist")).
+server(started, 1698878737).
+/*Wed Nov  1 16:45:36 2023*/ request(1, 1698878736.922, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(1, 0.009441000000000001, 407, 200, ok).
+/*Wed Nov  1 16:46:30 2023*/ request(2, 1698878790.206, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(2, 0.0007580000000000017, 438, 200, ok).
+/*Wed Nov  1 16:46:46 2023*/ request(3, 1698878806.093, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(3, 0.0013559999999999996, 438, 200, ok).
+/*Wed Nov  1 16:46:55 2023*/ request(4, 1698878815.122, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(65)]).
+completed(4, 0.002790000000000001, 115, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles\"' does not exist")).
+/*Wed Nov  1 16:47:04 2023*/ request(5, 1698878824.330, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(5, 0.0015660000000000014, 438, 200, ok).
+/*Wed Nov  1 19:22:20 2023*/ request(6, 1698888140.534, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(6, 0.0003949999999999787, 407, 200, ok).
+/*Wed Nov  1 21:19:55 2023*/ request(7, 1698895195.512, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(7, 0.0004850000000000132, 129, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test1.mjs\"' does not exist")).
+/*Wed Nov  1 21:20:25 2023*/ request(8, 1698895225.241, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(8, 0.0009689999999999976, 129, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/ofs_test1.mjs\"' does not exist")).
+/*Wed Nov  1 21:22:04 2023*/ request(9, 1698895324.762, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(9, 0.0009449999999999736, 407, 200, ok).

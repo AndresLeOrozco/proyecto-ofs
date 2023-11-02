@@ -53,7 +53,7 @@ export const ReadFileByName = async (name) => {
 
 export const WriteFileByName = async (name, content) => {
     try {
-        const fileContent = await createFile(name, content);
+        await createFile(name, content);
         return `File ${name} written successfully`;
     } catch (_) {
         const updatedFile = await updateFile(name, content);
@@ -65,7 +65,7 @@ export const WriteFileByName = async (name, content) => {
 export const editFileNameByName = async (name, newName) => {
 
     try {
-        const fileContent = await updateFileName(name, newName);
+        await updateFileName(name, newName);
         return newName;
     } catch (error) {
         throw error

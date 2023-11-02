@@ -31,11 +31,11 @@ export const createFile = async (fName, fContent) => {
   })
 }
 
-export const updateFile = async (fName, fContent, newfName = fName) => {
+export const updateFile = async (fName, fContent) => {
   try {
     return await prisma.file.update({
       where: {fileName: fName},
-      data: {fileName: newfName, fileContent: fContent},
+      data: {fileContent: fContent},
     });
   } catch (error) {
     console.log("Error updating", error) 

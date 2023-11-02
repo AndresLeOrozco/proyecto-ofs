@@ -256,6 +256,7 @@ const Home = () => {
         setOnOff={handleEditClickOn}
         setRename={handleClearClick}
         alert = {setAndShowAlert}
+        recoverScript={handleRecoverScript}
       />
       <div className="text-all">
         <div className="text-EA">
