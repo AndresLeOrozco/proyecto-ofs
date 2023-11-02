@@ -11,14 +11,14 @@ Returns a navigation bar component.
 
 import Link from "next/link"
 import { About } from "./Modals"
-
+import Image from "next/image"
 const Navbar = () => {
 
   return (
     <nav className="border-gray-200 bg-gray-900">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center">
-          <img
+          <Image
             src="https://www.escinf.una.ac.cr/templates/yootheme/cache/f2/logoESCINF-f2f112bd.png"
             className="h-20 mr-3"
             alt="Flowbite Logo"

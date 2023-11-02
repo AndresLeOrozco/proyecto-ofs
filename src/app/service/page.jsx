@@ -8,12 +8,12 @@ Kairo Chacon Maleanos
 Description: 
 Page that  gives ifnormation about other services that we offer.
 */
-
+import Image from "next/image"
 export const Home = () => {
     return (
         <div class="bg-white p-6 rounded-lg shadow-md flex">
             <div class="flex-shrink-0">
-                <img src="https://clipground.com/images/technology-png-logo-8.jpg" alt="Imagen pequeña" class="w-16 h-16 rounded-full" />
+                <Image src="https://clipground.com/images/technology-png-logo-8.jpg" alt="Imagen pequeña" class="w-16 h-16 rounded-full" />
             </div>
             <div class="ml-4">
                 <h1 class="text-2xl font-semibold">Our Services</h1><br />
