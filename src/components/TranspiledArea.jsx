@@ -40,7 +40,7 @@ export const TranspiledArea = ({ AreaText = "", FileName = "" }) => {
                         id={`ta-JS`}
                         wrap="off"
                         readOnly
-                        value={AreaText.replace(`import { Stream, iterate } from "../src/utils/stream.mjs";${'\n'}`, "")}
+                        value={AreaText.replace(`import { Stream, iterate } from "../src/utils/stream.mjs"${'\n'}`, "")}
                         placeholder="Transpiling..."
                     ></textarea>
                     <div className=" absolute inset-y-0 left-0 pl-2 top-2 text-gray-400">
