@@ -183,3 +183,36 @@ completed(1, 0.012880999999999998, 438, 200, ok).
 completed(2, 0.0005830000000000002, 438, 200, ok).
 /*Thu Nov  2 17:34:37 2023*/ request(3, 1698968077.912, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
 completed(3, 0.001588, 407, 200, ok).
+/*Thu Nov  2 17:37:06 2023*/ request(4, 1698968226.485, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(4, 0.0008940000000000007, 407, 200, ok).
+/*Thu Nov  2 17:37:12 2023*/ request(5, 1698968232.958, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(5, 0.0012519999999999996, 438, 200, ok).
+/*Thu Nov  2 17:38:24 2023*/ request(6, 1698968304.465, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(74)]).
+completed(6, 0.002518000000000001, 124, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/hola.txt\"' does not exist")).
+/*Thu Nov  2 17:38:32 2023*/ request(7, 1698968312.807, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(74)]).
+completed(7, 0.0018590000000000013, 124, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/hola.txt\"' does not exist")).
+/*Thu Nov  2 17:38:33 2023*/ request(8, 1698968313.857, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(74)]).
+completed(8, 0.0021790000000000004, 124, 500, error("source_sink `\"/Users/eduardoojeda/Documents/proyecto-ofs/jsFiles/hola.txt\"' does not exist")).
+/*Thu Nov  2 18:03:11 2023*/ request(9, 1698969791.155, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(9, 0.0010609999999999994, 407, 200, ok).
+/*Thu Nov  2 18:04:39 2023*/ request(10, 1698969879.698, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(10, 0.001471, 407, 200, ok).
+/*Thu Nov  2 18:09:14 2023*/ request(11, 1698970154.787, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(11, 0.002097999999999999, 407, 200, ok).
+/*Thu Nov  2 18:12:41 2023*/ request(12, 1698970361.512, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(12, 0.002008999999999997, 407, 200, ok).
+/*Thu Nov  2 18:12:49 2023*/ request(13, 1698970369.038, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(79)]).
+completed(13, 0.0021100000000000008, 438, 200, ok).
+/*Thu Nov  2 18:13:23 2023*/ request(14, 1698970403.842, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(14, 0.001628000000000001, 407, 200, ok).
+/*Thu Nov  2 18:17:26 2023*/ request(15, 1698970646.245, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(15, 0.0020599999999999993, 407, 200, ok).
+/*Thu Nov  2 18:20:56 2023*/ request(16, 1698970856.559, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(16, 0.0017669999999999977, 421, 200, ok).
+/*Thu Nov  2 18:25:37 2023*/ request(17, 1698971137.769, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(17, 0.0004720000000000002, 421, 200, ok).
+/*Thu Nov  2 18:26:02 2023*/ request(18, 1698971162.660, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(18, 0.0009540000000000035, 421, 200, ok).
+/*Thu Nov  2 18:26:43 2023*/ request(19, 1698971203.191, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(node),content_length(78)]).
+completed(19, 0.0013219999999999968, 421, 200, ok).
+server(stopped, 1698971949).
