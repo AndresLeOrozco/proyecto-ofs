@@ -185,11 +185,12 @@ const Home = () => {
   const handleSaveClick = async () => {
     let message = "Error, Empty EA Area or FileName field";
     if (state.textEA && state.inputText) {
-      const nameFile = await Post(state.textEA, `save/${state.inputText}`);
+      const filename = state.inputText.includes(".ofs") ? state.inputText : `${state.inputText}.ofs`;
+      const nameFile = await Post(state.textEA, `save/${filename}` );
       handleRecoverScript();
-      handleOnSelected(state.inputText);
-      handleSelectFile(state.inputText);
-      handleComboBoxValue(state.inputText)
+      handleOnSelected(filename);
+      handleSelectFile(filename);
+      handleComboBoxValue(filename)
       message = nameFile;
     }
 
