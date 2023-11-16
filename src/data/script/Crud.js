@@ -57,7 +57,7 @@ export const WriteFileByName = async (name, content) => {
         return `File ${name} written successfully`;
     } catch (_) {
         const updatedFile = await updateFile(name, content);
-        console.log(updatedFile)
+        // console.log(updatedFile)
         return `File ${name} updated successfully`;
     }
 }
