@@ -14,7 +14,7 @@ export const readKeywords = async () => {
 
     try {
         const keywords = await getKeywords();
-        return keywords[0];
+        return keywords;
     } catch (err) {
         console.error("Error reading the keywords:", err);
         throw err;

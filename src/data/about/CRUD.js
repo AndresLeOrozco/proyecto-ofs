@@ -14,7 +14,7 @@ export const readAbout = async () => {
 
     try {
         const about = await getAbout();
-        return about[0];
+        return about;
     } catch (err) {
         console.error("Error reading the about:", err);
         throw err;

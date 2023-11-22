@@ -24,7 +24,7 @@ export const getAllFiles = async () => {
 
 export const getKeywords = async () => {
   try {
-    const keywords = await prisma.keywords.findMany({
+    const keywords = await prisma.keywords.findFirst({
       select: {
         id: true,
         words: true,
@@ -38,7 +38,7 @@ export const getKeywords = async () => {
 
 export const getAbout = async () => {
   try {
-    const about = await prisma.about.findMany({
+    const about = await prisma.about.findFirst({
       select: {
         id: true,
         about: true,
