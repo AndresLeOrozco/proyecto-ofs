@@ -11,27 +11,22 @@ return general information about the project and developers.
 */
 
 import { NextResponse } from "next/server"
-import path from 'path';
-import { promises as fs } from 'fs';
+import { readAbout } from "@/data/about/CRUD"
 
 /*
   GET method: Reads and retrieves the content of all files and returns them as a JSON response.
 
 */
 
- export const GET = async () => {
-  
-  const filePath = path.join(process.cwd(), 'src', 'data')
-
+export const GET = async () => {
   try {
-    const fileContents = await fs.readFile(filePath + '/about.json', 'utf-8')
-    return NextResponse.json(fileContents)
-    
+      const about = await readAbout()
+      return NextResponse.json(about)
+
   } catch (error) {
 
-    return NextResponse.json('Error Al leer el Archivo', { status: 500 })
+      return NextResponse.json("Error Al leer el Archivo", { status: 500 })
   }
-
 }
 
 export const POST = async (request) => {

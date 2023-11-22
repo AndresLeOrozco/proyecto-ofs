@@ -22,6 +22,34 @@ export const getAllFiles = async () => {
   } 
 }
 
+export const getKeywords = async () => {
+  try {
+    const keywords = await prisma.keywords.findMany({
+      select: {
+        id: true,
+        words: true,
+      },
+    });
+    return keywords;
+  } catch (error) {
+    console.error("Keywords are not available.", error)
+  } 
+}
+
+export const getAbout = async () => {
+  try {
+    const about = await prisma.about.findMany({
+      select: {
+        id: true,
+        about: true,
+      },
+    });
+    return about;
+  } catch (error) {
+    console.error("About are not available.", error)
+  } 
+}
+
 export const createFile = async (fName, fContent) => {
   return await prisma.file.create({
     data: {

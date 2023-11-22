@@ -15,3 +15,13 @@ model file {
   fileName    String @unique
   fileContent String
 }
+
+model keywords {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  words String[]
+}
+
+model about {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  about Json
+}

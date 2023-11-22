@@ -31,8 +31,8 @@ export const About = () => {
 
     const getAbout = async () => {
         const getAbout = await Get('about')
-        const data = JSON.parse(getAbout)
-        setAbout(data)
+        // const data = JSON.parse(getAbout)
+        setAbout(getAbout.about)
     }
 
     useEffect(() => {

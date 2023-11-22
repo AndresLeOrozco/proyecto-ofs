@@ -11,8 +11,7 @@ return the suggested keywords in the json file.
 */
 
 import { NextResponse } from "next/server"
-import path from 'path';
-import { promises as fs } from 'fs';
+import { readKeywords } from "@/data/keywords/CRUD"
 
 /*
 
@@ -20,19 +19,15 @@ import { promises as fs } from 'fs';
 
 */
 
- export const GET = async () => {
-  
-  const filePath = path.join(process.cwd(), 'src', 'data')
-
+export const GET = async () => {
   try {
-    const fileContents = await fs.readFile(filePath + '/keywords.json', 'utf-8')
-    return NextResponse.json(fileContents)
-    
+      const keywords = await readKeywords()
+      return NextResponse.json(keywords)
+
   } catch (error) {
 
-    return NextResponse.json('Error Al leer el Archivo', { status: 500 })
+      return NextResponse.json("Error Al leer el Archivo", { status: 500 })
   }
-
 }
 
 export const POST = async (request) => {

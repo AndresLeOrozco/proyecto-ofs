@@ -49,8 +49,7 @@ export const TextArea = ({
 
   const loadSuggest = async () => {
     const keywordList = await Get('keywords')
-    const keywords = JSON.parse(keywordList)
-    setSuggest(keywords.keywords)
+    setSuggest(keywordList.words)
   }
 
   useEffect(() => {

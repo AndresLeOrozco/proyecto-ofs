@@ -19,8 +19,6 @@ Kairo Chacon Maleanos
  * @throws {Error} If there is an error reading the file.
  */
 
-import fs from "fs/promises"
-import path from "path"
 import { getAllFiles, getByName, createFile, updateFile, updateFileName } from "../../../prisma/DAO"
 
 export const ReadAllFiles = async () => {
