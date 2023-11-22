@@ -11,17 +11,14 @@ this file recover a fs file and returns its content
 
 import path from "path"
 
-export const compileFile = async (name) => {
+export const compileFile = async (text) => {
     try {
-
-        const filePath = path.join(process.cwd(), "jsFiles", name)
-
         const response = await fetch(`http://localhost:8000/compile`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({filePath: filePath})
+            body: JSON.stringify({filePath: text})
         })  
         const data = await response.json()
         return data

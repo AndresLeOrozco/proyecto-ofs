@@ -15,13 +15,12 @@ import { exec } from 'child_process';
 
 const execPromise = promisify(exec);
 
-export const EvaluateFile = async (name) => {
+export const EvaluateFile = async () => {
     try {
-        const filePath = path.join(process.cwd(), "jsFiles", name)
+        const filePath = path.join(process.cwd(), "private", "transpiledCode.mjs")
         const {stdout, stderr, error} = await execPromise(`node "${filePath}"`)
         console.error(stderr);
         console.error(stdout);
-        console.log("Estoooooooo", stdout)
         return stdout;
     } catch (err) {
         throw("Error reading file: ", name);

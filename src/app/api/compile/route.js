@@ -24,9 +24,8 @@ the request and with other string containing the current date.
 
 export async function POST(request) {
   try {
-    const { name } = await request.json()
-    const nameMJS = name.replace('.ofs', '.mjs');
-    const data = await compileFile(nameMJS)
+    const { text } = await request.json()
+    const data = await compileFile(text)
     return NextResponse.json(data)
   }
   catch (err) {
