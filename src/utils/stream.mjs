@@ -8,60 +8,60 @@ Kairo Chacon Maleanos
 Description: 
 class Stream to manage iterables in a functional way
 */
-export class Stream{
-    iterable
-    constructor(iterable){
-        this.iterable = iterable
-    }
-    map( f ){
-        function* generator(iterable){
-            for (const item of iterable){
-                yield f(item)
-            }
-        }
-        return new Stream(generator(this.iterable))
+export class Stream {
+    iterable;
+
+    constructor(iterable) {
+        this.iterable = iterable;
     }
 
-    filter( f ){ 
-        function* generator(iterable){
-            for (const item of iterable){
-                if (f(item)){
-                    yield item
+    map(f) {
+        function* generator(iterable) {
+            for (const item of iterable) {
+                yield f(item);
+            }
+        }
+        return new Stream(generator(this.iterable));
+    }
+
+    filter(f) {
+        function* generator(iterable) {
+            for (const item of iterable) {
+                if (f(item)) {
+                    yield item;
                 }
             }
         }
-        return new Stream(generator(this.iterable))
+        return new Stream(generator(this.iterable));
     }
 
-    // forEach( f ){ 
-    //     for (const item of this.iterable){
-    //         f(item)
-    //     }
-    // }
-
-    cut( n ){ 
-        function* generator(iterable){
-            let i = n
-            while(i > 0){
-				yield iterable.next().value
-				i--
-			}
+    cut(n) {
+        function* generator(iterable) {
+            let i = n;
+            for (const item of iterable) {
+                if (i <= 0) {
+                    break;
+                }
+                yield item;
+                i--;
+            }
         }
-        return new Stream(generator(this.iterable))
+        return new Stream(generator(this.iterable));
     }
 
+    toList() {
+        return [...this.iterable];
+    }
 
-    toList(){    
-        return [...this.iterable]
+    static iterate(init, f, end = 100) {
+        function* iterate() {
+            let current = init;
+            while (current <= end) {
+                yield current;
+                current = f(current);
+            }
+        }
+        return new Stream(iterate());
     }
 }
-export function* iterate(init, f, end=100){
-    let current = init
-    while(current <= end){
-        yield current
-        current = f(current)
-    }
-}
-
-
 

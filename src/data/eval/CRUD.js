@@ -21,6 +21,7 @@ export const EvaluateFile = async (name) => {
         const {stdout, stderr, error} = await execPromise(`node "${filePath}"`)
         console.error(stderr);
         console.error(stdout);
+        console.log("Estoooooooo", stdout)
         return stdout;
     } catch (err) {
         throw("Error reading file: ", name);
