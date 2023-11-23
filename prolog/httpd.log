@@ -471,3 +471,150 @@ completed(9, 0.0, 44, 200, ok).
 completed(10, 0.0, 44, 200, ok).
 /*Thu Nov 23 01:25:59 2023*/ request(11, 1700724359.848, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(219)]).
 completed(11, 0.0, 114, 500, error("Illegal HTTP parameter: es6([parenth(es6([[[ident(n)],[]],relOp(!=),num(0)]))])")).
+completed(2, 217.10937500000003, 45, 500, error("Time limit exceeded")).
+/*Thu Nov 23 01:28:57 2023*/ request(12, 1700724537.220, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(18)]).
+completed(12, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:29:10 2023*/ request(13, 1700724550.083, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(21)]).
+completed(13, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:29:16 2023*/ request(14, 1700724556.781, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(21)]).
+completed(14, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:31:43 2023*/ request(15, 1700724703.641, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(20)]).
+completed(15, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:33:17 2023*/ request(16, 1700724797.266, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(26)]).
+completed(16, 0.0, 41, 200, ok).
+/*Thu Nov 23 01:33:29 2023*/ request(17, 1700724809.009, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(36)]).
+completed(17, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:33:41 2023*/ request(18, 1700724821.502, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(38)]).
+completed(18, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:34:44 2023*/ request(19, 1700724884.156, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(26)]).
+completed(19, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:35:02 2023*/ request(20, 1700724902.762, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(29)]).
+completed(20, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:35:11 2023*/ request(21, 1700724911.172, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(21, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:35:23 2023*/ request(22, 1700724923.490, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(44)]).
+completed(22, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:35:48 2023*/ request(23, 1700724948.770, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(23, 0.0625, 41, 200, ok).
+server(stopped, 1700725004).
+server(started, 1700725232).
+/*Thu Nov 23 01:40:32 2023*/ request(1, 1700725232.340, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(38)]).
+completed(1, 0.03125, 44, 200, ok).
+/*Thu Nov 23 01:40:45 2023*/ request(2, 1700725245.825, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(39)]).
+completed(2, 0.0625, 41, 200, ok).
+/*Thu Nov 23 01:40:54 2023*/ request(3, 1700725254.115, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(38)]).
+completed(3, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:41:09 2023*/ request(4, 1700725269.450, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(4, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:42:20 2023*/ request(5, 1700725340.271, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(680)]).
+completed(5, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:42:35 2023*/ request(6, 1700725355.246, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(683)]).
+completed(6, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:42:47 2023*/ request(7, 1700725367.265, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(668)]).
+completed(7, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:43:28 2023*/ request(8, 1700725408.086, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(680)]).
+completed(8, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:43:40 2023*/ request(9, 1700725420.500, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(9, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:44:08 2023*/ request(10, 1700725448.814, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(10, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:44:38 2023*/ request(11, 1700725478.220, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(11, 0.0, 44, 200, ok).
+server(stopped, 1700725510).
+server(started, 1700725520).
+/*Thu Nov 23 01:45:19 2023*/ request(1, 1700725519.816, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(1, 0.015625, 44, 200, ok).
+/*Thu Nov 23 01:45:42 2023*/ request(2, 1700725542.839, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(677)]).
+completed(2, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:46:01 2023*/ request(3, 1700725561.733, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(661)]).
+completed(3, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:46:11 2023*/ request(4, 1700725571.226, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(4, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:46:31 2023*/ request(5, 1700725591.920, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(678)]).
+completed(5, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:46:51 2023*/ request(6, 1700725611.496, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(680)]).
+completed(6, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:46:52 2023*/ request(7, 1700725612.493, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(680)]).
+completed(7, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:47:04 2023*/ request(8, 1700725624.633, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(8, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:48:08 2023*/ request(9, 1700725688.488, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(680)]).
+completed(9, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:48:40 2023*/ request(10, 1700725720.558, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(669)]).
+completed(10, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:49:27 2023*/ request(11, 1700725767.154, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(11, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:50:18 2023*/ request(12, 1700725818.811, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+completed(12, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:51:14 2023*/ request(13, 1700725874.920, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(678)]).
+completed(13, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:51:15 2023*/ request(14, 1700725875.398, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(678)]).
+completed(14, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:51:15 2023*/ request(15, 1700725875.952, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(678)]).
+completed(15, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:51:16 2023*/ request(16, 1700725876.114, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(678)]).
+completed(16, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:51:19 2023*/ request(17, 1700725879.141, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+completed(17, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:51:26 2023*/ request(18, 1700725886.643, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(656)]).
+completed(18, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:51:41 2023*/ request(19, 1700725901.805, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(656)]).
+completed(19, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:52:10 2023*/ request(20, 1700725930.624, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(660)]).
+completed(20, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:52:34 2023*/ request(21, 1700725954.156, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(680)]).
+completed(21, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:52:48 2023*/ request(22, 1700725968.377, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(22, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:52:49 2023*/ request(23, 1700725969.077, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(23, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:52:49 2023*/ request(24, 1700725969.241, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(682)]).
+completed(24, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:05 2023*/ request(25, 1700725985.859, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(683)]).
+completed(25, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:06 2023*/ request(26, 1700725986.408, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(683)]).
+completed(26, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:06 2023*/ request(27, 1700725986.599, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(683)]).
+completed(27, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:17 2023*/ request(28, 1700725997.076, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(688)]).
+completed(28, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:17 2023*/ request(29, 1700725997.787, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(688)]).
+completed(29, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:17 2023*/ request(30, 1700725997.936, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(688)]).
+completed(30, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:18 2023*/ request(31, 1700725998.095, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(688)]).
+completed(31, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:18 2023*/ request(32, 1700725998.228, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(688)]).
+completed(32, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:53:39 2023*/ request(33, 1700726019.130, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(692)]).
+completed(33, 0.0, 44, 200, ok).
+server(stopped, 1700726094).
+server(started, 1700726112).
+/*Thu Nov 23 01:55:12 2023*/ request(1, 1700726112.145, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(1, 0.015625, 44, 200, ok).
+/*Thu Nov 23 01:55:25 2023*/ request(2, 1700726125.885, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(686)]).
+completed(2, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:55:42 2023*/ request(3, 1700726142.070, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(687)]).
+completed(3, 0.0, 44, 200, ok).
+server(stopped, 1700726210).
+server(started, 1700726219).
+/*Thu Nov 23 01:56:59 2023*/ request(1, 1700726219.044, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(1, 0.0, 44, 200, ok).
+server(stopped, 1700726415).
+server(started, 1700726437).
+/*Thu Nov 23 02:00:36 2023*/ request(1, 1700726436.553, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(1, 0.0, 44, 200, ok).
+/*Thu Nov 23 02:00:44 2023*/ request(2, 1700726444.427, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(2, 0.0, 44, 200, ok).
+server(stopped, 1700726596).
+server(started, 1700726607).
+/*Thu Nov 23 02:03:27 2023*/ request(1, 1700726607.190, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(1, 0.015625, 81, 500, error("comment/2: Unknown procedure: string_without/4")).
+/*Thu Nov 23 02:04:39 2023*/ request(2, 1700726679.722, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(2, 0.0, 44, 200, ok).
+/*Thu Nov 23 02:04:45 2023*/ request(3, 1700726685.800, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(3, 0.0, 44, 200, ok).
+/*Thu Nov 23 02:04:49 2023*/ request(4, 1700726689.305, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(369)]).
+completed(4, 0.0, 44, 200, ok).
+/*Thu Nov 23 02:04:55 2023*/ request(5, 1700726695.195, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(219)]).
+completed(5, 0.0, 114, 500, error("Illegal HTTP parameter: es6([parenth(es6([[[ident(n)],[]],relOp(!=),num(0)]))])")).

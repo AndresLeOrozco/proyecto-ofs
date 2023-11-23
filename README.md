@@ -26,9 +26,9 @@ then start the start the application with the optimize code:
 npm start
 ```
 
-## To start the Prolog server
+## To start the Prolog server, open a new terminal in root folder
 
-Change to right folder using the following command: 
+Change to the right folder using the following command: 
 
 ```bash
 cd prolog

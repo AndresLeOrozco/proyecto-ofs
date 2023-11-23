@@ -47,13 +47,12 @@ printIt --> spaces, "printIt", spaces.
 
 space --> (" " ; "\t" ; "\n" ; "\r"; commentBlock).
 
-spaces --> space, spaces.
 spaces --> [].
-
-spaces --> comment.
+spaces --> space, spaces.
+spaces --> comment, spaces.
 
 comment --> "//", rest_comment.
-rest_comment --> "\n".
+rest_comment --> "\n";"\r".
 rest_comment --> [_],  rest_comment.
 
 
