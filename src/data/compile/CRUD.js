@@ -10,7 +10,7 @@ this file recover a fs file and returns its content
 */
 
 import path from "path"
-
+import fs from "fs/promises";
 export const compileFile = async (text) => {
     try {
         const response = await fetch(`http://localhost:8000/compile`, {
@@ -20,8 +20,9 @@ export const compileFile = async (text) => {
             },
             body: JSON.stringify({filePath: text})
         })  
-        const data = await response.json()
-        return data
+        const filePath = path.join(process.cwd(), "private", "prueba.mjs");
+        const fileContent = await fs.readFile(filePath, "utf-8");
+        return fileContent
     } catch (err) {
         console.error(err)
         return "No File"

@@ -21,7 +21,7 @@ export class Stream {
                 yield f(item);
             }
         }
-        return new Stream(generator(this.iterable));
+        return new Stream(generator(this.iterable)).toList();
     }
 
     filter(f) {

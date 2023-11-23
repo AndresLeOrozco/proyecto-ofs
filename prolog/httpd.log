@@ -194,3 +194,280 @@ server(stopped, 1700678057).
 server(started, 1700678065).
 /*Wed Nov 22 12:34:24 2023*/ request(1, 1700678064.749, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
 completed(1, 0.015625, 330, 200, ok).
+server(started, 1700681975).
+/*Wed Nov 22 13:39:35 2023*/ request(1, 1700681975.376, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(18)]).
+completed(1, 0.0, 133, 200, ok).
+/*Wed Nov 22 13:39:49 2023*/ request(2, 1700681989.181, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(38)]).
+completed(2, 0.0, 153, 200, ok).
+/*Wed Nov 22 13:40:26 2023*/ request(3, 1700682026.015, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(38)]).
+completed(3, 0.0, 153, 200, ok).
+server(started, 1700713700).
+/*Wed Nov 22 22:28:19 2023*/ request(1, 1700713699.981, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(27)]).
+completed(1, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Wed Nov 22 22:29:23 2023*/ request(2, 1700713763.527, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(27)]).
+completed(2, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Wed Nov 22 22:32:36 2023*/ request(3, 1700713956.888, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(156)]).
+completed(3, 0.0, 211, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 22:33:13 2023*/ request(4, 1700713993.180, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(4, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 22:35:35 2023*/ request(5, 1700714135.457, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
+/*Wed Nov 22 22:36:05 2023*/ request(6, 1700714165.537, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+/*Wed Nov 22 22:36:17 2023*/ request(7, 1700714177.987, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+/*Wed Nov 22 22:36:38 2023*/ request(8, 1700714198.740, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+/*Wed Nov 22 22:36:38 2023*/ request(9, 1700714198.888, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(5, 168.21875000000003, 45, 500, error("Time limit exceeded")).
+/*Wed Nov 22 22:40:35 2023*/ request(10, 1700714435.524, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(6, 165.18750000000003, 45, 500, error("Time limit exceeded")).
+completed(7, 173.85937500000003, 45, 500, error("Time limit exceeded")).
+completed(8, 170.75000000000003, 45, 500, error("Time limit exceeded")).
+completed(9, 164.98437500000003, 45, 500, error("Time limit exceeded")).
+completed(10, 201.92187500000003, 0, 500, error("Socket error: Software caused connection abort")).
+/*Wed Nov 22 22:54:03 2023*/ request(11, 1700715243.010, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(11, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+/*Wed Nov 22 22:55:32 2023*/ request(12, 1700715332.892, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+server(stopped, 1700715352).
+server(started, 1700715370).
+/*Wed Nov 22 22:56:10 2023*/ request(1, 1700715370.302, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+/*Wed Nov 22 22:56:12 2023*/ request(2, 1700715372.376, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+/*Wed Nov 22 22:57:18 2023*/ request(3, 1700715438.547, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+server(stopped, 1700715443).
+server(started, 1700715451).
+/*Wed Nov 22 22:57:30 2023*/ request(1, 1700715450.894, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(1, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+/*Wed Nov 22 22:59:48 2023*/ request(2, 1700715588.192, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(578)]).
+completed(2, 0.0, 275, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([es6([[[ident(process),ident(stdout),ident(write)],[]]])]),expr([es6([parenth(es6([str(\"*** Test Case 0 ***\\n\")]))])]),const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:00:41 2023*/ request(3, 1700715641.441, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(156)]).
+completed(3, 0.0, 211, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+server(stopped, 1700715980).
+server(started, 1700715987).
+/*Wed Nov 22 23:06:27 2023*/ request(1, 1700715987.192, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(156)]).
+completed(1, 0.03125, 211, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:07:49 2023*/ request(2, 1700716069.202, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(156)]).
+completed(2, 0.0, 211, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:08:15 2023*/ request(3, 1700716095.911, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(3, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:15:39 2023*/ request(4, 1700716539.352, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(4, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:16:08 2023*/ request(5, 1700716568.133, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(5, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:17:42 2023*/ request(6, 1700716662.435, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(6, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:18:08 2023*/ request(7, 1700716688.651, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(7, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:19:01 2023*/ request(8, 1700716741.381, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(8, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:19:48 2023*/ request(9, 1700716788.901, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(27)]).
+completed(9, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Wed Nov 22 23:20:11 2023*/ request(10, 1700716811.774, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(31)]).
+completed(10, 0.0, 159, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])]),expr([es6([parenth(es6([str(\"x\")]))])])])")).
+/*Wed Nov 22 23:21:17 2023*/ request(11, 1700716877.116, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(11, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:29:04 2023*/ request(12, 1700717344.687, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(12, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+server(stopped, 1700717592).
+server(started, 1700717600).
+/*Wed Nov 22 23:33:20 2023*/ request(1, 1700717600.380, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(1, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:33:42 2023*/ request(2, 1700717622.400, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(31)]).
+completed(2, 0.015625, 159, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])]),expr([es6([parenth(es6([str(\"x\")]))])])])")).
+server(stopped, 1700717663).
+server(started, 1700717692).
+/*Wed Nov 22 23:34:52 2023*/ request(1, 1700717692.242, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(1, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:35:32 2023*/ request(2, 1700717732.477, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(2, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Wed Nov 22 23:38:54 2023*/ request(3, 1700717934.841, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(3, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:42:00 2023*/ request(4, 1700718120.247, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(4, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:42:24 2023*/ request(5, 1700718144.399, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(5, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:42:51 2023*/ request(6, 1700718171.994, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(6, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+/*Wed Nov 22 23:43:12 2023*/ request(7, 1700718192.066, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
+/*Wed Nov 22 23:43:15 2023*/ request(8, 1700718195.546, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
+/*Wed Nov 22 23:43:30 2023*/ request(9, 1700718210.360, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
+/*Wed Nov 22 23:46:40 2023*/ request(10, 1700718400.495, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+completed(10, 0.0, 275, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([es6([[[ident(process),ident(stdout),ident(write)],[]]])]),expr([es6([parenth(es6([str(\"*** Test Case 0 ***\\n\")]))])]),const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:46:51 2023*/ request(11, 1700718411.550, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(655)]).
+completed(11, 0.0, 275, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([es6([[[ident(process),ident(stdout),ident(write)],[]]])]),expr([es6([parenth(es6([str(\"*** Test Case 0 ***\\n\")]))])]),const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:46:59 2023*/ request(12, 1700718419.327, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(643)]).
+completed(12, 0.0, 275, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([es6([[[ident(process),ident(stdout),ident(write)],[]]])]),expr([es6([parenth(es6([str(\"*** Test Case 0 ***\\n\")]))])]),const(ident(FOUR),undefined)])")).
+completed(7, 188.45312500000003, 45, 500, error("Time limit exceeded")).
+completed(8, 186.93750000000003, 45, 500, error("Time limit exceeded")).
+completed(9, 192.07812500000003, 45, 500, error("Time limit exceeded")).
+/*Wed Nov 22 23:49:17 2023*/ request(13, 1700718557.590, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(622)]).
+/*Wed Nov 22 23:49:20 2023*/ request(14, 1700718560.235, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(622)]).
+/*Wed Nov 22 23:49:32 2023*/ request(15, 1700718572.673, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(612)]).
+/*Wed Nov 22 23:49:45 2023*/ request(16, 1700718585.420, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+completed(16, 0.0, 275, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([es6([[[ident(process),ident(stdout),ident(write)],[]]])]),expr([es6([parenth(es6([str(\"*** Test Case 0 ***\\n\")]))])]),const(ident(FOUR),undefined)])")).
+/*Wed Nov 22 23:50:56 2023*/ request(17, 1700718656.381, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(20)]).
+completed(17, 0.0, 100, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])])])")).
+/*Wed Nov 22 23:53:06 2023*/ request(18, 1700718786.975, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(24)]).
+completed(18, 0.0, 100, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])])])")).
+completed(13, 186.67187500000003, 45, 500, error("Time limit exceeded")).
+completed(14, 193.06250000000003, 45, 500, error("Time limit exceeded")).
+completed(15, 183.06250000000003, 45, 500, error("Time limit exceeded")).
+/*Wed Nov 22 23:56:13 2023*/ request(19, 1700718973.912, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(19)]).
+completed(19, 0.0, 123, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(xx)],[]]])]),expr([es6([num(1)])])])")).
+/*Wed Nov 22 23:56:27 2023*/ request(20, 1700718987.348, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(18)]).
+completed(20, 0.0, 122, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])]),expr([es6([num(1)])])])")).
+/*Wed Nov 22 23:56:31 2023*/ request(21, 1700718991.555, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(20)]).
+completed(21, 0.0, 100, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])])])")).
+/*Wed Nov 22 23:57:30 2023*/ request(22, 1700719050.051, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(26)]).
+completed(22, 0.0, 110, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(GUGAESPLAYO)],[]]])])])")).
+/*Wed Nov 22 23:58:21 2023*/ request(23, 1700719101.385, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(35)]).
+completed(23, 0.0, 96, 500, error("Illegal HTTP parameter: prog([[],let(ident(guga),undefined)])")).
+/*Wed Nov 22 23:58:51 2023*/ request(24, 1700719131.281, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(24)]).
+completed(24, 0.0, 162, 500, error("Illegal HTTP parameter: prog([[],expr([es6(array(args([es6([num(1)]),es6([num(2)]),es6([num(3)]),es6([num(4)])]),rest([])))])])")).
+/*Wed Nov 22 23:58:58 2023*/ request(25, 1700719138.649, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(34)]).
+completed(25, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+server(stopped, 1700719317).
+server(started, 1700719323).
+/*Thu Nov 23 00:02:03 2023*/ request(1, 1700719323.002, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(34)]).
+completed(1, 0.015625, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Thu Nov 23 00:02:16 2023*/ request(2, 1700719336.978, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(50)]).
+completed(2, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Thu Nov 23 00:02:25 2023*/ request(3, 1700719345.115, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(51)]).
+completed(3, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Thu Nov 23 00:03:59 2023*/ request(4, 1700719439.602, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(34)]).
+completed(4, 0.0, 162, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])]),expr([es6([parenth(es6([str(\"amen\")]))])])])")).
+/*Thu Nov 23 00:04:21 2023*/ request(5, 1700719461.012, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(5, 0.125, 117, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])])])")).
+/*Thu Nov 23 00:04:22 2023*/ request(6, 1700719462.381, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(6, 0.15625, 117, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])])])")).
+/*Thu Nov 23 00:04:37 2023*/ request(7, 1700719477.836, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(46)]).
+completed(7, 0.0, 174, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])]),expr([es6([parenth(es6([str(\"lord, i love you\")]))])])])")).
+/*Thu Nov 23 00:04:49 2023*/ request(8, 1700719489.122, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(8, 0.17187500000000003, 117, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])])])")).
+/*Thu Nov 23 00:05:01 2023*/ request(9, 1700719501.997, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(46)]).
+completed(9, 0.0, 174, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])]),expr([es6([parenth(es6([str(\"lord, i love you\")]))])])])")).
+/*Thu Nov 23 00:08:34 2023*/ request(10, 1700719714.605, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(587)]).
+completed(10, 0.0, 275, 500, error("Illegal HTTP parameter: prog([[import(ident(process),from(str(\"node:process\")))],expr([es6([[[ident(process),ident(stdout),ident(write)],[]]])]),expr([es6([parenth(es6([str(\"*** Test Case 0 ***\\n\")]))])]),const(ident(FOUR),undefined)])")).
+server(stopped, 1700720196).
+server(started, 1700720312).
+/*Thu Nov 23 00:18:32 2023*/ request(1, 1700720312.400, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(51)]).
+completed(1, 0.015625, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Thu Nov 23 00:18:39 2023*/ request(2, 1700720319.072, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(51)]).
+completed(2, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],const(ident(x),undefined)])")).
+/*Thu Nov 23 00:19:29 2023*/ request(3, 1700720369.376, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(3, 0.0, 161, 500, error("Illegal HTTP parameter: prog([[],expr([iterate([es6([num(1)]),es6([lambExpr(n,es6([[[ident(n)],[]],aritOp(+),num(2)]))])])])])")).
+/*Thu Nov 23 00:20:22 2023*/ request(4, 1700720422.873, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
+/*Thu Nov 23 00:20:24 2023*/ request(5, 1700720424.414, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
+/*Thu Nov 23 00:20:35 2023*/ request(6, 1700720435.662, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(203)]).
+completed(6, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+/*Thu Nov 23 00:22:36 2023*/ request(7, 1700720556.890, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(210)]).
+completed(7, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+/*Thu Nov 23 00:22:50 2023*/ request(8, 1700720570.476, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(8, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+/*Thu Nov 23 00:23:18 2023*/ request(9, 1700720598.356, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(215)]).
+/*Thu Nov 23 00:23:34 2023*/ request(10, 1700720614.323, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(196)]).
+completed(10, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+completed(4, 200.12500000000003, 45, 500, error("Time limit exceeded")).
+completed(5, 202.53125000000003, 45, 500, error("Time limit exceeded")).
+/*Thu Nov 23 00:26:30 2023*/ request(11, 1700720790.134, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(260)]).
+completed(11, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+completed(9, 201.64062500000003, 45, 500, error("Time limit exceeded")).
+server(stopped, 1700722580).
+server(started, 1700722677).
+/*Thu Nov 23 00:57:56 2023*/ request(1, 1700722676.680, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(1, 0.015625, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(nats),undefined)])")).
+/*Thu Nov 23 00:58:00 2023*/ request(2, 1700722680.528, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(2, 0.0, 98, 500, error("Illegal HTTP parameter: prog([[],const(ident(FOUR),undefined)])")).
+/*Thu Nov 23 00:58:22 2023*/ request(3, 1700722702.372, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(18)]).
+completed(3, 0.0, 100, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])])])")).
+server(stopped, 1700722821).
+server(started, 1700722827).
+/*Thu Nov 23 01:00:26 2023*/ request(1, 1700722826.960, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(18)]).
+completed(1, 0.015625, 100, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])])])")).
+/*Thu Nov 23 01:01:17 2023*/ request(2, 1700722877.646, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(17)]).
+completed(2, 0.0, 100, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])])])")).
+/*Thu Nov 23 01:01:22 2023*/ request(3, 1700722882.449, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(18)]).
+completed(3, 0.0, 145, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(x)],[]]])]),expr([es6([minus(es6([[[ident(x)],[]]]))])])])")).
+/*Thu Nov 23 01:01:47 2023*/ request(4, 1700722907.699, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(26)]).
+completed(4, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:02 2023*/ request(5, 1700722922.667, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(5, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:03 2023*/ request(6, 1700722923.654, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(6, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:04 2023*/ request(7, 1700722924.058, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(7, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:04 2023*/ request(8, 1700722924.223, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(8, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:12 2023*/ request(9, 1700722932.843, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(9, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:19 2023*/ request(10, 1700722939.751, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(10, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:29 2023*/ request(11, 1700722949.673, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(11, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:37 2023*/ request(12, 1700722957.525, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(12, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:02:50 2023*/ request(13, 1700722970.369, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(28)]).
+completed(13, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:03:22 2023*/ request(14, 1700723002.685, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(44)]).
+completed(14, 0.0, 93, 500, error("Illegal HTTP parameter: prog([[],let(ident(x),undefined)])")).
+/*Thu Nov 23 01:04:48 2023*/ request(15, 1700723088.324, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(31)]).
+completed(15, 0.0, 159, 500, error("Illegal HTTP parameter: prog([[],expr([es6([[[ident(console),ident(log)],[]]])]),expr([es6([parenth(es6([str(\"x\")]))])])])")).
+/*Thu Nov 23 01:08:17 2023*/ request(16, 1700723297.523, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(36)]).
+completed(16, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],let(ident(uwu),undefined)])")).
+/*Thu Nov 23 01:08:43 2023*/ request(17, 1700723323.572, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(54)]).
+completed(17, 0.0, 95, 500, error("Illegal HTTP parameter: prog([[],let(ident(uwu),undefined)])")).
+server(stopped, 1700723667).
+server(started, 1700723690).
+/*Thu Nov 23 01:14:49 2023*/ request(1, 1700723689.853, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(270)]).
+/*Thu Nov 23 01:14:51 2023*/ request(2, 1700723691.931, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(270)]).
+server(stopped, 1700723797).
+server(started, 1700723804).
+/*Thu Nov 23 01:16:44 2023*/ request(1, 1700723804.187, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(270)]).
+/*Thu Nov 23 01:16:44 2023*/ request(2, 1700723804.899, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(270)]).
+/*Thu Nov 23 01:16:48 2023*/ request(3, 1700723808.020, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+/*Thu Nov 23 01:16:48 2023*/ request(4, 1700723808.991, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+/*Thu Nov 23 01:16:49 2023*/ request(5, 1700723809.136, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(1, 59.23437500000001, 357, 503, error("Stack limit (1.0Gb) exceeded\n  Stack sizes: local: 0.7Gb, global: 0.2Gb, trail: 30.0Mb\n  Stack depth: 3,927,821, last-call: 0%, Choice points: 3,927,808\n  Possible non-terminating recursion:\n    [3,927,805] user:statementList([length:1|_576], [length:239], [])\n    [3,927,804] user:statementList([length:2|_610], [length:239], [])")).
+/*Thu Nov 23 01:18:35 2023*/ request(6, 1700723915.025, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(2, 56.35937500000001, 357, 503, error("Stack limit (1.0Gb) exceeded\n  Stack sizes: local: 0.7Gb, global: 0.2Gb, trail: 30.0Mb\n  Stack depth: 3,927,986, last-call: 0%, Choice points: 3,927,973\n  Possible non-terminating recursion:\n    [3,927,970] user:statementList([length:1|_568], [length:239], [])\n    [3,927,969] user:statementList([length:2|_602], [length:239], [])")).
+/*Thu Nov 23 01:18:37 2023*/ request(7, 1700723917.452, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(3, 57.21875000000001, 357, 503, error("Stack limit (1.0Gb) exceeded\n  Stack sizes: local: 0.7Gb, global: 0.2Gb, trail: 30.0Mb\n  Stack depth: 3,928,006, last-call: 0%, Choice points: 3,927,993\n  Possible non-terminating recursion:\n    [3,927,991] user:statementList([length:1|_568], [length:216], [])\n    [3,927,990] user:statementList([length:2|_602], [length:216], [])")).
+completed(5, 57.09375000000001, 357, 503, error("Stack limit (1.0Gb) exceeded\n  Stack sizes: local: 0.7Gb, global: 0.2Gb, trail: 30.0Mb\n  Stack depth: 3,928,006, last-call: 0%, Choice points: 3,927,993\n  Possible non-terminating recursion:\n    [3,927,991] user:statementList([length:1|_568], [length:216], [])\n    [3,927,990] user:statementList([length:2|_602], [length:216], [])")).
+completed(4, 57.43750000000001, 357, 503, error("Stack limit (1.0Gb) exceeded\n  Stack sizes: local: 0.7Gb, global: 0.2Gb, trail: 30.0Mb\n  Stack depth: 3,928,006, last-call: 0%, Choice points: 3,927,993\n  Possible non-terminating recursion:\n    [3,927,991] user:statementList([length:1|_568], [length:216], [])\n    [3,927,990] user:statementList([length:2|_602], [length:216], [])")).
+server(stopped, 1700723978).
+server(started, 1700723991).
+/*Thu Nov 23 01:19:50 2023*/ request(1, 1700723990.699, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(267)]).
+completed(1, 0.015625, 44, 200, ok).
+/*Thu Nov 23 01:20:29 2023*/ request(2, 1700724029.241, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(2, 0.0, 44, 200, ok).
+server(stopped, 1700724065).
+server(started, 1700724075).
+/*Thu Nov 23 01:21:15 2023*/ request(1, 1700724075.491, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+/*Thu Nov 23 01:21:18 2023*/ request(2, 1700724078.099, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+/*Thu Nov 23 01:21:20 2023*/ request(3, 1700724080.141, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+/*Thu Nov 23 01:21:20 2023*/ request(4, 1700724080.454, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+/*Thu Nov 23 01:21:20 2023*/ request(5, 1700724080.621, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+server(stopped, 1700724093).
+server(started, 1700724099).
+/*Thu Nov 23 01:21:39 2023*/ request(1, 1700724099.147, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+/*Thu Nov 23 01:21:40 2023*/ request(2, 1700724100.121, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+/*Thu Nov 23 01:21:47 2023*/ request(3, 1700724107.348, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+server(stopped, 1700724112).
+server(started, 1700724149).
+/*Thu Nov 23 01:22:29 2023*/ request(1, 1700724149.400, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(260)]).
+completed(1, 0.015625, 44, 200, ok).
+/*Thu Nov 23 01:22:35 2023*/ request(2, 1700724155.240, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(679)]).
+/*Thu Nov 23 01:23:03 2023*/ request(3, 1700724183.365, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(3, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:23:46 2023*/ request(4, 1700724226.156, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(260)]).
+completed(4, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:23:54 2023*/ request(5, 1700724234.281, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(246)]).
+completed(5, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:24:00 2023*/ request(6, 1700724240.917, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(681)]).
+completed(6, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:24:06 2023*/ request(7, 1700724246.396, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(118)]).
+completed(7, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:24:12 2023*/ request(8, 1700724252.654, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(271)]).
+completed(8, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:24:20 2023*/ request(9, 1700724260.311, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(364)]).
+completed(9, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:25:37 2023*/ request(10, 1700724337.472, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(370)]).
+completed(10, 0.0, 44, 200, ok).
+/*Thu Nov 23 01:25:59 2023*/ request(11, 1700724359.848, [peer(ip(127,0,0,1)),method(post),request_uri('/compile'),path('/compile'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(219)]).
+completed(11, 0.0, 114, 500, error("Illegal HTTP parameter: es6([parenth(es6([[[ident(n)],[]],relOp(!=),num(0)]))])")).
